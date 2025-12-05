@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "agent-chat": {
+      "command": "/Users/justinavery/claude/agentic-lesson/.venv/bin/python",
+      "args": ["-m", "agent_chat_mcp.server"],
+      "cwd": "/Users/justinavery/claude/agentic-lesson/agent-chat-mcp"
+    }
+  }
+}

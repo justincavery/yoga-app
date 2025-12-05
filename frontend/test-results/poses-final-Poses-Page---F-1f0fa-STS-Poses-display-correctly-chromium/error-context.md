@@ -1,0 +1,256 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - heading "YogaFlow" [level=1] [ref=e8]
+        - navigation [ref=e9]:
+          - link "Dashboard" [ref=e10] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Poses" [ref=e11] [cursor=pointer]:
+            - /url: /poses
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - paragraph [ref=e14]: Test User
+          - paragraph [ref=e15]: test@playwright.com
+        - button "Logout" [ref=e16]:
+          - img [ref=e17]
+          - text: Logout
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - heading "Pose Library" [level=2] [ref=e23]
+      - paragraph [ref=e24]: Explore and discover yoga poses for your practice
+    - generic [ref=e26]:
+      - generic [ref=e29]:
+        - img [ref=e31]
+        - textbox "Search poses by name, Sanskrit name, or description..." [ref=e34]
+      - generic [ref=e36]:
+        - combobox [ref=e37] [cursor=pointer]:
+          - option "Select an option" [disabled] [selected]
+          - option "All Difficulties"
+          - option "Beginner"
+          - option "Intermediate"
+          - option "Advanced"
+        - generic:
+          - img
+      - generic [ref=e39]:
+        - combobox [ref=e40] [cursor=pointer]:
+          - option "Select an option" [disabled] [selected]
+          - option "All Categories"
+          - option "Standing"
+          - option "Seated"
+          - option "Backbend"
+          - option "Inversion"
+          - option "Balance"
+          - option "Core"
+          - option "Restorative"
+        - generic:
+          - img
+      - button "Clear" [disabled] [ref=e42]:
+        - img [ref=e43]
+        - text: Clear
+    - generic [ref=e46]: Showing 20 poses
+    - generic [ref=e47]:
+      - generic [ref=e48] [cursor=pointer]:
+        - img "Boat Pose" [ref=e50]
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - heading "Boat Pose" [level=3] [ref=e53]
+            - generic [ref=e54]: intermediate
+          - paragraph [ref=e55]: Navasana
+          - paragraph [ref=e56]: A powerful core-strengthening pose that builds abdominal strength and hip flexor endurance while challenging balance.
+          - generic [ref=e57]: balancing
+        - button "View Details" [ref=e59]
+      - generic [ref=e60] [cursor=pointer]:
+        - img "Bound Angle Pose" [ref=e62]
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - heading "Bound Angle Pose" [level=3] [ref=e65]
+            - generic [ref=e66]: advanced
+          - paragraph [ref=e67]: Baddha Konasana
+          - paragraph [ref=e68]: A deep hip opener that improves flexibility in the hips and groins while calming the mind.
+          - generic [ref=e69]: seated
+        - button "View Details" [ref=e71]
+      - generic [ref=e72] [cursor=pointer]:
+        - img "Bow Pose" [ref=e74]
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - heading "Bow Pose" [level=3] [ref=e77]
+            - generic [ref=e78]: intermediate
+          - paragraph [ref=e79]: Dhanurasana
+          - paragraph [ref=e80]: A deep backbend that opens the entire front body while strengthening the back and improving flexibility.
+          - generic [ref=e81]: backbends
+        - button "View Details" [ref=e83]
+      - generic [ref=e84] [cursor=pointer]:
+        - img "Bridge Pose" [ref=e86]
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - heading "Bridge Pose" [level=3] [ref=e89]
+            - generic [ref=e90]: beginner
+          - paragraph [ref=e91]: Setu Bandha Sarvangasana
+          - paragraph [ref=e92]: A gentle backbend that opens the chest, stretches the spine, and can be both energizing and restorative.
+          - generic [ref=e93]: backbends
+        - button "View Details" [ref=e95]
+      - generic [ref=e96] [cursor=pointer]:
+        - img "Camel Pose" [ref=e98]
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - heading "Camel Pose" [level=3] [ref=e101]
+            - generic [ref=e102]: intermediate
+          - paragraph [ref=e103]: Ustrasana
+          - paragraph [ref=e104]: A deep backbend that opens the entire front of the body while building strength and flexibility in the spine.
+          - generic [ref=e105]: backbends
+        - button "View Details" [ref=e107]
+      - generic [ref=e108] [cursor=pointer]:
+        - img "Cat-Cow Pose" [ref=e110]
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - heading "Cat-Cow Pose" [level=3] [ref=e113]
+            - generic [ref=e114]: beginner
+          - paragraph [ref=e115]: Marjaryasana-Bitilasana
+          - paragraph [ref=e116]: A gentle flowing sequence between two poses that warms the body and brings flexibility to the spine.
+          - generic [ref=e117]: seated
+        - button "View Details" [ref=e119]
+      - generic [ref=e120] [cursor=pointer]:
+        - img "Child's Pose" [ref=e122]
+        - generic [ref=e123]:
+          - generic [ref=e124]:
+            - heading "Child's Pose" [level=3] [ref=e125]
+            - generic [ref=e126]: beginner
+          - paragraph [ref=e127]: Balasana
+          - paragraph [ref=e128]: A gentle resting pose that provides a sense of calm and security while gently stretching the back, hips, and thighs.
+          - generic [ref=e129]: restorative
+        - button "View Details" [ref=e131]
+      - generic [ref=e132] [cursor=pointer]:
+        - img "Cobra Pose" [ref=e134]
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - heading "Cobra Pose" [level=3] [ref=e137]
+            - generic [ref=e138]: intermediate
+          - paragraph [ref=e139]: Bhujangasana
+          - paragraph [ref=e140]: An energizing backbend that opens the chest and strengthens the spine while stimulating abdominal organs.
+          - generic [ref=e141]: backbends
+        - button "View Details" [ref=e143]
+      - generic [ref=e144] [cursor=pointer]:
+        - img "Corpse Pose" [ref=e146]
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - heading "Corpse Pose" [level=3] [ref=e149]
+            - generic [ref=e150]: beginner
+          - paragraph [ref=e151]: Savasana
+          - paragraph [ref=e152]: The final relaxation pose that allows complete rest and integration of the practice. Often considered the most important and paradoxically the most challenging pose.
+          - generic [ref=e153]: restorative
+        - button "View Details" [ref=e155]
+      - generic [ref=e156] [cursor=pointer]:
+        - img "Crow Pose" [ref=e158]
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - heading "Crow Pose" [level=3] [ref=e161]
+            - generic [ref=e162]: advanced
+          - paragraph [ref=e163]: Bakasana
+          - paragraph [ref=e164]: A foundational arm balance that builds upper body strength, core stability, and mental focus.
+          - generic [ref=e165]: arm_balances
+        - button "View Details" [ref=e167]
+      - generic [ref=e168] [cursor=pointer]:
+        - img "Destroyer of the Universe Pose" [ref=e170]
+        - generic [ref=e171]:
+          - generic [ref=e172]:
+            - heading "Destroyer of the Universe Pose" [level=3] [ref=e173]
+            - generic [ref=e174]: advanced
+          - paragraph [ref=e175]: Bhairavasana
+          - paragraph [ref=e176]: An extremely challenging balance combining leg flexibility with arm strength and equilibrium.
+          - generic [ref=e177]: balancing
+        - button "View Details" [ref=e179]
+      - generic [ref=e180] [cursor=pointer]:
+        - img "Dolphin Pose" [ref=e182]
+        - generic [ref=e183]:
+          - generic [ref=e184]:
+            - heading "Dolphin Pose" [level=3] [ref=e185]
+            - generic [ref=e186]: intermediate
+          - paragraph [ref=e187]: Ardha Pincha Mayurasana
+          - paragraph [ref=e188]: A forearm version of Downward Dog that builds shoulder strength while providing the benefits of a mild inversion.
+          - generic [ref=e189]: inversions
+        - button "View Details" [ref=e191]
+      - generic [ref=e192] [cursor=pointer]:
+        - img "Downward Facing Dog" [ref=e194]
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - heading "Downward Facing Dog" [level=3] [ref=e197]
+            - generic [ref=e198]: beginner
+          - paragraph [ref=e199]: Adho Mukha Svanasana
+          - paragraph [ref=e200]: One of the most recognizable yoga poses, this mild inversion energizes and rejuvenates while strengthening the entire body.
+          - generic [ref=e201]: inversions
+        - button "View Details" [ref=e203]
+      - generic [ref=e204] [cursor=pointer]:
+        - img "Eagle Pose" [ref=e206]
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - heading "Eagle Pose" [level=3] [ref=e209]
+            - generic [ref=e210]: intermediate
+          - paragraph [ref=e211]: Garudasana
+          - paragraph [ref=e212]: A standing balance that wraps arms and legs while building focus, strength, and flexibility in the shoulders and hips.
+          - generic [ref=e213]: balancing
+        - button "View Details" [ref=e215]
+      - generic [ref=e216] [cursor=pointer]:
+        - img "Easy Pose" [ref=e218]
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - heading "Easy Pose" [level=3] [ref=e221]
+            - generic [ref=e222]: beginner
+          - paragraph [ref=e223]: Sukhasana
+          - paragraph [ref=e224]: A comfortable seated meditation pose that promotes grounding and inner awareness.
+          - generic [ref=e225]: seated
+        - button "View Details" [ref=e227]
+      - generic [ref=e228] [cursor=pointer]:
+        - img "Eight Angle Pose" [ref=e230]
+        - generic [ref=e231]:
+          - generic [ref=e232]:
+            - heading "Eight Angle Pose" [level=3] [ref=e233]
+            - generic [ref=e234]: advanced
+          - paragraph [ref=e235]: Astavakrasana
+          - paragraph [ref=e236]: An intricate arm balance that requires significant core strength, arm strength, and hip flexibility.
+          - generic [ref=e237]: arm_balances
+        - button "View Details" [ref=e239]
+      - generic [ref=e240] [cursor=pointer]:
+        - img "Extended Puppy Pose" [ref=e242]
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - heading "Extended Puppy Pose" [level=3] [ref=e245]
+            - generic [ref=e246]: beginner
+          - paragraph [ref=e247]: Uttana Shishosana
+          - paragraph [ref=e248]: A cross between Child's Pose and Downward Dog that deeply stretches the spine and shoulders.
+          - generic [ref=e249]: forward_bends
+        - button "View Details" [ref=e251]
+      - generic [ref=e252] [cursor=pointer]:
+        - img "Extended Side Angle Pose" [ref=e254]
+        - generic [ref=e255]:
+          - generic [ref=e256]:
+            - heading "Extended Side Angle Pose" [level=3] [ref=e257]
+            - generic [ref=e258]: intermediate
+          - paragraph [ref=e259]: Utthita Parsvakonasana
+          - paragraph [ref=e260]: A powerful standing pose that combines strength with a deep side stretch, building stamina and flexibility.
+          - generic [ref=e261]: standing
+        - button "View Details" [ref=e263]
+      - generic [ref=e264] [cursor=pointer]:
+        - img "Feathered Peacock Pose" [ref=e266]
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - heading "Feathered Peacock Pose" [level=3] [ref=e269]
+            - generic [ref=e270]: advanced
+          - paragraph [ref=e271]: Pincha Mayurasana Advanced
+          - paragraph [ref=e272]: The full freestanding forearm balance away from the wall, requiring complete control and strength.
+          - generic [ref=e273]: inversions
+        - button "View Details" [ref=e275]
+      - generic [ref=e276] [cursor=pointer]:
+        - img "Firefly Pose" [ref=e278]
+        - generic [ref=e279]:
+          - generic [ref=e280]:
+            - heading "Firefly Pose" [level=3] [ref=e281]
+            - generic [ref=e282]: advanced
+          - paragraph [ref=e283]: Tittibhasana
+          - paragraph [ref=e284]: An advanced arm balance that requires significant strength, flexibility, and body awareness.
+          - generic [ref=e285]: arm_balances
+        - button "View Details" [ref=e287]
+```

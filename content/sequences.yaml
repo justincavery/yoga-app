@@ -1,0 +1,1068 @@
+sequences:
+  # BEGINNER SEQUENCES
+  - id: seq_001
+    name: "Gentle Morning Wake-Up"
+    description: "A gentle 15-minute flow to ease into your day, perfect for beginners. This sequence warms up the body, improves circulation, and sets a calm, focused tone for the day ahead."
+    difficulty_level: "beginner"
+    duration_minutes: 15
+    focus_area: "flexibility"
+    style: "gentle"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 120
+        notes: "Begin seated, focus on breath awareness and setting intention"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 90
+        notes: "Warm up the spine with 8-10 rounds"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 3
+        duration_seconds: 60
+        notes: "Rest and breathe"
+      - pose_id: "pose_003"  # Downward Facing Dog
+        position_order: 4
+        duration_seconds: 60
+        notes: "Pedal feet to warm up legs"
+      - pose_id: "pose_001"  # Mountain Pose
+        position_order: 5
+        duration_seconds: 45
+        notes: "Find grounding and alignment"
+      - pose_id: "pose_007"  # Standing Forward Bend
+        position_order: 6
+        duration_seconds: 60
+        notes: "Let head hang heavy, bend knees if needed"
+      - pose_id: "pose_001"  # Mountain Pose
+        position_order: 7
+        duration_seconds: 30
+        notes: "Return to center"
+      - pose_id: "pose_008"  # Warrior I (right)
+        position_order: 8
+        duration_seconds: 45
+        notes: "Right side"
+      - pose_id: "pose_008"  # Warrior I (left)
+        position_order: 9
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Facing Dog
+        position_order: 10
+        duration_seconds: 45
+        notes: "Transition pose"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 11
+        duration_seconds: 90
+        notes: "Rest and integrate"
+      - pose_id: "pose_009"  # Bridge Pose
+        position_order: 12
+        duration_seconds: 60
+        notes: "Gentle backbend"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 13
+        duration_seconds: 180
+        notes: "Final relaxation"
+
+  - id: seq_002
+    name: "Stress Relief Evening Flow"
+    description: "A calming 30-minute sequence designed to release tension and prepare for restful sleep. Perfect after a long day, this practice focuses on gentle stretches and restorative poses."
+    difficulty_level: "beginner"
+    duration_minutes: 30
+    focus_area: "relaxation"
+    style: "restorative"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 180
+        notes: "Begin with breath work and intention setting"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 120
+        notes: "Gentle spinal movement, slow pace"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 3
+        duration_seconds: 120
+        notes: "Extended rest, focus on releasing tension"
+      - pose_id: "pose_003"  # Downward Facing Dog
+        position_order: 4
+        duration_seconds: 75
+        notes: "Gentle hold, bend knees as needed"
+      - pose_id: "pose_007"  # Standing Forward Bend
+        position_order: 5
+        duration_seconds: 90
+        notes: "Let gravity do the work"
+      - pose_id: "pose_010"  # Tree Pose (right)
+        position_order: 6
+        duration_seconds: 45
+        notes: "Right side, gentle balance"
+      - pose_id: "pose_010"  # Tree Pose (left)
+        position_order: 7
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_007"  # Standing Forward Bend
+        position_order: 8
+        duration_seconds: 60
+        notes: "Return to fold"
+      - pose_id: "pose_014"  # Seated Forward Bend
+        position_order: 9
+        duration_seconds: 120
+        notes: "Seated stretch, use props as needed"
+      - pose_id: "pose_018"  # Seated Spinal Twist (right)
+        position_order: 10
+        duration_seconds: 60
+        notes: "Right side, gentle detoxifying twist"
+      - pose_id: "pose_018"  # Seated Spinal Twist (left)
+        position_order: 11
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_009"  # Bridge Pose
+        position_order: 12
+        duration_seconds: 75
+        notes: "Gentle heart opener"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 13
+        duration_seconds: 90
+        notes: "Rest before final relaxation"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 14
+        duration_seconds: 300
+        notes: "Extended final relaxation, 5 minutes minimum"
+
+  # INTERMEDIATE SEQUENCES
+  - id: seq_003
+    name: "Power Vinyasa Flow"
+    description: "A dynamic 45-minute flow that builds strength, flexibility, and endurance. This energizing practice links breath with movement through creative sequences and standing poses."
+    difficulty_level: "intermediate"
+    duration_minutes: 45
+    focus_area: "strength"
+    style: "vinyasa"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 90
+        notes: "Set intention, establish ujjayi breath"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 90
+        notes: "10 rounds to warm spine"
+      - pose_id: "pose_003"  # Downward Facing Dog
+        position_order: 3
+        duration_seconds: 75
+        notes: "Foundation pose"
+      - pose_id: "pose_001"  # Mountain Pose
+        position_order: 4
+        duration_seconds: 30
+        notes: "Step forward"
+      - pose_id: "pose_008"  # Warrior I (right)
+        position_order: 5
+        duration_seconds: 60
+        notes: "Right side, build heat"
+      - pose_id: "pose_011"  # Warrior II (right)
+        position_order: 6
+        duration_seconds: 60
+        notes: "Open to Warrior II"
+      - pose_id: "pose_013"  # Extended Side Angle (right)
+        position_order: 7
+        duration_seconds: 60
+        notes: "Right side, deep stretch"
+      - pose_id: "pose_012"  # Triangle (right)
+        position_order: 8
+        duration_seconds: 60
+        notes: "Straighten front leg to Triangle"
+      - pose_id: "pose_003"  # Downward Facing Dog
+        position_order: 9
+        duration_seconds: 45
+        notes: "Transition, step forward"
+      - pose_id: "pose_008"  # Warrior I (left)
+        position_order: 10
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_011"  # Warrior II (left)
+        position_order: 11
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_013"  # Extended Side Angle (left)
+        position_order: 12
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_012"  # Triangle (left)
+        position_order: 13
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Facing Dog
+        position_order: 14
+        duration_seconds: 60
+        notes: "Rest"
+      - pose_id: "pose_015"  # Boat Pose
+        position_order: 15
+        duration_seconds: 30
+        notes: "Core work, repeat 3 times"
+      - pose_id: "pose_016"  # Cobra
+        position_order: 16
+        duration_seconds: 30
+        notes: "Backbend, repeat 3 times"
+      - pose_id: "pose_003"  # Downward Facing Dog
+        position_order: 17
+        duration_seconds: 45
+        notes: "Transition"
+      - pose_id: "pose_020"  # Pigeon (right)
+        position_order: 18
+        duration_seconds: 120
+        notes: "Right side hip opener"
+      - pose_id: "pose_020"  # Pigeon (left)
+        position_order: 19
+        duration_seconds: 120
+        notes: "Left side"
+      - pose_id: "pose_014"  # Seated Forward Bend
+        position_order: 20
+        duration_seconds: 90
+        notes: "Cool down"
+      - pose_id: "pose_018"  # Seated Twist (right)
+        position_order: 21
+        duration_seconds: 60
+        notes: "Right side"
+      - pose_id: "pose_018"  # Seated Twist (left)
+        position_order: 22
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_009"  # Bridge
+        position_order: 23
+        duration_seconds: 60
+        notes: "Final backbend"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 24
+        duration_seconds: 300
+        notes: "Final relaxation"
+
+  - id: seq_004
+    name: "Deep Hip Opening Flow"
+    description: "A 45-minute practice focused on releasing tight hips and lower back tension. Perfect for desk workers and athletes, this sequence combines active stretching with restorative holds."
+    difficulty_level: "intermediate"
+    duration_minutes: 45
+    focus_area: "flexibility"
+    style: "yin"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 120
+        notes: "Begin with hip circles and breath awareness"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 90
+        notes: "Warm up spine and hips"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 3
+        duration_seconds: 60
+        notes: "Walk it out"
+      - pose_id: "pose_007"  # Standing Forward Fold
+        position_order: 4
+        duration_seconds: 90
+        notes: "Bend knees generously"
+      - pose_id: "pose_011"  # Warrior II (right)
+        position_order: 5
+        duration_seconds: 75
+        notes: "Right side, open hips"
+      - pose_id: "pose_013"  # Extended Side Angle (right)
+        position_order: 6
+        duration_seconds: 75
+        notes: "Right side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 7
+        duration_seconds: 45
+        notes: "Transition"
+      - pose_id: "pose_011"  # Warrior II (left)
+        position_order: 8
+        duration_seconds: 75
+        notes: "Left side"
+      - pose_id: "pose_013"  # Extended Side Angle (left)
+        position_order: 9
+        duration_seconds: 75
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 10
+        duration_seconds: 45
+        notes: "Transition"
+      - pose_id: "pose_020"  # Pigeon (right)
+        position_order: 11
+        duration_seconds: 180
+        notes: "Right side, 3 minute hold, deep release"
+      - pose_id: "pose_020"  # Pigeon (left)
+        position_order: 12
+        duration_seconds: 180
+        notes: "Left side, 3 minute hold"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 13
+        duration_seconds: 90
+        notes: "Neutralize spine"
+      - pose_id: "pose_028"  # Bound Angle
+        position_order: 14
+        duration_seconds: 180
+        notes: "3 minute hold, deep hip opener"
+      - pose_id: "pose_014"  # Seated Forward Bend
+        position_order: 15
+        duration_seconds: 120
+        notes: "Release hamstrings"
+      - pose_id: "pose_018"  # Seated Twist (right)
+        position_order: 16
+        duration_seconds: 75
+        notes: "Right side"
+      - pose_id: "pose_018"  # Seated Twist (left)
+        position_order: 17
+        duration_seconds: 75
+        notes: "Left side"
+      - pose_id: "pose_009"  # Bridge
+        position_order: 18
+        duration_seconds: 60
+        notes: "Gentle backbend"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 19
+        duration_seconds: 300
+        notes: "Final relaxation"
+
+  # ADVANCED SEQUENCES
+  - id: seq_005
+    name: "Advanced Power & Balance"
+    description: "A challenging 60-minute practice combining arm balances, inversions, and deep backbends. This sequence builds strength, flexibility, and mental focus while cultivating an advanced practice."
+    difficulty_level: "advanced"
+    duration_minutes: 60
+    focus_area: "balance"
+    style: "vinyasa"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 120
+        notes: "Set intention, pranayama preparation"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 90
+        notes: "Warm up spine"
+      - pose_id: "pose_019"  # Dolphin
+        position_order: 3
+        duration_seconds: 90
+        notes: "Build shoulder strength"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 4
+        duration_seconds: 60
+        notes: "Transition"
+      - pose_id: "pose_008"  # Warrior I (right)
+        position_order: 5
+        duration_seconds: 45
+        notes: "Right side, build heat"
+      - pose_id: "pose_011"  # Warrior II (right)
+        position_order: 6
+        duration_seconds: 45
+        notes: "Right side"
+      - pose_id: "pose_013"  # Extended Side Angle (right)
+        position_order: 7
+        duration_seconds: 45
+        notes: "Right side"
+      - pose_id: "pose_012"  # Triangle (right)
+        position_order: 8
+        duration_seconds: 45
+        notes: "Right side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 9
+        duration_seconds: 30
+        notes: "Transition"
+      - pose_id: "pose_008"  # Warrior I (left)
+        position_order: 10
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_011"  # Warrior II (left)
+        position_order: 11
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_013"  # Extended Side Angle (left)
+        position_order: 12
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_012"  # Triangle (left)
+        position_order: 13
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 14
+        duration_seconds: 45
+        notes: "Prepare for arm balance"
+      - pose_id: "pose_021"  # Crow
+        position_order: 15
+        duration_seconds: 30
+        notes: "Arm balance, 2-3 attempts"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 16
+        duration_seconds: 60
+        notes: "Rest"
+      - pose_id: "pose_024"  # Side Plank (right)
+        position_order: 17
+        duration_seconds: 30
+        notes: "Right side"
+      - pose_id: "pose_024"  # Side Plank (left)
+        position_order: 18
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 19
+        duration_seconds: 45
+        notes: "Transition"
+      - pose_id: "pose_025"  # King Dancer (right)
+        position_order: 20
+        duration_seconds: 45
+        notes: "Right side balance"
+      - pose_id: "pose_025"  # King Dancer (left)
+        position_order: 21
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 22
+        duration_seconds: 45
+        notes: "Prepare for inversion"
+      - pose_id: "pose_026"  # Forearm Stand
+        position_order: 23
+        duration_seconds: 30
+        notes: "Practice attempts at wall"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 24
+        duration_seconds: 90
+        notes: "Rest after inversions"
+      - pose_id: "pose_017"  # Camel
+        position_order: 25
+        duration_seconds: 45
+        notes: "Deep backbend"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 26
+        duration_seconds: 60
+        notes: "Counter pose"
+      - pose_id: "pose_023"  # Wheel
+        position_order: 27
+        duration_seconds: 30
+        notes: "Full backbend, 2-3 rounds"
+      - pose_id: "pose_020"  # Pigeon (right)
+        position_order: 28
+        duration_seconds: 120
+        notes: "Right side hip release"
+      - pose_id: "pose_020"  # Pigeon (left)
+        position_order: 29
+        duration_seconds: 120
+        notes: "Left side"
+      - pose_id: "pose_014"  # Seated Forward Bend
+        position_order: 30
+        duration_seconds: 90
+        notes: "Cool down"
+      - pose_id: "pose_018"  # Seated Twist (right)
+        position_order: 31
+        duration_seconds: 60
+        notes: "Right side"
+      - pose_id: "pose_018"  # Seated Twist (left)
+        position_order: 32
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_030"  # Shoulder Stand
+        position_order: 33
+        duration_seconds: 90
+        notes: "With blanket support"
+      - pose_id: "pose_029"  # Plow
+        position_order: 34
+        duration_seconds: 60
+        notes: "Transition from Shoulder Stand"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 35
+        duration_seconds: 420
+        notes: "Extended final relaxation, 7 minutes"
+
+  # BATCH 1 ADDITIONS (SEQUENCES 6-10)
+  - id: seq_006
+    name: "Core Strength Builder"
+    description: "A 30-minute focused practice targeting core strength and stability. This sequence builds abdominal power through planks, arm balances, and dynamic movements while improving overall body control."
+    difficulty_level: "intermediate"
+    duration_minutes: 30
+    focus_area: "strength"
+    style: "power"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 90
+        notes: "Set intention, connect to core"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 90
+        notes: "Warm spine, engage core"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 3
+        duration_seconds: 60
+        notes: "Build heat"
+      - pose_id: "pose_045"  # Low Lunge (right)
+        position_order: 4
+        duration_seconds: 45
+        notes: "Right side, engage core"
+      - pose_id: "pose_045"  # Low Lunge (left)
+        position_order: 5
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 6
+        duration_seconds: 30
+        notes: "Transition"
+      - pose_id: "pose_015"  # Boat Pose
+        position_order: 7
+        duration_seconds: 30
+        notes: "Core strength, repeat 3x with 10 sec rest"
+      - pose_id: "pose_040"  # Locust
+        position_order: 8
+        duration_seconds: 30
+        notes: "Back strength, repeat 3x"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 9
+        duration_seconds: 45
+        notes: "Brief rest"
+      - pose_id: "pose_024"  # Side Plank (right)
+        position_order: 10
+        duration_seconds: 30
+        notes: "Right side obliques"
+      - pose_id: "pose_024"  # Side Plank (left)
+        position_order: 11
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 12
+        duration_seconds: 45
+        notes: "Reset"
+      - pose_id: "pose_021"  # Crow
+        position_order: 13
+        duration_seconds: 30
+        notes: "Arm balance, multiple attempts"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 14
+        duration_seconds: 60
+        notes: "Rest"
+      - pose_id: "pose_051"  # Eagle (right)
+        position_order: 15
+        duration_seconds: 30
+        notes: "Right side balance and core"
+      - pose_id: "pose_051"  # Eagle (left)
+        position_order: 16
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_015"  # Boat
+        position_order: 17
+        duration_seconds: 30
+        notes: "Final core blast"
+      - pose_id: "pose_009"  # Bridge
+        position_order: 18
+        duration_seconds: 60
+        notes: "Counter stretch"
+      - pose_id: "pose_038"  # Supine Twist (right)
+        position_order: 19
+        duration_seconds: 60
+        notes: "Right side release"
+      - pose_id: "pose_038"  # Supine Twist (left)
+        position_order: 20
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_034"  # Happy Baby
+        position_order: 21
+        duration_seconds: 60
+        notes: "Hip release"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 22
+        duration_seconds: 300
+        notes: "Final relaxation"
+
+  - id: seq_007
+    name: "Balance & Focus Flow"
+    description: "A 45-minute practice emphasizing standing balances and concentration. Perfect for developing mental clarity and physical stability through challenging one-legged poses and arm balances."
+    difficulty_level: "intermediate"
+    duration_minutes: 45
+    focus_area: "balance"
+    style: "vinyasa"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 120
+        notes: "Pranayama and focus setting"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 90
+        notes: "Gentle warm-up"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 3
+        duration_seconds: 60
+        notes: "Foundation"
+      - pose_id: "pose_001"  # Mountain
+        position_order: 4
+        duration_seconds: 45
+        notes: "Find center, establish drishti"
+      - pose_id: "pose_010"  # Tree (right)
+        position_order: 5
+        duration_seconds: 60
+        notes: "Right side, build focus"
+      - pose_id: "pose_010"  # Tree (left)
+        position_order: 6
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_008"  # Warrior I (right)
+        position_order: 7
+        duration_seconds: 45
+        notes: "Right side"
+      - pose_id: "pose_048"  # Warrior III (right)
+        position_order: 8
+        duration_seconds: 30
+        notes: "Right side balance challenge"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 9
+        duration_seconds: 30
+        notes: "Transition"
+      - pose_id: "pose_008"  # Warrior I (left)
+        position_order: 10
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_048"  # Warrior III (left)
+        position_order: 11
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 12
+        duration_seconds: 45
+        notes: "Reset"
+      - pose_id: "pose_011"  # Warrior II (right)
+        position_order: 13
+        duration_seconds: 45
+        notes: "Right side"
+      - pose_id: "pose_047"  # Half Moon (right)
+        position_order: 14
+        duration_seconds: 30
+        notes: "Right side, use block"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 15
+        duration_seconds: 30
+        notes: "Transition"
+      - pose_id: "pose_011"  # Warrior II (left)
+        position_order: 16
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_047"  # Half Moon (left)
+        position_order: 17
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 18
+        duration_seconds: 60
+        notes: "Prepare for arm balance"
+      - pose_id: "pose_021"  # Crow
+        position_order: 19
+        duration_seconds: 30
+        notes: "Core and focus"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 20
+        duration_seconds: 60
+        notes: "Rest"
+      - pose_id: "pose_051"  # Eagle (right)
+        position_order: 21
+        duration_seconds: 45
+        notes: "Right side wrapping balance"
+      - pose_id: "pose_051"  # Eagle (left)
+        position_order: 22
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_025"  # King Dancer (right)
+        position_order: 23
+        duration_seconds: 45
+        notes: "Right side graceful balance"
+      - pose_id: "pose_025"  # King Dancer (left)
+        position_order: 24
+        duration_seconds: 45
+        notes: "Left side"
+      - pose_id: "pose_050"  # Standing Split (right)
+        position_order: 25
+        duration_seconds: 30
+        notes: "Right side"
+      - pose_id: "pose_050"  # Standing Split (left)
+        position_order: 26
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_007"  # Forward Bend
+        position_order: 27
+        duration_seconds: 90
+        notes: "Release and cool down"
+      - pose_id: "pose_014"  # Seated Forward Bend
+        position_order: 28
+        duration_seconds: 90
+        notes: "Calm nervous system"
+      - pose_id: "pose_018"  # Seated Twist (right)
+        position_order: 29
+        duration_seconds: 60
+        notes: "Right side"
+      - pose_id: "pose_018"  # Seated Twist (left)
+        position_order: 30
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_009"  # Bridge
+        position_order: 31
+        duration_seconds: 60
+        notes: "Gentle backbend"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 32
+        duration_seconds: 360
+        notes: "Deep integration, 6 minutes"
+
+  - id: seq_008
+    name: "Deep Stretch & Flexibility"
+    description: "A 60-minute slow-flow practice focused on deep stretching and increasing flexibility. This restorative sequence holds poses longer to safely open tight muscles and increase range of motion throughout the body."
+    difficulty_level: "beginner"
+    duration_minutes: 60
+    focus_area: "flexibility"
+    style: "yin"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 180
+        notes: "Begin with extended centering and breath"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 120
+        notes: "Very slow, mindful movements"
+      - pose_id: "pose_037"  # Extended Puppy
+        position_order: 3
+        duration_seconds: 120
+        notes: "Shoulder and spine stretch"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 4
+        duration_seconds: 120
+        notes: "Rest"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 5
+        duration_seconds: 90
+        notes: "Pedal feet slowly"
+      - pose_id: "pose_041"  # Wide-Legged Forward Bend
+        position_order: 6
+        duration_seconds: 120
+        notes: "Deep hamstring stretch"
+      - pose_id: "pose_045"  # Low Lunge (right)
+        position_order: 7
+        duration_seconds: 90
+        notes: "Right hip flexor release"
+      - pose_id: "pose_053"  # Lizard (right)
+        position_order: 8
+        duration_seconds: 90
+        notes: "Right side deep hip opener"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 9
+        duration_seconds: 45
+        notes: "Transition"
+      - pose_id: "pose_045"  # Low Lunge (left)
+        position_order: 10
+        duration_seconds: 90
+        notes: "Left hip flexor"
+      - pose_id: "pose_053"  # Lizard (left)
+        position_order: 11
+        duration_seconds: 90
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 12
+        duration_seconds: 45
+        notes: "Transition"
+      - pose_id: "pose_020"  # Pigeon (right)
+        position_order: 13
+        duration_seconds: 180
+        notes: "Right side, 3 minute hold"
+      - pose_id: "pose_020"  # Pigeon (left)
+        position_order: 14
+        duration_seconds: 180
+        notes: "Left side, 3 minute hold"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 15
+        duration_seconds: 90
+        notes: "Neutralize"
+      - pose_id: "pose_039"  # Garland Pose
+        position_order: 16
+        duration_seconds: 90
+        notes: "Deep squat hold"
+      - pose_id: "pose_031"  # Staff Pose
+        position_order: 17
+        duration_seconds: 60
+        notes: "Transition to floor"
+      - pose_id: "pose_044"  # Reclining Hand to Toe (right)
+        position_order: 18
+        duration_seconds: 90
+        notes: "Right hamstring, use strap"
+      - pose_id: "pose_044"  # Reclining Hand to Toe (left)
+        position_order: 19
+        duration_seconds: 90
+        notes: "Left hamstring"
+      - pose_id: "pose_034"  # Happy Baby
+        position_order: 20
+        duration_seconds: 120
+        notes: "Hip release"
+      - pose_id: "pose_032"  # Reclined Bound Angle
+        position_order: 21
+        duration_seconds: 240
+        notes: "4 minute restorative hip opener"
+      - pose_id: "pose_038"  # Supine Twist (right)
+        position_order: 22
+        duration_seconds: 90
+        notes: "Right side"
+      - pose_id: "pose_038"  # Supine Twist (left)
+        position_order: 23
+        duration_seconds: 90
+        notes: "Left side"
+      - pose_id: "pose_033"  # Legs Up Wall
+        position_order: 24
+        duration_seconds: 300
+        notes: "Gentle inversion, 5 minutes"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 25
+        duration_seconds: 480
+        notes: "Extended final rest, 8 minutes"
+
+  - id: seq_009
+    name: "Energizing Morning Power"
+    description: "A dynamic 20-minute practice to kickstart your day with energy and vitality. This fast-paced flow combines sun salutations, standing poses, and backbends to wake up the body and mind."
+    difficulty_level: "beginner"
+    duration_minutes: 20
+    focus_area: "energy"
+    style: "vinyasa"
+    is_preset: true
+    poses:
+      - pose_id: "pose_001"  # Mountain
+        position_order: 1
+        duration_seconds: 30
+        notes: "Brief centering"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 60
+        notes: "Quick spinal warm-up"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 3
+        duration_seconds: 60
+        notes: "Wake up full body"
+      - pose_id: "pose_001"  # Mountain
+        position_order: 4
+        duration_seconds: 20
+        notes: "Return to standing"
+      - pose_id: "pose_007"  # Forward Bend
+        position_order: 5
+        duration_seconds: 30
+        notes: "Quick fold"
+      - pose_id: "pose_001"  # Mountain
+        position_order: 6
+        duration_seconds: 20
+        notes: "Rise up"
+      - pose_id: "pose_008"  # Warrior I (right)
+        position_order: 7
+        duration_seconds: 40
+        notes: "Right side power"
+      - pose_id: "pose_011"  # Warrior II (right)
+        position_order: 8
+        duration_seconds: 40
+        notes: "Open to side"
+      - pose_id: "pose_054"  # Reverse Warrior (right)
+        position_order: 9
+        duration_seconds: 30
+        notes: "Side stretch"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 10
+        duration_seconds: 30
+        notes: "Transition"
+      - pose_id: "pose_008"  # Warrior I (left)
+        position_order: 11
+        duration_seconds: 40
+        notes: "Left side"
+      - pose_id: "pose_011"  # Warrior II (left)
+        position_order: 12
+        duration_seconds: 40
+        notes: "Left side"
+      - pose_id: "pose_054"  # Reverse Warrior (left)
+        position_order: 13
+        duration_seconds: 30
+        notes: "Left side stretch"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 14
+        duration_seconds: 45
+        notes: "Rest"
+      - pose_id: "pose_016"  # Cobra
+        position_order: 15
+        duration_seconds: 30
+        notes: "Energizing backbend"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 16
+        duration_seconds: 30
+        notes: "Counter"
+      - pose_id: "pose_040"  # Locust
+        position_order: 17
+        duration_seconds: 30
+        notes: "Build energy"
+      - pose_id: "pose_009"  # Bridge
+        position_order: 18
+        duration_seconds: 45
+        notes: "Heart opener"
+      - pose_id: "pose_043"  # Knees to Chest
+        position_order: 19
+        duration_seconds: 45
+        notes: "Release"
+      - pose_id: "pose_036"  # Seated Side Bend (right)
+        position_order: 20
+        duration_seconds: 30
+        notes: "Right side breath work"
+      - pose_id: "pose_036"  # Seated Side Bend (left)
+        position_order: 21
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 22
+        duration_seconds: 120
+        notes: "Brief integration"
+
+  - id: seq_010
+    name: "Advanced Arm Balance Journey"
+    description: "A challenging 45-minute practice for experienced yogis focusing on arm balances, inversions, and advanced asanas. This sequence builds strength, courage, and body awareness through progressive challenging poses."
+    difficulty_level: "advanced"
+    duration_minutes: 45
+    focus_area: "strength"
+    style: "power"
+    is_preset: true
+    poses:
+      - pose_id: "pose_006"  # Easy Pose
+        position_order: 1
+        duration_seconds: 120
+        notes: "Mental preparation and focus"
+      - pose_id: "pose_004"  # Cat-Cow
+        position_order: 2
+        duration_seconds: 90
+        notes: "Spinal warm-up"
+      - pose_id: "pose_019"  # Dolphin
+        position_order: 3
+        duration_seconds: 90
+        notes: "Build shoulder strength"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 4
+        duration_seconds: 60
+        notes: "Prepare body"
+      - pose_id: "pose_011"  # Warrior II (right)
+        position_order: 5
+        duration_seconds: 40
+        notes: "Right side foundation"
+      - pose_id: "pose_013"  # Extended Side Angle (right)
+        position_order: 6
+        duration_seconds: 40
+        notes: "Right side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 7
+        duration_seconds: 30
+        notes: "Transition"
+      - pose_id: "pose_011"  # Warrior II (left)
+        position_order: 8
+        duration_seconds: 40
+        notes: "Left side"
+      - pose_id: "pose_013"  # Extended Side Angle (left)
+        position_order: 9
+        duration_seconds: 40
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 10
+        duration_seconds: 45
+        notes: "Prepare for arm balance"
+      - pose_id: "pose_021"  # Crow
+        position_order: 11
+        duration_seconds: 30
+        notes: "Foundation arm balance"
+      - pose_id: "pose_060"  # Side Crow (right)
+        position_order: 12
+        duration_seconds: 20
+        notes: "Right side twist balance"
+      - pose_id: "pose_060"  # Side Crow (left)
+        position_order: 13
+        duration_seconds: 20
+        notes: "Left side"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 14
+        duration_seconds: 60
+        notes: "Rest wrists"
+      - pose_id: "pose_061"  # Flying Pigeon (right)
+        position_order: 15
+        duration_seconds: 20
+        notes: "Right side advanced balance"
+      - pose_id: "pose_061"  # Flying Pigeon (left)
+        position_order: 16
+        duration_seconds: 20
+        notes: "Left side"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 17
+        duration_seconds: 45
+        notes: "Brief rest"
+      - pose_id: "pose_019"  # Dolphin
+        position_order: 18
+        duration_seconds: 60
+        notes: "Build for inversion"
+      - pose_id: "pose_026"  # Forearm Stand
+        position_order: 19
+        duration_seconds: 30
+        notes: "At wall, multiple attempts"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 20
+        duration_seconds: 90
+        notes: "Rest after inversion"
+      - pose_id: "pose_024"  # Side Plank (right)
+        position_order: 21
+        duration_seconds: 30
+        notes: "Right side strength"
+      - pose_id: "pose_024"  # Side Plank (left)
+        position_order: 22
+        duration_seconds: 30
+        notes: "Left side"
+      - pose_id: "pose_003"  # Downward Dog
+        position_order: 23
+        duration_seconds: 45
+        notes: "Transition"
+      - pose_id: "pose_017"  # Camel
+        position_order: 24
+        duration_seconds: 45
+        notes: "Deep backbend"
+      - pose_id: "pose_002"  # Child's Pose
+        position_order: 25
+        duration_seconds: 60
+        notes: "Counter pose"
+      - pose_id: "pose_023"  # Wheel
+        position_order: 26
+        duration_seconds: 30
+        notes: "Full backbend, 2 rounds"
+      - pose_id: "pose_020"  # Pigeon (right)
+        position_order: 27
+        duration_seconds: 90
+        notes: "Right hip release"
+      - pose_id: "pose_020"  # Pigeon (left)
+        position_order: 28
+        duration_seconds: 90
+        notes: "Left hip release"
+      - pose_id: "pose_014"  # Seated Forward Bend
+        position_order: 29
+        duration_seconds: 90
+        notes: "Cool down"
+      - pose_id: "pose_018"  # Seated Twist (right)
+        position_order: 30
+        duration_seconds: 60
+        notes: "Right side detox"
+      - pose_id: "pose_018"  # Seated Twist (left)
+        position_order: 31
+        duration_seconds: 60
+        notes: "Left side"
+      - pose_id: "pose_030"  # Shoulder Stand
+        position_order: 32
+        duration_seconds: 90
+        notes: "Calming inversion"
+      - pose_id: "pose_029"  # Plow
+        position_order: 33
+        duration_seconds: 60
+        notes: "Transition from shoulder stand"
+      - pose_id: "pose_055"  # Fish
+        position_order: 34
+        duration_seconds: 45
+        notes: "Counter pose"
+      - pose_id: "pose_005"  # Savasana
+        position_order: 35
+        duration_seconds: 300
+        notes: "Deep rest and integration"

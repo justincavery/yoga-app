@@ -1,0 +1,3561 @@
+poses:
+  # BEGINNER POSES (1-10)
+  - id: pose_001
+    name_english: "Mountain Pose"
+    name_sanskrit: "Tadasana"
+    category: "standing"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "Mountain Pose is the foundation of all standing poses. It teaches proper alignment and grounding while appearing deceptively simple."
+    benefits:
+      - "Improves posture and body awareness"
+      - "Strengthens thighs, knees, and ankles"
+      - "Firms abdomen and buttocks"
+      - "Relieves sciatica"
+      - "Reduces flat feet"
+      - "Calms the mind and improves focus"
+    target_areas:
+      - "full body"
+      - "legs"
+      - "core"
+    instructions:
+      - "Stand with feet hip-width apart, distributing weight evenly across both feet"
+      - "Press all four corners of your feet into the ground"
+      - "Engage your thigh muscles and lift your kneecaps slightly"
+      - "Draw your tailbone down toward the floor while lifting through the crown of your head"
+      - "Roll your shoulders back and down, letting your arms hang naturally at your sides"
+      - "Face your palms forward to open the chest"
+      - "Gaze forward with your chin parallel to the floor"
+      - "Breathe deeply and hold for 30-60 seconds"
+    contraindications:
+      - "Recent or chronic knee injury (practice with caution)"
+      - "Low blood pressure (may cause dizziness if held too long)"
+    modifications:
+      - "For balance issues: practice with feet wider apart or near a wall"
+      - "For tight shoulders: keep palms facing thighs"
+    props_needed: []
+
+  - id: pose_002
+    name_english: "Child's Pose"
+    name_sanskrit: "Balasana"
+    category: "restorative"
+    difficulty_level: "beginner"
+    duration_default: 120
+    description: "A gentle resting pose that provides a sense of calm and security while gently stretching the back, hips, and thighs."
+    benefits:
+      - "Gently stretches the hips, thighs, and ankles"
+      - "Calms the brain and relieves stress and fatigue"
+      - "Relieves back and neck pain when done with proper support"
+      - "Massages internal organs"
+      - "Helps alleviate insomnia"
+      - "Reduces anxiety and mental tension"
+    target_areas:
+      - "back"
+      - "hips"
+      - "thighs"
+      - "ankles"
+    instructions:
+      - "Kneel on the floor with big toes touching and knees hip-width apart or wider"
+      - "Sit back on your heels"
+      - "Exhale and lay your torso down between your thighs"
+      - "Lengthen your tailbone away from the back of your pelvis"
+      - "Extend your arms forward, palms down, or rest them alongside your body with palms up"
+      - "Let your forehead rest on the mat"
+      - "Breathe deeply, feeling your back expand with each inhale"
+      - "Hold for 1-5 minutes"
+    contraindications:
+      - "Diarrhea"
+      - "Pregnancy (use wide-knee variation with bolster support)"
+      - "Knee injury (place folded blanket between thighs and calves)"
+    modifications:
+      - "Tight hips: place a folded blanket between buttocks and heels"
+      - "Tight shoulders: rest forehead on stacked fists or block"
+      - "Pregnancy: knees wide apart with bolster support"
+    props_needed:
+      - "blanket (optional)"
+      - "bolster (optional)"
+      - "block (optional)"
+
+  - id: pose_003
+    name_english: "Downward Facing Dog"
+    name_sanskrit: "Adho Mukha Svanasana"
+    category: "inversion"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "One of the most recognizable yoga poses, this mild inversion energizes and rejuvenates while strengthening the entire body."
+    benefits:
+      - "Strengthens arms, shoulders, and back"
+      - "Stretches hamstrings, calves, and arches"
+      - "Energizes the body"
+      - "Improves digestion"
+      - "Relieves headaches, insomnia, and fatigue"
+      - "Therapeutic for high blood pressure and asthma"
+    target_areas:
+      - "full body"
+      - "shoulders"
+      - "hamstrings"
+      - "calves"
+      - "hands"
+      - "spine"
+    instructions:
+      - "Start on hands and knees with wrists under shoulders and knees under hips"
+      - "Spread your fingers wide and press firmly through your palms"
+      - "Tuck your toes and lift your knees off the floor"
+      - "Press your hips up and back, creating an inverted V shape"
+      - "Keep your knees slightly bent initially, focusing on lengthening the spine"
+      - "Press your heels toward the floor (they don't need to touch)"
+      - "Keep your head between your upper arms, not hanging down"
+      - "Gaze toward your navel or between your feet"
+      - "Hold for 1-3 minutes, breathing deeply"
+    contraindications:
+      - "Carpal tunnel syndrome"
+      - "Late-term pregnancy"
+      - "High blood pressure (use modifications)"
+      - "Headache"
+      - "Recent or chronic shoulder, arm, or wrist injury"
+    modifications:
+      - "Tight hamstrings: bend knees generously and focus on lengthening spine"
+      - "Wrist sensitivity: place forearms on blocks or do Dolphin Pose instead"
+      - "High blood pressure: keep head higher than heart"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_004
+    name_english: "Cat-Cow Pose"
+    name_sanskrit: "Marjaryasana-Bitilasana"
+    category: "seated"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A gentle flowing sequence between two poses that warms the body and brings flexibility to the spine."
+    benefits:
+      - "Improves posture and balance"
+      - "Strengthens and stretches the spine and neck"
+      - "Stretches the hips, abdomen, and back"
+      - "Increases coordination"
+      - "Massages internal organs"
+      - "Creates emotional balance and relieves stress"
+      - "Excellent warm-up for spine mobility"
+    target_areas:
+      - "spine"
+      - "neck"
+      - "back"
+      - "abdomen"
+      - "hips"
+    instructions:
+      - "Start on hands and knees in tabletop position"
+      - "Align wrists under shoulders and knees under hips"
+      - "Keep spine neutral and gaze down"
+      - "COW: Inhale, drop belly toward floor, lift chest and chin, gaze up"
+      - "Broaden across shoulder blades and draw shoulders away from ears"
+      - "CAT: Exhale, draw belly to spine, round back toward ceiling"
+      - "Drop head toward floor, tuck chin to chest"
+      - "Continue flowing between poses for 5-10 breaths"
+      - "Move with your breath: inhale into Cow, exhale into Cat"
+    contraindications:
+      - "Neck injury (keep head in neutral position)"
+      - "Recent back surgery"
+      - "Wrist injury (modify by using forearms)"
+    modifications:
+      - "Wrist sensitivity: come onto forearms or use wrist wedges"
+      - "Knee sensitivity: place folded blanket under knees"
+      - "Neck issues: keep head in neutral alignment with spine"
+    props_needed:
+      - "blanket (optional)"
+      - "wrist wedges (optional)"
+
+  - id: pose_005
+    name_english: "Corpse Pose"
+    name_sanskrit: "Savasana"
+    category: "restorative"
+    difficulty_level: "beginner"
+    duration_default: 300
+    description: "The final relaxation pose that allows complete rest and integration of the practice. Often considered the most important and paradoxically the most challenging pose."
+    benefits:
+      - "Reduces blood pressure"
+      - "Decreases heart rate"
+      - "Reduces muscle tension"
+      - "Alleviates stress, mild depression, and anxiety"
+      - "Calms the nervous system"
+      - "Improves sleep quality"
+      - "Promotes spiritual awakening and higher consciousness"
+    target_areas:
+      - "full body"
+      - "mind"
+      - "nervous system"
+    instructions:
+      - "Lie flat on your back with legs extended"
+      - "Place arms alongside body, palms facing up"
+      - "Position feet hip-width apart, allowing them to fall open naturally"
+      - "Close your eyes gently"
+      - "Make any final adjustments to ensure complete comfort"
+      - "Release all muscular effort and let your body become heavy"
+      - "Allow your breathing to occur naturally"
+      - "Focus on releasing tension from each body part, starting from toes to head"
+      - "Rest for 5-15 minutes"
+      - "To exit: begin to deepen breath, wiggle fingers and toes, stretch arms overhead, roll to right side, then slowly press up to seated"
+    contraindications:
+      - "Pregnancy after first trimester (lie on left side with support)"
+      - "Back injury (use supports under knees)"
+      - "Difficulty breathing while lying flat (elevate head and chest)"
+    modifications:
+      - "Lower back discomfort: place bolster or rolled blanket under knees"
+      - "Pregnancy: recline on left side with pillow between legs"
+      - "Feel cold: cover with blanket"
+      - "Difficulty relaxing: place eye pillow over eyes"
+    props_needed:
+      - "blanket (optional)"
+      - "bolster (optional)"
+      - "eye pillow (optional)"
+
+  - id: pose_006
+    name_english: "Easy Pose"
+    name_sanskrit: "Sukhasana"
+    category: "seated"
+    difficulty_level: "beginner"
+    duration_default: 120
+    description: "A comfortable seated meditation pose that promotes grounding and inner awareness."
+    benefits:
+      - "Opens the hips"
+      - "Lengthens the spine"
+      - "Calms the mind"
+      - "Reduces stress and anxiety"
+      - "Strengthens the back"
+      - "Improves posture"
+      - "Promotes inner calm and peace"
+    target_areas:
+      - "hips"
+      - "spine"
+      - "mind"
+    instructions:
+      - "Sit on the floor or a cushion with legs crossed"
+      - "Place each foot beneath the opposite knee"
+      - "Rest your hands on your knees, palms down or in a mudra"
+      - "Press your hip bones down into the floor"
+      - "Lengthen your spine by reaching through the crown of your head"
+      - "Drop your shoulders back and down"
+      - "Soften your face, jaw, and belly"
+      - "Breathe deeply and evenly"
+      - "Hold for 1-5 minutes, then switch the cross of your legs"
+    contraindications:
+      - "Knee injury (use additional support or different seated pose)"
+      - "Hip injury (sit on higher support)"
+    modifications:
+      - "Tight hips: sit on folded blanket or bolster"
+      - "Knee discomfort: support knees with blocks or blankets"
+      - "Back support needed: sit against wall"
+    props_needed:
+      - "cushion or blanket (recommended)"
+      - "blocks (optional)"
+
+  - id: pose_007
+    name_english: "Standing Forward Bend"
+    name_sanskrit: "Uttanasana"
+    category: "forward_bend"
+    difficulty_level: "beginner"
+    duration_default: 45
+    description: "A fundamental forward fold that calms the mind while deeply stretching the back of the body."
+    benefits:
+      - "Stretches hamstrings, calves, and hips"
+      - "Strengthens thighs and knees"
+      - "Relieves stress and mild depression"
+      - "Calms the brain and soothes nerves"
+      - "Reduces fatigue and anxiety"
+      - "Stimulates liver and kidneys"
+      - "Improves digestion"
+      - "May relieve headache and insomnia"
+    target_areas:
+      - "hamstrings"
+      - "calves"
+      - "back"
+      - "spine"
+    instructions:
+      - "Stand in Mountain Pose with hands on hips"
+      - "Exhale and bend forward from the hip joints, not the waist"
+      - "Keep your knees straight but not locked"
+      - "Let your hands rest on the ground beside your feet, or on blocks"
+      - "If you can't reach the floor, cross your forearms and hold your elbows"
+      - "Press your heels firmly into the floor"
+      - "With each inhale, lift and lengthen the torso slightly"
+      - "With each exhale, release more fully into the forward bend"
+      - "Let your head hang heavy"
+      - "Hold for 30-60 seconds"
+    contraindications:
+      - "Back injury (bend knees generously or avoid)"
+      - "Hamstring injury (use blocks and keep knees bent)"
+      - "Low blood pressure (come up slowly)"
+    modifications:
+      - "Tight hamstrings: bend knees generously, use blocks under hands"
+      - "Lower back sensitivity: keep knees bent and focus on lengthening spine"
+      - "For deeper stretch: walk hands back toward heels"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_008
+    name_english: "Warrior I"
+    name_sanskrit: "Virabhadrasana I"
+    category: "standing"
+    difficulty_level: "beginner"
+    duration_default: 45
+    description: "A powerful standing pose that builds strength, stability, and confidence while stretching the entire front body."
+    benefits:
+      - "Strengthens shoulders, arms, back, and legs"
+      - "Stretches chest, lungs, shoulders, neck, belly, and groins"
+      - "Improves focus, balance, and stability"
+      - "Energizes the entire body"
+      - "Builds confidence and mental strength"
+      - "Therapeutic for sciatica"
+      - "Opens hips and chest"
+    target_areas:
+      - "legs"
+      - "hips"
+      - "chest"
+      - "shoulders"
+      - "arms"
+    instructions:
+      - "Stand in Mountain Pose, then step left foot back 3-4 feet"
+      - "Turn left foot out 45 degrees, keep right foot pointing forward"
+      - "Rotate hips to face forward as much as possible"
+      - "Bend right knee over right ankle, creating 90-degree angle"
+      - "Keep back leg straight and strong"
+      - "Raise arms overhead with palms facing each other or touching"
+      - "Draw shoulders down away from ears"
+      - "Gaze forward or up toward hands"
+      - "Hold for 30-60 seconds"
+      - "Repeat on opposite side"
+    contraindications:
+      - "High blood pressure (keep arms at shoulder height)"
+      - "Heart problems (practice with caution)"
+      - "Shoulder problems (keep hands on hips)"
+      - "Neck problems (don't look up, keep head neutral)"
+    modifications:
+      - "Balance issues: shorten stance or practice near wall"
+      - "Shoulder issues: keep hands on hips or prayer position at chest"
+      - "Knee concerns: don't bend front knee as deeply"
+    props_needed: []
+
+  - id: pose_009
+    name_english: "Bridge Pose"
+    name_sanskrit: "Setu Bandha Sarvangasana"
+    category: "backbend"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A gentle backbend that opens the chest, stretches the spine, and can be both energizing and restorative."
+    benefits:
+      - "Stretches chest, neck, and spine"
+      - "Strengthens back, buttocks, and hamstrings"
+      - "Improves circulation of blood"
+      - "Calms the brain and reduces stress"
+      - "Stimulates abdominal organs, lungs, and thyroid"
+      - "Rejuvenates tired legs"
+      - "Therapeutic for asthma, high blood pressure, and sinusitis"
+    target_areas:
+      - "spine"
+      - "chest"
+      - "legs"
+      - "glutes"
+    instructions:
+      - "Lie on your back with knees bent, feet flat on floor hip-width apart"
+      - "Place feet parallel, heels close to sitting bones"
+      - "Rest arms alongside body with palms down"
+      - "Press feet and arms firmly into floor"
+      - "Exhale and lift hips toward ceiling"
+      - "Keep thighs and feet parallel"
+      - "Clasp hands beneath pelvis and extend arms"
+      - "Press shoulders into floor to lift chest toward chin"
+      - "Keep knees directly over heels"
+      - "Hold for 30-60 seconds, breathing smoothly"
+      - "Release with an exhale, slowly rolling spine down"
+    contraindications:
+      - "Neck injury"
+      - "Back injury (practice with caution, use props)"
+      - "Pregnancy (after first trimester, use wall support)"
+    modifications:
+      - "Support needed: place block under sacrum for restorative version"
+      - "Tight shoulders: use strap around arms"
+      - "Beginners: hold elbows instead of clasping hands"
+    props_needed:
+      - "block (optional)"
+      - "strap (optional)"
+
+  - id: pose_010
+    name_english: "Tree Pose"
+    name_sanskrit: "Vrksasana"
+    category: "balancing"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A graceful balancing pose that cultivates focus, stability, and poise while strengthening the legs and core."
+    benefits:
+      - "Improves balance and stability"
+      - "Strengthens thighs, calves, ankles, and spine"
+      - "Stretches groins, inner thighs, chest, and shoulders"
+      - "Improves concentration and focus"
+      - "Calms the mind"
+      - "Relieves sciatica"
+      - "Reduces flat feet"
+      - "Builds confidence"
+    target_areas:
+      - "legs"
+      - "ankles"
+      - "core"
+      - "hips"
+    instructions:
+      - "Stand in Mountain Pose with hands in prayer at chest"
+      - "Shift weight onto right foot"
+      - "Bend left knee and place left foot on right inner thigh, calf, or ankle"
+      - "Never place foot directly on knee joint"
+      - "Press foot and leg together equally"
+      - "Find a steady focal point (drishti) to help balance"
+      - "When steady, raise arms overhead in V position or keep at chest"
+      - "Keep standing leg strong and core engaged"
+      - "Hold for 30-60 seconds"
+      - "Lower arms and leg with control"
+      - "Repeat on opposite side"
+    contraindications:
+      - "Recent or chronic knee, hip, or ankle injury"
+      - "Low blood pressure (may cause dizziness)"
+      - "Headache"
+      - "Insomnia (practice earlier in day)"
+    modifications:
+      - "For balance: keep toe of lifted foot on floor, heel against ankle"
+      - "For support: practice near wall or place hand on chair"
+      - "For tight hips: place foot lower on calf or ankle"
+      - "For shoulders: keep hands in prayer at chest"
+    props_needed:
+      - "wall or chair (optional for support)"
+
+  # INTERMEDIATE POSES (11-20)
+  - id: pose_011
+    name_english: "Warrior II"
+    name_sanskrit: "Virabhadrasana II"
+    category: "standing"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A strong standing pose that builds stamina and concentration while opening the hips and chest."
+    benefits:
+      - "Strengthens and stretches legs and ankles"
+      - "Opens chest, lungs, and shoulders"
+      - "Stimulates abdominal organs"
+      - "Increases stamina and endurance"
+      - "Relieves backaches"
+      - "Improves concentration and balance"
+      - "Therapeutic for flat feet and osteoporosis"
+    target_areas:
+      - "legs"
+      - "hips"
+      - "chest"
+      - "shoulders"
+      - "arms"
+    instructions:
+      - "Stand with feet 3-4 feet apart"
+      - "Turn right foot out 90 degrees and left foot slightly inward"
+      - "Align right heel with left arch"
+      - "Extend arms out to sides at shoulder height, palms down"
+      - "Bend right knee over right ankle, keeping knee tracking over second toe"
+      - "Keep left leg straight and strong, pressing outer edge of left foot into floor"
+      - "Keep torso centered over pelvis, shoulders stacked over hips"
+      - "Turn head to gaze over right fingertips"
+      - "Keep shoulders relaxed and arms active"
+      - "Hold for 30-60 seconds"
+      - "Straighten right leg, reverse feet, repeat on left side"
+    contraindications:
+      - "Diarrhea"
+      - "High blood pressure (avoid holding for long periods)"
+      - "Neck problems (don't turn head, keep gazing forward)"
+      - "Recent or chronic hip or knee injury"
+    modifications:
+      - "Balance issues: shorten stance or practice near wall"
+      - "Weak legs: don't bend front knee as deeply"
+      - "Tight hips: take shorter stance"
+    props_needed: []
+
+  - id: pose_012
+    name_english: "Triangle Pose"
+    name_sanskrit: "Trikonasana"
+    category: "standing"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A foundational standing pose that creates length through the sides of the body while building strength and stability."
+    benefits:
+      - "Stretches and strengthens thighs, knees, and ankles"
+      - "Stretches hips, groins, hamstrings, calves, shoulders, chest, and spine"
+      - "Stimulates abdominal organs"
+      - "Improves digestion"
+      - "Relieves stress and mild anxiety"
+      - "Therapeutic for back pain, neck pain, and sciatica"
+      - "Improves balance"
+    target_areas:
+      - "legs"
+      - "hips"
+      - "side body"
+      - "spine"
+    instructions:
+      - "Stand with feet 3-4 feet apart"
+      - "Turn right foot out 90 degrees, left foot slightly in"
+      - "Align right heel with left arch"
+      - "Extend arms out to sides at shoulder height"
+      - "Keep legs straight and engaged"
+      - "Reach right arm forward, then hinge at hip to bring right hand toward shin, ankle, or floor"
+      - "Extend left arm straight up toward ceiling"
+      - "Keep both sides of torso equally long"
+      - "Turn head to gaze at left thumb or keep neutral"
+      - "Press feet firmly into floor, reaching through both arms"
+      - "Hold for 30-60 seconds"
+      - "Inhale to come up, repeat on opposite side"
+    contraindications:
+      - "Diarrhea"
+      - "Headache"
+      - "Low blood pressure (practice against wall)"
+      - "Heart conditions (practice against wall)"
+      - "Neck problems (don't turn head upward)"
+    modifications:
+      - "For support: place bottom hand on block"
+      - "For balance: practice with back against wall"
+      - "Tight hamstrings: bend front knee slightly or use block"
+    props_needed:
+      - "block (optional)"
+
+  - id: pose_013
+    name_english: "Extended Side Angle Pose"
+    name_sanskrit: "Utthita Parsvakonasana"
+    category: "standing"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A powerful standing pose that combines strength with a deep side stretch, building stamina and flexibility."
+    benefits:
+      - "Strengthens legs, knees, and ankles"
+      - "Stretches groins, spine, waist, chest, lungs, and shoulders"
+      - "Stimulates abdominal organs"
+      - "Increases stamina"
+      - "Improves digestion and elimination"
+      - "Therapeutic for menstrual discomfort"
+      - "Opens chest and improves breathing capacity"
+    target_areas:
+      - "legs"
+      - "hips"
+      - "side body"
+      - "chest"
+      - "shoulders"
+    instructions:
+      - "Stand with feet 3-4 feet apart"
+      - "Turn right foot out 90 degrees, left foot slightly in"
+      - "Bend right knee over right ankle to 90 degrees"
+      - "Reach right arm forward, then bring right forearm to right thigh or hand to floor outside right foot"
+      - "Extend left arm up and over head, creating one line from left heel to left fingertips"
+      - "Turn chest toward ceiling"
+      - "Press firmly through outer edge of left foot"
+      - "Keep left leg strong and straight"
+      - "Gaze up toward left arm or forward if neck is sensitive"
+      - "Hold for 30-60 seconds"
+      - "Inhale to come up, repeat on opposite side"
+    contraindications:
+      - "Headache"
+      - "High or low blood pressure (use modifications)"
+      - "Insomnia (practice earlier in day)"
+      - "Neck problems (don't look up)"
+    modifications:
+      - "Support needed: place bottom hand on block inside front foot"
+      - "Less intense: rest forearm on thigh instead of hand to floor"
+      - "Balance issues: practice with back against wall"
+    props_needed:
+      - "block (optional)"
+
+  - id: pose_014
+    name_english: "Seated Forward Bend"
+    name_sanskrit: "Paschimottanasana"
+    category: "forward_bend"
+    difficulty_level: "intermediate"
+    duration_default: 60
+    description: "A classic seated forward fold that calms the mind while providing a deep stretch to the entire back of the body."
+    benefits:
+      - "Stretches spine, shoulders, and hamstrings"
+      - "Calms the brain and relieves stress and mild depression"
+      - "Stimulates liver, kidneys, ovaries, and uterus"
+      - "Improves digestion"
+      - "Relieves symptoms of menopause and menstrual discomfort"
+      - "Soothes headache and anxiety"
+      - "Reduces fatigue"
+      - "Therapeutic for high blood pressure and infertility"
+    target_areas:
+      - "hamstrings"
+      - "spine"
+      - "back"
+      - "shoulders"
+    instructions:
+      - "Sit on floor with legs extended straight in front"
+      - "Press sitting bones down and reach through heels"
+      - "Inhale and raise arms overhead, lengthening spine"
+      - "Exhale and hinge at hips to fold forward"
+      - "Keep spine long rather than rounding forward"
+      - "Hold outer edges of feet, ankles, or shins"
+      - "With each inhale, lengthen spine slightly"
+      - "With each exhale, deepen the fold from hips"
+      - "Relax shoulders away from ears"
+      - "Hold for 1-3 minutes"
+      - "Inhale to come up with flat back"
+    contraindications:
+      - "Asthma"
+      - "Diarrhea"
+      - "Back injury (only perform under supervision or avoid)"
+      - "Hamstring injury (use strap and keep knees bent)"
+    modifications:
+      - "Tight hamstrings: sit on folded blanket, bend knees, use strap around feet"
+      - "Lower back issues: keep knees bent and focus on lengthening spine"
+      - "More support: place bolster across legs"
+    props_needed:
+      - "strap (optional)"
+      - "blanket (optional)"
+      - "bolster (optional)"
+
+  - id: pose_015
+    name_english: "Boat Pose"
+    name_sanskrit: "Navasana"
+    category: "balancing"
+    difficulty_level: "intermediate"
+    duration_default: 30
+    description: "A powerful core-strengthening pose that builds abdominal strength and hip flexor endurance while challenging balance."
+    benefits:
+      - "Strengthens abdomen, hip flexors, and spine"
+      - "Stimulates kidneys, thyroid, prostate glands, and intestines"
+      - "Improves digestion"
+      - "Relieves stress"
+      - "Improves balance and posture"
+      - "Builds confidence"
+      - "Tones abdominal organs"
+    target_areas:
+      - "core"
+      - "hip flexors"
+      - "spine"
+      - "legs"
+    instructions:
+      - "Sit on floor with knees bent, feet flat on floor"
+      - "Place hands beside hips"
+      - "Lean back slightly and lift feet off floor, bringing shins parallel to floor"
+      - "Extend arms forward parallel to floor, palms facing each other"
+      - "Keep chest lifted and spine long"
+      - "If possible, straighten legs to create V shape with body"
+      - "Keep shoulders relaxed and core engaged"
+      - "Gaze forward, balancing on sitting bones"
+      - "Hold for 10-30 seconds, breathing steadily"
+      - "Repeat 2-3 times with rest between"
+    contraindications:
+      - "Asthma"
+      - "Diarrhea"
+      - "Headache"
+      - "Heart problems"
+      - "Insomnia"
+      - "Low blood pressure"
+      - "Menstruation (practice with caution)"
+      - "Pregnancy"
+      - "Neck injury (practice with support)"
+    modifications:
+      - "Beginners: keep knees bent, hold behind thighs"
+      - "More challenge: straighten legs fully"
+      - "Balance support: practice near wall"
+    props_needed: []
+
+  - id: pose_016
+    name_english: "Cobra Pose"
+    name_sanskrit: "Bhujangasana"
+    category: "backbend"
+    difficulty_level: "intermediate"
+    duration_default: 30
+    description: "An energizing backbend that opens the chest and strengthens the spine while stimulating abdominal organs."
+    benefits:
+      - "Strengthens the spine"
+      - "Stretches chest, lungs, shoulders, and abdomen"
+      - "Firms the buttocks"
+      - "Stimulates abdominal organs"
+      - "Opens heart and lungs"
+      - "Relieves stress and fatigue"
+      - "Therapeutic for asthma"
+      - "Improves posture"
+    target_areas:
+      - "spine"
+      - "chest"
+      - "shoulders"
+      - "abdomen"
+      - "back muscles"
+    instructions:
+      - "Lie prone on floor with legs extended, tops of feet on floor"
+      - "Place hands on floor under shoulders, elbows close to ribs"
+      - "Press hips and tops of feet firmly into floor"
+      - "Inhale and straighten arms to lift chest off floor"
+      - "Go only to height where you can maintain connection through pelvis"
+      - "Press tailbone toward pubis and lift pubis toward navel"
+      - "Firm but don't harden buttocks"
+      - "Draw shoulders back and down"
+      - "Keep elbows slightly bent unless very flexible"
+      - "Gaze forward or slightly up, keeping neck neutral"
+      - "Hold for 15-30 seconds"
+      - "Exhale to release down"
+    contraindications:
+      - "Back injury"
+      - "Carpal tunnel syndrome"
+      - "Headache"
+      - "Pregnancy"
+      - "Recent abdominal surgery"
+    modifications:
+      - "Gentler version: keep elbows bent, forearms on floor (Sphinx Pose)"
+      - "More support: place rolled blanket under pelvis"
+      - "Wrist issues: come onto forearms"
+    props_needed:
+      - "blanket (optional)"
+
+  - id: pose_017
+    name_english: "Camel Pose"
+    name_sanskrit: "Ustrasana"
+    category: "backbend"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A deep backbend that opens the entire front of the body while building strength and flexibility in the spine."
+    benefits:
+      - "Stretches entire front of body, ankles, thighs, groins, abdomen, chest, and throat"
+      - "Strengthens back muscles"
+      - "Improves posture"
+      - "Stimulates organs of abdomen and neck"
+      - "Opens chest and improves breathing capacity"
+      - "Relieves menstrual discomfort"
+      - "Energizes the body"
+    target_areas:
+      - "spine"
+      - "chest"
+      - "hip flexors"
+      - "thighs"
+      - "throat"
+    instructions:
+      - "Kneel on floor with knees hip-width apart"
+      - "Place hands on lower back, fingers pointing down"
+      - "Draw elbows toward each other"
+      - "Inhale and lift chest, beginning to arch back"
+      - "Keep hips over knees"
+      - "If comfortable, reach one hand at a time to heels"
+      - "Keep neck in neutral position or let head drop back if comfortable"
+      - "Press shins and tops of feet firmly into floor"
+      - "Hold for 30-60 seconds"
+      - "To exit, bring hands to hips and use core to lift up"
+      - "Rest in Child's Pose"
+    contraindications:
+      - "High or low blood pressure"
+      - "Migraine"
+      - "Insomnia"
+      - "Serious low back or neck injury"
+    modifications:
+      - "Less intense: keep hands on lower back"
+      - "More support: tuck toes under to raise heels"
+      - "Use blocks: place blocks outside calves for hands"
+      - "Neck sensitivity: keep chin tucked, don't drop head back"
+    props_needed:
+      - "blocks (optional)"
+      - "blanket under knees (optional)"
+
+  - id: pose_018
+    name_english: "Seated Spinal Twist"
+    name_sanskrit: "Ardha Matsyendrasana"
+    category: "twist"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A classic seated twist that energizes the spine while stimulating digestion and detoxification."
+    benefits:
+      - "Stretches shoulders, hips, and neck"
+      - "Energizes the spine"
+      - "Stimulates digestive fire"
+      - "Massages abdominal organs"
+      - "Relieves menstrual discomfort, fatigue, and backache"
+      - "Therapeutic for asthma"
+      - "Improves spinal flexibility"
+      - "Detoxifies internal organs"
+    target_areas:
+      - "spine"
+      - "shoulders"
+      - "hips"
+      - "neck"
+    instructions:
+      - "Sit on floor with legs extended"
+      - "Bend right knee and place right foot outside left thigh"
+      - "Bend left knee and tuck left foot near right hip"
+      - "Sit up tall, lengthening spine"
+      - "Exhale and twist to right"
+      - "Place left elbow outside right knee, right hand on floor behind"
+      - "Press elbow against knee to deepen twist"
+      - "With each inhale, lengthen spine"
+      - "With each exhale, twist slightly deeper"
+      - "Keep both sitting bones grounded"
+      - "Turn head to gaze over right shoulder"
+      - "Hold for 30-60 seconds"
+      - "Release and repeat on opposite side"
+    contraindications:
+      - "Back or spine injury"
+      - "Pregnancy (twist away from bent knee)"
+      - "Recent abdominal surgery"
+    modifications:
+      - "Tight hips: keep bottom leg straight"
+      - "Less intense: place hand behind without twisting as deeply"
+      - "More height: sit on folded blanket"
+    props_needed:
+      - "blanket (optional)"
+
+  - id: pose_019
+    name_english: "Dolphin Pose"
+    name_sanskrit: "Ardha Pincha Mayurasana"
+    category: "inversion"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A forearm version of Downward Dog that builds shoulder strength while providing the benefits of a mild inversion."
+    benefits:
+      - "Strengthens arms, shoulders, and legs"
+      - "Stretches hamstrings, calves, and arches"
+      - "Builds shoulder stability for inversions"
+      - "Calms the brain and relieves stress"
+      - "Improves digestion"
+      - "Energizes the body"
+      - "Therapeutic for high blood pressure and asthma"
+    target_areas:
+      - "shoulders"
+      - "arms"
+      - "legs"
+      - "hamstrings"
+      - "spine"
+    instructions:
+      - "Start on hands and knees"
+      - "Lower forearms to floor, elbows shoulder-width apart"
+      - "Press palms together or keep parallel"
+      - "Tuck toes and lift hips up and back"
+      - "Walk feet closer to elbows until hips are over shoulders"
+      - "Press forearms and hands firmly into floor"
+      - "Let head hang freely between upper arms"
+      - "Engage legs and press heels toward floor"
+      - "Keep core engaged to support spine"
+      - "Hold for 30-60 seconds"
+    contraindications:
+      - "Shoulder injury"
+      - "Neck injury"
+      - "High blood pressure (practice with caution)"
+      - "Headache"
+      - "Late-term pregnancy"
+    modifications:
+      - "Tight hamstrings: keep knees bent"
+      - "Shoulder support: use strap around arms to keep elbows from splaying"
+      - "Less intense: keep knees bent and hips higher"
+    props_needed:
+      - "strap (optional)"
+
+  - id: pose_020
+    name_english: "Pigeon Pose"
+    name_sanskrit: "Eka Pada Rajakapotasana"
+    category: "hip_opener"
+    difficulty_level: "intermediate"
+    duration_default: 90
+    description: "A deep hip opener that releases tension in the hips and lower back while promoting emotional release."
+    benefits:
+      - "Deeply stretches hip flexors, rotators, and glutes"
+      - "Opens chest and shoulders when in full expression"
+      - "Lengthens hip flexors of back leg"
+      - "Stimulates abdominal organs"
+      - "Releases stored emotions and tension"
+      - "Improves posture"
+      - "Alleviates sciatic pain"
+    target_areas:
+      - "hips"
+      - "glutes"
+      - "hip flexors"
+      - "lower back"
+    instructions:
+      - "Start in Downward Facing Dog"
+      - "Bring right knee forward and place behind right wrist"
+      - "Position right ankle somewhere in front of left hip"
+      - "Slide left leg back, straightening knee and pointing toes"
+      - "Square hips to front as much as possible"
+      - "Keep right foot flexed to protect knee"
+      - "Walk hands forward and lower torso over front leg"
+      - "Rest on forearms or extend arms fully, lowering forehead to floor"
+      - "Relax and breathe deeply"
+      - "Hold for 1-3 minutes"
+      - "Press through hands to lift up, return to Down Dog"
+      - "Repeat on opposite side"
+    contraindications:
+      - "Knee injury or pain (use modifications or avoid)"
+      - "Ankle injury"
+      - "Sacroiliac joint issues"
+      - "Tight hips (progress gradually)"
+    modifications:
+      - "Tight hips: place folded blanket under hip of bent leg"
+      - "Knee sensitivity: bring foot closer to groin, use more padding"
+      - "Alternative: Reclined Pigeon (on back)"
+      - "Support: place bolster under torso for forward fold"
+    props_needed:
+      - "blanket (recommended)"
+      - "bolster (optional)"
+      - "blocks (optional)"
+
+  # ADVANCED POSES (21-30)
+  - id: pose_021
+    name_english: "Crow Pose"
+    name_sanskrit: "Bakasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "A foundational arm balance that builds upper body strength, core stability, and mental focus."
+    benefits:
+      - "Strengthens arms, wrists, and core"
+      - "Improves balance and coordination"
+      - "Builds mental focus and concentration"
+      - "Tones abdominal organs"
+      - "Opens groins"
+      - "Builds confidence"
+      - "Prepares for more advanced arm balances"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "shoulders"
+    instructions:
+      - "Start in a squat with feet together"
+      - "Place hands shoulder-width apart in front of you"
+      - "Spread fingers wide and press firmly into floor"
+      - "Come onto tiptoes and lift hips high"
+      - "Bend elbows slightly and lean forward"
+      - "Place knees on back of upper arms, as high as possible"
+      - "Shift weight forward until one foot lifts, then the other"
+      - "Squeeze knees into arms"
+      - "Engage core and round upper back"
+      - "Gaze forward, not down"
+      - "Hold for 5-30 seconds"
+      - "Lower feet with control"
+    contraindications:
+      - "Carpal tunnel syndrome"
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Pregnancy"
+    modifications:
+      - "Beginners: practice lifting one foot at a time"
+      - "Support: place block under forehead for safety"
+      - "Build strength: hold plank pose to build arm strength first"
+    props_needed:
+      - "block (optional)"
+
+  - id: pose_022
+    name_english: "Headstand"
+    name_sanskrit: "Sirsasana"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 60
+    description: "The king of asanas, this challenging inversion builds strength, improves circulation, and calms the mind."
+    benefits:
+      - "Strengthens arms, legs, and spine"
+      - "Improves digestion"
+      - "Relieves stress and mild depression"
+      - "Calms the brain"
+      - "Stimulates pituitary and pineal glands"
+      - "Improves blood flow to brain"
+      - "Strengthens arms, shoulders, and core"
+      - "Builds confidence and mental clarity"
+    target_areas:
+      - "arms"
+      - "shoulders"
+      - "core"
+      - "spine"
+    instructions:
+      - "Start on hands and knees"
+      - "Interlace fingers, place forearms on floor with elbows shoulder-width apart"
+      - "Place crown of head on floor, back of head cradled in hands"
+      - "Tuck toes and lift hips up"
+      - "Walk feet closer to elbows until hips are over shoulders"
+      - "Engage core and slowly lift legs, one at a time or together"
+      - "Keep legs active and reaching upward"
+      - "Press forearms firmly into floor"
+      - "Keep weight primarily on forearms, not on head"
+      - "Hold for 10 seconds to 3 minutes"
+      - "Lower legs with control"
+      - "Rest in Child's Pose"
+    contraindications:
+      - "High blood pressure"
+      - "Heart conditions"
+      - "Neck injury"
+      - "Headache or migraine"
+      - "Menstruation"
+      - "Pregnancy (if not already practicing)"
+      - "Glaucoma or detached retina"
+    modifications:
+      - "Beginners: practice against wall for support"
+      - "Build strength: practice Dolphin Pose"
+      - "Alternative: practice Legs Up the Wall for similar benefits"
+    props_needed:
+      - "wall (recommended for beginners)"
+      - "blanket under head (optional)"
+
+  - id: pose_023
+    name_english: "Wheel Pose"
+    name_sanskrit: "Urdhva Dhanurasana"
+    category: "backbend"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "A deep, energizing backbend that opens the entire front body while building tremendous strength and flexibility."
+    benefits:
+      - "Stretches chest, lungs, and abdomen"
+      - "Strengthens arms, wrists, legs, buttocks, and spine"
+      - "Stimulates cardiovascular system"
+      - "Energizes and combats depression"
+      - "Opens shoulders and hip flexors"
+      - "Stimulates thyroid and pituitary glands"
+      - "Increases spinal flexibility"
+    target_areas:
+      - "spine"
+      - "chest"
+      - "shoulders"
+      - "wrists"
+      - "legs"
+      - "hip flexors"
+    instructions:
+      - "Lie on back with knees bent, feet hip-width apart near buttocks"
+      - "Place hands beside head, fingers pointing toward shoulders"
+      - "Press feet and hands firmly into floor"
+      - "Lift hips and shoulders off floor"
+      - "Place crown of head briefly on floor"
+      - "Straighten arms to lift head off floor"
+      - "Keep feet parallel and knees hip-width apart"
+      - "Press into hands and feet, lifting chest toward ceiling"
+      - "Let head hang naturally, gaze toward floor"
+      - "Hold for 5-30 seconds"
+      - "Tuck chin and carefully lower down"
+      - "Rest in supine position, then hug knees to chest"
+    contraindications:
+      - "Back injury"
+      - "Carpal tunnel syndrome"
+      - "Diarrhea"
+      - "Headache"
+      - "Heart problems"
+      - "High or low blood pressure"
+    modifications:
+      - "Preparation: practice Bridge Pose to build strength"
+      - "Less intense: come onto crown of head only (Half Wheel)"
+      - "Support: place blocks under hands for more height"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_024
+    name_english: "Side Plank"
+    name_sanskrit: "Vasisthasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "A challenging arm balance that builds core and arm strength while improving balance and focus."
+    benefits:
+      - "Strengthens arms, wrists, and legs"
+      - "Tones abdominal muscles and obliques"
+      - "Improves balance"
+      - "Strengthens wrists"
+      - "Builds endurance"
+      - "Improves concentration"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "obliques"
+      - "legs"
+    instructions:
+      - "Start in Plank Pose"
+      - "Shift weight onto right hand and outer edge of right foot"
+      - "Stack left foot on top of right"
+      - "Lift hips high, creating one straight line from head to heels"
+      - "Extend left arm straight up toward ceiling"
+      - "Gaze at left hand or forward"
+      - "Press firmly through right hand and foot"
+      - "Engage core and keep hips lifted"
+      - "Hold for 15-30 seconds"
+      - "Return to Plank, repeat on opposite side"
+    contraindications:
+      - "Wrist injury or carpal tunnel syndrome"
+      - "Shoulder injury"
+      - "Elbow injury"
+    modifications:
+      - "Easier: lower bottom knee to floor"
+      - "Balance help: practice against wall"
+      - "Less intense: rest top foot on floor in front of bottom foot"
+    props_needed:
+      - "block under bottom hand (optional)"
+
+  - id: pose_025
+    name_english: "King Dancer Pose"
+    name_sanskrit: "Natarajasana"
+    category: "balancing"
+    difficulty_level: "advanced"
+    duration_default: 45
+    description: "A graceful standing balance that combines strength, flexibility, and poise in a beautiful backbend."
+    benefits:
+      - "Strengthens legs and ankles"
+      - "Stretches shoulders, chest, thighs, groins, and abdomen"
+      - "Improves balance and poise"
+      - "Opens hip flexors"
+      - "Strengthens back muscles"
+      - "Improves concentration"
+      - "Energizes the body"
+    target_areas:
+      - "legs"
+      - "ankles"
+      - "shoulders"
+      - "chest"
+      - "thighs"
+      - "spine"
+    instructions:
+      - "Stand in Mountain Pose"
+      - "Shift weight onto right foot"
+      - "Bend left knee and bring left heel toward buttock"
+      - "Reach back with left hand and hold outside of left foot or ankle"
+      - "Extend right arm forward and up"
+      - "Begin to kick left foot back and up into hand"
+      - "Simultaneously reach right arm forward"
+      - "Keep standing leg strong and straight"
+      - "Lift chest and gaze forward"
+      - "Hold for 15-30 seconds"
+      - "Release with control and repeat on opposite side"
+    contraindications:
+      - "Low blood pressure"
+      - "Recent or chronic knee, hip, or shoulder injury"
+    modifications:
+      - "Balance help: practice near wall or use strap around foot"
+      - "Less intense: hold ankle instead of foot, don't kick as high"
+      - "Support: keep free hand on wall or chair"
+    props_needed:
+      - "strap (optional)"
+      - "wall or chair (optional)"
+
+  - id: pose_026
+    name_english: "Forearm Stand"
+    name_sanskrit: "Pincha Mayurasana"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "A challenging inversion that builds shoulder and core strength while improving balance and focus."
+    benefits:
+      - "Strengthens shoulders, arms, and core"
+      - "Improves balance"
+      - "Calms the brain"
+      - "Relieves stress and mild depression"
+      - "Improves blood circulation"
+      - "Stretches shoulders and chest"
+      - "Builds confidence"
+    target_areas:
+      - "shoulders"
+      - "arms"
+      - "core"
+      - "wrists"
+    instructions:
+      - "Start in Dolphin Pose"
+      - "Walk feet closer to elbows"
+      - "Engage core and lift one leg high"
+      - "Press strongly through forearms"
+      - "Use momentum to hop or float other leg up"
+      - "Bring legs together pointing toward ceiling"
+      - "Keep core engaged and ribs drawn in"
+      - "Press forearms firmly into floor"
+      - "Gaze between hands or slightly forward"
+      - "Hold for 10-30 seconds"
+      - "Lower legs with control"
+      - "Rest in Child's Pose"
+    contraindications:
+      - "Shoulder injury"
+      - "Neck injury"
+      - "Headache"
+      - "Heart conditions"
+      - "High blood pressure"
+      - "Menstruation"
+      - "Pregnancy"
+    modifications:
+      - "Use wall: practice with heels against wall for support"
+      - "Build strength: practice Dolphin Pose and forearm plank"
+      - "Use strap: place strap around arms at elbow-width to prevent splaying"
+    props_needed:
+      - "wall (recommended)"
+      - "strap (optional)"
+
+  - id: pose_027
+    name_english: "Firefly Pose"
+    name_sanskrit: "Tittibhasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 20
+    description: "An advanced arm balance that requires significant strength, flexibility, and body awareness."
+    benefits:
+      - "Strengthens arms, wrists, and core"
+      - "Stretches hamstrings and groins"
+      - "Improves balance and coordination"
+      - "Tones abdominal organs"
+      - "Builds mental focus"
+      - "Develops full-body awareness"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "hamstrings"
+      - "hips"
+    instructions:
+      - "Start in a wide-legged forward fold squat"
+      - "Place hands on floor behind feet, shoulder-width apart"
+      - "Lift one leg and place back of thigh on upper arm"
+      - "Repeat with other leg"
+      - "Shift weight into hands and lean forward"
+      - "Straighten legs as much as possible"
+      - "Lift feet off floor"
+      - "Engage core and press firmly through hands"
+      - "Gaze forward"
+      - "Hold for 5-20 seconds"
+      - "Lower feet with control"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Lower back injury"
+      - "Hamstring injury"
+    modifications:
+      - "Preparation: practice arm balances like Crow Pose first"
+      - "Support: place blocks under feet to reduce range needed"
+      - "Less intense: keep knees bent"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_028
+    name_english: "Bound Angle Pose"
+    name_sanskrit: "Baddha Konasana"
+    category: "seated"
+    difficulty_level: "advanced"
+    duration_default: 90
+    description: "A deep hip opener that improves flexibility in the hips and groins while calming the mind."
+    benefits:
+      - "Stretches inner thighs, groins, and knees"
+      - "Stimulates abdominal organs, ovaries, and bladder"
+      - "Stimulates heart and improves circulation"
+      - "Relieves mild depression, anxiety, and fatigue"
+      - "Therapeutic for flat feet, high blood pressure, and infertility"
+      - "Helps relieve menstrual discomfort and sciatica"
+      - "Consistent practice in late pregnancy may ease childbirth"
+    target_areas:
+      - "hips"
+      - "groins"
+      - "inner thighs"
+      - "knees"
+    instructions:
+      - "Sit on floor with legs extended"
+      - "Bend knees and bring soles of feet together"
+      - "Draw heels toward pelvis"
+      - "Hold feet with hands"
+      - "Let knees fall toward floor"
+      - "Lengthen spine, lifting through crown of head"
+      - "Maintain natural curve in lower back"
+      - "Option to fold forward, walking hands forward"
+      - "Keep spine long if folding forward"
+      - "Hold for 1-5 minutes"
+      - "Use hands to lift knees together, then straighten legs"
+    contraindications:
+      - "Groin or knee injury (use support under thighs)"
+      - "Lower back issues (sit on blanket and avoid forward fold)"
+    modifications:
+      - "Tight hips: sit on folded blanket or bolster"
+      - "Knee sensitivity: place blocks or blankets under thighs"
+      - "Back support: sit against wall"
+      - "Less intense: move feet farther from pelvis"
+    props_needed:
+      - "blanket (recommended)"
+      - "blocks (optional)"
+      - "bolster (optional)"
+
+  - id: pose_029
+    name_english: "Plow Pose"
+    name_sanskrit: "Halasana"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 60
+    description: "An intense inversion that deeply stretches the spine and shoulders while calming the nervous system."
+    benefits:
+      - "Stretches shoulders and spine"
+      - "Calms the brain"
+      - "Stimulates abdominal organs and thyroid gland"
+      - "Reduces stress and fatigue"
+      - "Therapeutic for backache, headache, infertility, and insomnia"
+      - "Helps relieve symptoms of menopause"
+      - "Improves digestion"
+    target_areas:
+      - "spine"
+      - "shoulders"
+      - "neck"
+      - "hamstrings"
+    instructions:
+      - "Lie on back with arms alongside body, palms down"
+      - "Bend knees and lift feet off floor"
+      - "Press hands into floor and lift hips toward ceiling"
+      - "Bring knees toward chest, then extend legs overhead"
+      - "Lower feet toward floor behind head"
+      - "Keep legs as straight as possible"
+      - "Interlace fingers and straighten arms on floor"
+      - "Lift thighs toward ceiling to keep weight off neck"
+      - "Hold for 30-60 seconds"
+      - "Slowly roll spine back to floor, vertebra by vertebra"
+    contraindications:
+      - "Diarrhea"
+      - "Menstruation"
+      - "Neck injury"
+      - "Asthma or high blood pressure (practice with experienced teacher)"
+      - "Pregnancy (avoid if not already practicing)"
+    modifications:
+      - "Feet don't reach floor: place chair or blocks behind head for feet"
+      - "Neck protection: place folded blankets under shoulders"
+      - "Less intense: keep knees bent"
+    props_needed:
+      - "chair or blocks (optional)"
+      - "blankets (recommended for neck)"
+
+  - id: pose_030
+    name_english: "Shoulder Stand"
+    name_sanskrit: "Sarvangasana"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 90
+    description: "The queen of asanas, this powerful inversion provides numerous benefits while requiring proper alignment and respect."
+    benefits:
+      - "Calms the brain and relieves stress"
+      - "Stimulates thyroid and abdominal organs"
+      - "Improves digestion"
+      - "Stretches shoulders and neck"
+      - "Tones legs and buttocks"
+      - "Helps relieve menopause symptoms"
+      - "Reduces fatigue and insomnia"
+      - "Therapeutic for asthma, infertility, and sinusitis"
+    target_areas:
+      - "shoulders"
+      - "neck"
+      - "spine"
+      - "legs"
+    instructions:
+      - "Lie on back on folded blankets with shoulders near edge"
+      - "Place arms alongside body, palms down"
+      - "Bend knees and lift feet off floor"
+      - "Press arms into floor and lift legs toward ceiling"
+      - "Bring hands to lower back for support"
+      - "Walk hands up back toward shoulder blades"
+      - "Straighten legs toward ceiling"
+      - "Keep weight on shoulders and upper arms, NOT on neck"
+      - "Press elbows toward each other"
+      - "Lift chest toward chin"
+      - "Hold for 30 seconds to 3 minutes"
+      - "Lower back to floor slowly, bending knees"
+    contraindications:
+      - "Diarrhea"
+      - "Headache"
+      - "High blood pressure"
+      - "Menstruation"
+      - "Neck injury"
+      - "Pregnancy (if not already practicing)"
+      - "Heart conditions"
+      - "Glaucoma"
+    modifications:
+      - "Neck protection: ALWAYS use folded blankets under shoulders"
+      - "Support: practice with legs up wall first"
+      - "Less intense: keep legs bent or practice against wall"
+    props_needed:
+      - "blankets (essential for neck protection)"
+      - "wall (optional for beginners)"
+
+  # BATCH 1 ADDITIONS (31-80)
+  # BEGINNER POSES (31-45)
+  - id: pose_031
+    name_english: "Staff Pose"
+    name_sanskrit: "Dandasana"
+    category: "seated"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A foundational seated pose that teaches proper alignment for all seated postures while strengthening the back and core."
+    benefits:
+      - "Improves posture"
+      - "Strengthens back muscles"
+      - "Stretches shoulders and chest"
+      - "Teaches proper seated alignment"
+      - "Strengthens core muscles"
+      - "Prepares body for other seated poses"
+    target_areas:
+      - "spine"
+      - "core"
+      - "legs"
+      - "back"
+    instructions:
+      - "Sit on floor with legs extended straight in front"
+      - "Flex feet and press through heels"
+      - "Place hands on floor beside hips, fingers pointing forward"
+      - "Press sitting bones down into floor"
+      - "Engage thighs and press backs of legs into floor"
+      - "Lengthen spine from tailbone to crown of head"
+      - "Draw shoulder blades down back"
+      - "Lift chest and gaze forward"
+      - "Breathe deeply and hold for 30-60 seconds"
+    contraindications:
+      - "Lower back injury (use props for support)"
+      - "Wrist injury (modify hand position)"
+    modifications:
+      - "Tight hamstrings: sit on folded blanket or bolster"
+      - "Lower back support: place hands behind you, slightly back"
+      - "Knee issues: place rolled blanket under knees"
+    props_needed:
+      - "blanket (optional)"
+      - "bolster (optional)"
+
+  - id: pose_032
+    name_english: "Reclined Bound Angle Pose"
+    name_sanskrit: "Supta Baddha Konasana"
+    category: "restorative"
+    difficulty_level: "beginner"
+    duration_default: 300
+    description: "A deeply restorative hip opener that promotes relaxation and opens the chest while gently stretching the inner thighs."
+    benefits:
+      - "Opens hips and groins gently"
+      - "Relieves menstrual discomfort and symptoms"
+      - "Reduces stress and mild depression"
+      - "Improves circulation"
+      - "Stretches inner thighs and chest"
+      - "Calms the mind and nervous system"
+      - "Therapeutic for high blood pressure"
+    target_areas:
+      - "hips"
+      - "inner thighs"
+      - "chest"
+      - "groins"
+    instructions:
+      - "Lie on back with knees bent, feet flat on floor"
+      - "Bring soles of feet together and let knees fall open to sides"
+      - "Draw heels as close to pelvis as comfortable"
+      - "Place hands on belly or extend arms out at 45-degree angle, palms up"
+      - "Let gravity gently open hips"
+      - "Relax shoulders down into floor"
+      - "Close eyes and breathe deeply"
+      - "Hold for 3-10 minutes"
+      - "To exit: use hands to bring knees together, roll to side, then press up"
+    contraindications:
+      - "Groin or knee injury (use extra support)"
+      - "Hip injury (elevate hips on bolster)"
+    modifications:
+      - "Support knees: place blocks or blankets under each thigh"
+      - "Back support: place bolster under spine lengthwise"
+      - "Head support: place folded blanket under head"
+      - "Less intense: move feet farther from body"
+    props_needed:
+      - "blocks (recommended)"
+      - "blankets (recommended)"
+      - "bolster (optional)"
+
+  - id: pose_033
+    name_english: "Legs Up the Wall"
+    name_sanskrit: "Viparita Karani"
+    category: "inversion"
+    difficulty_level: "beginner"
+    duration_default: 300
+    description: "A gentle inversion that reduces fatigue and promotes deep relaxation while improving circulation and calming the nervous system."
+    benefits:
+      - "Reduces swelling in feet and ankles"
+      - "Relieves tired or cramped legs and feet"
+      - "Gently stretches hamstrings and lower back"
+      - "Calms anxiety and reduces stress"
+      - "Improves circulation"
+      - "Alleviates mild headaches"
+      - "Helps relieve symptoms of menopause and menstruation"
+      - "Promotes better sleep"
+    target_areas:
+      - "legs"
+      - "hamstrings"
+      - "lower back"
+      - "nervous system"
+    instructions:
+      - "Place folded blanket or bolster parallel to wall, 5-6 inches away"
+      - "Sit sideways on support with one hip against wall"
+      - "Swing legs up wall as you lower shoulders and head to floor"
+      - "Rest legs vertically against wall"
+      - "Move support closer or farther as needed for comfort"
+      - "Arms can rest by sides with palms up, or overhead"
+      - "Close eyes and breathe naturally"
+      - "Stay for 5-15 minutes"
+      - "To exit: bend knees toward chest, roll to side, pause, then sit up slowly"
+    contraindications:
+      - "Serious eye conditions including glaucoma"
+      - "High blood pressure (practice without elevation under hips)"
+      - "Neck injury"
+    modifications:
+      - "Tight hamstrings: move hips farther from wall"
+      - "No support needed: practice directly on floor without blanket"
+      - "Extra comfort: place eye pillow over eyes"
+    props_needed:
+      - "wall"
+      - "blanket or bolster (optional)"
+      - "eye pillow (optional)"
+
+  - id: pose_034
+    name_english: "Happy Baby Pose"
+    name_sanskrit: "Ananda Balasana"
+    category: "hip_opener"
+    difficulty_level: "beginner"
+    duration_default: 90
+    description: "A playful and relaxing pose that gently opens the hips and stretches the spine while calming the mind."
+    benefits:
+      - "Opens hips and inner thighs"
+      - "Gently stretches hamstrings"
+      - "Releases lower back and sacrum"
+      - "Calms the brain and relieves stress"
+      - "Stretches spine"
+      - "Reduces fatigue"
+    target_areas:
+      - "hips"
+      - "inner thighs"
+      - "hamstrings"
+      - "spine"
+      - "lower back"
+    instructions:
+      - "Lie on back and draw knees toward belly"
+      - "Separate knees wider than torso"
+      - "Bring knees up toward armpits"
+      - "Reach up and grab outside edges of feet with hands"
+      - "Flex feet and press heels toward ceiling"
+      - "Gently pull feet down to bring knees toward floor beside ribs"
+      - "Keep ankles over knees, shins perpendicular to floor"
+      - "Press tailbone toward floor"
+      - "Rock gently side to side if it feels good"
+      - "Hold for 60-90 seconds, breathing deeply"
+    contraindications:
+      - "Knee injury"
+      - "Ankle injury"
+      - "Neck injury (avoid pulling on neck)"
+      - "Pregnancy"
+    modifications:
+      - "Can't reach feet: hold behind knees or use strap around feet"
+      - "Tight hips: hold calves or back of thighs instead"
+      - "Lower back sensitive: keep one foot on floor, stretch one side at a time"
+    props_needed:
+      - "strap (optional)"
+
+  - id: pose_035
+    name_english: "Sphinx Pose"
+    name_sanskrit: "Salamba Bhujangasana"
+    category: "backbend"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A gentle backbend that strengthens the spine and opens the chest while being accessible to most practitioners."
+    benefits:
+      - "Strengthens spine"
+      - "Stretches chest, lungs, shoulders, and abdomen"
+      - "Stimulates abdominal organs"
+      - "Opens chest and improves posture"
+      - "Firms buttocks"
+      - "Relieves stress"
+      - "Therapeutic for fatigue"
+    target_areas:
+      - "spine"
+      - "chest"
+      - "shoulders"
+      - "abdomen"
+      - "back"
+    instructions:
+      - "Lie on belly with legs extended, tops of feet on floor"
+      - "Place forearms on floor parallel to each other"
+      - "Align elbows under shoulders"
+      - "Press forearms and palms firmly into floor"
+      - "Inhale and lift chest forward and up"
+      - "Press pubic bone into floor"
+      - "Draw shoulders back and down"
+      - "Keep neck long and gaze forward or slightly down"
+      - "Engage legs and press tops of feet into floor"
+      - "Hold for 30-60 seconds, breathing smoothly"
+      - "Lower down with control"
+    contraindications:
+      - "Back injury"
+      - "Headache"
+      - "Pregnancy (after first trimester)"
+    modifications:
+      - "Less intense: place forearms on folded blanket for less height"
+      - "More support: place bolster under chest"
+      - "Neck sensitive: look straight down"
+    props_needed:
+      - "blanket (optional)"
+      - "bolster (optional)"
+
+  - id: pose_036
+    name_english: "Seated Side Bend"
+    name_sanskrit: "Parsva Sukhasana"
+    category: "seated"
+    difficulty_level: "beginner"
+    duration_default: 45
+    description: "A simple yet effective stretch that lengthens the side body and improves breathing capacity."
+    benefits:
+      - "Stretches side body and ribs"
+      - "Improves breathing capacity"
+      - "Releases shoulder tension"
+      - "Stretches obliques and intercostal muscles"
+      - "Improves spinal flexibility"
+      - "Calms the mind"
+    target_areas:
+      - "side body"
+      - "ribs"
+      - "shoulders"
+      - "obliques"
+      - "spine"
+    instructions:
+      - "Sit in Easy Pose with legs crossed"
+      - "Place right hand on floor beside right hip"
+      - "Inhale and raise left arm overhead"
+      - "Exhale and lean to right, creating arc with left side of body"
+      - "Keep both sitting bones grounded"
+      - "Gaze up at left arm or forward"
+      - "Press right hand into floor for support"
+      - "Keep shoulders relaxed away from ears"
+      - "Hold for 30-45 seconds, breathing into left ribs"
+      - "Inhale to come up, repeat on opposite side"
+    contraindications:
+      - "Recent abdominal surgery"
+      - "Severe lower back pain"
+    modifications:
+      - "Support: sit on folded blanket"
+      - "Less intense: keep bottom arm bent, don't lean as far"
+      - "Balance issues: practice against wall"
+    props_needed:
+      - "blanket (optional)"
+
+  - id: pose_037
+    name_english: "Extended Puppy Pose"
+    name_sanskrit: "Uttana Shishosana"
+    category: "forward_bend"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A cross between Child's Pose and Downward Dog that deeply stretches the spine and shoulders."
+    benefits:
+      - "Stretches spine and shoulders"
+      - "Relieves tension in upper back"
+      - "Calms the mind"
+      - "Opens chest"
+      - "Stretches arms"
+      - "Relieves stress and insomnia"
+    target_areas:
+      - "spine"
+      - "shoulders"
+      - "upper back"
+      - "chest"
+      - "arms"
+    instructions:
+      - "Start on hands and knees in tabletop position"
+      - "Align wrists under shoulders, knees under hips"
+      - "Walk hands forward one hand-length"
+      - "Curl toes under"
+      - "Exhale and move hips back halfway toward heels"
+      - "Keep arms active and extended"
+      - "Drop forehead to floor"
+      - "Press palms into floor and stretch arms forward"
+      - "Keep slight curve in lower back"
+      - "Press hips toward heels while keeping arms stretched"
+      - "Hold for 30-60 seconds"
+      - "Walk hands back to return to tabletop"
+    contraindications:
+      - "Knee injury"
+      - "Hip injury"
+    modifications:
+      - "Forehead doesn't reach floor: place block or blanket under forehead"
+      - "Shoulder tightness: widen arms"
+      - "Knee sensitivity: place folded blanket under knees"
+    props_needed:
+      - "block (optional)"
+      - "blanket (optional)"
+
+  - id: pose_038
+    name_english: "Supine Spinal Twist"
+    name_sanskrit: "Supta Matsyendrasana"
+    category: "twist"
+    difficulty_level: "beginner"
+    duration_default: 90
+    description: "A gentle reclined twist that releases the spine and massages the abdominal organs while promoting relaxation."
+    benefits:
+      - "Releases tension in spine"
+      - "Massages abdominal organs"
+      - "Improves digestion"
+      - "Stretches chest, shoulders, and back"
+      - "Reduces stress"
+      - "Relieves lower back pain"
+      - "Improves spinal mobility"
+    target_areas:
+      - "spine"
+      - "back"
+      - "chest"
+      - "shoulders"
+      - "hips"
+    instructions:
+      - "Lie on back with knees bent, feet flat on floor"
+      - "Extend arms out to sides at shoulder height, palms down"
+      - "Draw right knee toward chest, keeping left foot on floor"
+      - "Exhale and lower right knee across body toward left side"
+      - "Turn head to gaze right"
+      - "Keep right shoulder grounded as much as possible"
+      - "Let gravity deepen the twist"
+      - "Breathe into back ribs"
+      - "Hold for 60-90 seconds"
+      - "Inhale to bring knee back to center, repeat on opposite side"
+    contraindications:
+      - "Recent or chronic back or spinal injury"
+      - "Pregnancy (modify by keeping knees separated)"
+    modifications:
+      - "Knee doesn't reach floor: place pillow under knee"
+      - "Shoulder lifts: don't twist as deep"
+      - "Both knees: draw both knees to chest and lower together"
+    props_needed:
+      - "pillow or blanket (optional)"
+
+  - id: pose_039
+    name_english: "Garland Pose"
+    name_sanskrit: "Malasana"
+    category: "hip_opener"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A deep squat that opens the hips and strengthens the ankles while improving digestion and grounding."
+    benefits:
+      - "Opens hips and groins"
+      - "Stretches ankles, hamstrings, and lower back"
+      - "Strengthens feet and ankles"
+      - "Improves balance"
+      - "Stimulates digestion"
+      - "Tones abdominal organs"
+      - "Prepares body for childbirth"
+    target_areas:
+      - "hips"
+      - "groins"
+      - "ankles"
+      - "hamstrings"
+      - "lower back"
+    instructions:
+      - "Stand with feet slightly wider than hip-width apart"
+      - "Turn toes out slightly"
+      - "Bend knees and lower hips toward floor into full squat"
+      - "Keep heels on floor if possible"
+      - "Bring palms together at heart center"
+      - "Press elbows against inner knees"
+      - "Use arm pressure to open knees wider"
+      - "Lengthen spine and lift chest"
+      - "Gaze forward"
+      - "Hold for 30-60 seconds"
+    contraindications:
+      - "Knee injury"
+      - "Lower back injury"
+      - "Ankle injury"
+    modifications:
+      - "Heels lift: place rolled blanket or mat under heels"
+      - "Balance issues: squat with back against wall"
+      - "Less intense: sit on block or bolster"
+      - "Very tight: practice with wider stance"
+    props_needed:
+      - "blanket or wedge (optional)"
+      - "block or bolster (optional)"
+
+  - id: pose_040
+    name_english: "Locust Pose"
+    name_sanskrit: "Salabhasana"
+    category: "backbend"
+    difficulty_level: "beginner"
+    duration_default: 30
+    description: "A strengthening backbend that tones the entire posterior chain while preparing the body for deeper backbends."
+    benefits:
+      - "Strengthens back, buttocks, and legs"
+      - "Stretches chest, shoulders, and abdomen"
+      - "Improves posture"
+      - "Stimulates abdominal organs"
+      - "Relieves stress"
+      - "Firms buttocks and tones legs"
+      - "Therapeutic for lower back pain"
+    target_areas:
+      - "back"
+      - "glutes"
+      - "legs"
+      - "shoulders"
+      - "chest"
+    instructions:
+      - "Lie on belly with arms alongside body, palms up"
+      - "Rest forehead on floor"
+      - "Rotate thighs inward, pressing tops of feet into floor"
+      - "Firm buttocks"
+      - "Inhale and lift head, chest, arms, and legs off floor"
+      - "Reach back through toes and forward through crown"
+      - "Reach fingertips toward heels"
+      - "Keep neck neutral, gaze down or slightly forward"
+      - "Keep inner thighs rotating toward each other"
+      - "Hold for 15-30 seconds"
+      - "Lower down with control"
+      - "Repeat 2-3 times if comfortable"
+    contraindications:
+      - "Headache"
+      - "Serious back injury"
+      - "Neck injury (keep head on floor)"
+      - "Pregnancy"
+    modifications:
+      - "Less intense: lift only chest and arms, keep legs down"
+      - "Or lift only legs, keep chest down"
+      - "Build up gradually to full expression"
+      - "Place blanket under pelvis for support"
+    props_needed:
+      - "blanket (optional)"
+
+  - id: pose_041
+    name_english: "Wide-Legged Forward Bend"
+    name_sanskrit: "Prasarita Padottanasana"
+    category: "forward_bend"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A standing forward fold with wide legs that stretches the hamstrings and inner thighs while calming the mind."
+    benefits:
+      - "Stretches hamstrings, calves, and inner thighs"
+      - "Strengthens feet and ankles"
+      - "Stretches and strengthens spine"
+      - "Calms the brain"
+      - "Relieves mild backache"
+      - "Reduces fatigue and stress"
+      - "Improves digestion"
+    target_areas:
+      - "hamstrings"
+      - "inner thighs"
+      - "calves"
+      - "spine"
+      - "back"
+    instructions:
+      - "Stand with feet 3-4 feet apart, parallel to each other"
+      - "Place hands on hips"
+      - "Engage thighs and lift inner arches"
+      - "Inhale and lift chest"
+      - "Exhale and hinge forward at hips, keeping spine long"
+      - "Place hands on floor shoulder-width apart"
+      - "Keep legs straight and strong"
+      - "Walk hands back between feet if possible"
+      - "Let head hang or place crown on floor"
+      - "Press outer edges of feet into floor"
+      - "Hold for 30-60 seconds"
+      - "Hands to hips, inhale to come up with flat back"
+    contraindications:
+      - "Lower back injury"
+      - "Hamstring injury"
+    modifications:
+      - "Hands don't reach floor: place blocks under hands"
+      - "Less flexible: keep hands on hips or shins"
+      - "More depth: walk hands farther back"
+      - "Balance: practice with back against wall"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_042
+    name_english: "Gate Pose"
+    name_sanskrit: "Parighasana"
+    category: "seated"
+    difficulty_level: "beginner"
+    duration_default: 45
+    description: "A kneeling side stretch that opens the side body and hips while improving breathing capacity."
+    benefits:
+      - "Stretches side body, ribs, and spine"
+      - "Opens shoulders and chest"
+      - "Stretches hamstrings"
+      - "Stimulates abdominal organs and lungs"
+      - "Improves breathing capacity"
+      - "Therapeutic for back pain"
+    target_areas:
+      - "side body"
+      - "ribs"
+      - "spine"
+      - "hamstrings"
+      - "shoulders"
+    instructions:
+      - "Kneel on floor with knees hip-width apart"
+      - "Extend right leg out to side, foot flat on floor"
+      - "Align right heel with left knee"
+      - "Turn right toes forward or slightly out"
+      - "Inhale and raise left arm overhead"
+      - "Exhale and lean torso toward right leg"
+      - "Rest right hand on right shin, ankle, or floor"
+      - "Keep left hip stacked over left knee"
+      - "Gaze up at left arm or forward"
+      - "Hold for 30-45 seconds"
+      - "Inhale to come up, repeat on opposite side"
+    contraindications:
+      - "Knee injury"
+      - "Hip injury"
+    modifications:
+      - "Knee sensitivity: place folded blanket under knees"
+      - "Tight hamstring: bend extended leg slightly"
+      - "Balance issues: practice near wall"
+    props_needed:
+      - "blanket (optional)"
+
+  - id: pose_043
+    name_english: "Knees to Chest Pose"
+    name_sanskrit: "Apanasana"
+    category: "restorative"
+    difficulty_level: "beginner"
+    duration_default: 90
+    description: "A gentle pose that releases the lower back and massages the abdominal organs while promoting digestion and relaxation."
+    benefits:
+      - "Releases tension in lower back"
+      - "Massages abdominal organs"
+      - "Improves digestion and elimination"
+      - "Relieves bloating and gas"
+      - "Calms the nervous system"
+      - "Reduces stress and anxiety"
+      - "Gently stretches spine"
+    target_areas:
+      - "lower back"
+      - "spine"
+      - "abdomen"
+      - "hips"
+    instructions:
+      - "Lie on back with legs extended"
+      - "Exhale and draw both knees toward chest"
+      - "Wrap arms around shins or knees"
+      - "Keep back flat on floor"
+      - "Gently rock side to side if it feels good"
+      - "Draw shoulders away from ears"
+      - "Relax neck and jaw"
+      - "Breathe deeply into belly and back"
+      - "Hold for 60-90 seconds"
+      - "Release legs slowly back to floor"
+    contraindications:
+      - "Pregnancy (after first trimester)"
+      - "Recent abdominal surgery"
+      - "Knee injury (hold behind thighs instead)"
+    modifications:
+      - "Knee pain: hold behind thighs instead of shins"
+      - "Neck tension: place small pillow under head"
+      - "One leg at a time: keep one foot on floor while hugging other knee"
+    props_needed:
+      - "pillow (optional)"
+
+  - id: pose_044
+    name_english: "Reclining Hand to Big Toe Pose"
+    name_sanskrit: "Supta Padangusthasana"
+    category: "forward_bend"
+    difficulty_level: "beginner"
+    duration_default: 60
+    description: "A reclined hamstring stretch that improves flexibility while maintaining spinal alignment and stability."
+    benefits:
+      - "Stretches hamstrings, calves, and thighs"
+      - "Strengthens knees"
+      - "Improves digestion"
+      - "Relieves backache and sciatica"
+      - "Therapeutic for high blood pressure"
+      - "Stretches hips and groins"
+      - "Reduces menstrual discomfort"
+    target_areas:
+      - "hamstrings"
+      - "calves"
+      - "hips"
+      - "thighs"
+      - "groins"
+    instructions:
+      - "Lie on back with both legs extended"
+      - "Bend right knee and draw thigh toward chest"
+      - "Loop strap around ball of right foot or hold big toe with first two fingers"
+      - "Straighten right leg toward ceiling"
+      - "Keep left leg active, pressing into floor"
+      - "Press right heel toward ceiling"
+      - "Keep both hips grounded"
+      - "Draw right leg closer to torso as flexibility allows"
+      - "Keep shoulders relaxed and back flat"
+      - "Hold for 30-60 seconds"
+      - "Release and repeat on left side"
+    contraindications:
+      - "Hamstring injury"
+      - "Lower back injury (keep bent leg bent)"
+      - "High blood pressure (avoid holding too long)"
+    modifications:
+      - "Tight hamstrings: use strap and keep knee bent"
+      - "Extra support: bend bottom leg with foot on floor"
+      - "Advanced: hold big toe directly without strap"
+    props_needed:
+      - "strap (recommended)"
+
+  - id: pose_045
+    name_english: "Low Lunge"
+    name_sanskrit: "Anjaneyasana"
+    category: "standing"
+    difficulty_level: "beginner"
+    duration_default: 45
+    description: "A powerful hip flexor stretch that builds strength in the legs while opening the chest and heart."
+    benefits:
+      - "Stretches hip flexors and quadriceps"
+      - "Opens chest and shoulders"
+      - "Strengthens legs and ankles"
+      - "Improves balance"
+      - "Energizes the body"
+      - "Builds confidence"
+      - "Stretches groins"
+    target_areas:
+      - "hip flexors"
+      - "quadriceps"
+      - "groins"
+      - "chest"
+      - "legs"
+    instructions:
+      - "Start in Downward Facing Dog"
+      - "Step right foot forward between hands"
+      - "Lower left knee to floor"
+      - "Slide left leg back until you feel stretch in left hip flexor"
+      - "Keep right knee over right ankle"
+      - "Press top of left foot into floor"
+      - "Inhale and lift torso upright"
+      - "Raise arms overhead or keep hands on front thigh"
+      - "Draw tailbone down and lift chest"
+      - "Gaze forward or up"
+      - "Hold for 30-45 seconds"
+      - "Return to Down Dog and repeat on opposite side"
+    contraindications:
+      - "Knee injury (use extra padding)"
+      - "Hip injury"
+      - "High blood pressure (keep hands on hips)"
+    modifications:
+      - "Knee sensitivity: place folded blanket under back knee"
+      - "Balance issues: keep hands on floor or front thigh"
+      - "Less intense: don't raise arms overhead"
+      - "More stretch: lift back knee off floor"
+    props_needed:
+      - "blanket (optional)"
+
+  # INTERMEDIATE POSES (46-60)
+  - id: pose_046
+    name_english: "Revolved Triangle Pose"
+    name_sanskrit: "Parivrtta Trikonasana"
+    category: "twist"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A challenging standing twist that combines balance, flexibility, and strength while deeply twisting the spine."
+    benefits:
+      - "Strengthens and stretches legs, hips, and spine"
+      - "Opens chest and shoulders"
+      - "Improves balance and concentration"
+      - "Stimulates abdominal organs"
+      - "Improves digestion"
+      - "Therapeutic for back pain and sciatica"
+      - "Relieves stress"
+    target_areas:
+      - "spine"
+      - "legs"
+      - "hips"
+      - "chest"
+      - "shoulders"
+    instructions:
+      - "Stand with feet 3-4 feet apart"
+      - "Turn right foot out 90 degrees, left foot in 45 degrees"
+      - "Square hips to face right leg"
+      - "Exhale and rotate torso to right"
+      - "Hinge forward at hips and place left hand on floor outside right foot"
+      - "Extend right arm straight up toward ceiling"
+      - "Keep both legs straight and engaged"
+      - "Twist from thoracic spine, not just shoulders"
+      - "Turn head to gaze at right hand"
+      - "Keep hips level"
+      - "Hold for 30-45 seconds"
+      - "Inhale to come up, repeat on opposite side"
+    contraindications:
+      - "Low blood pressure"
+      - "Headache"
+      - "Insomnia (practice earlier in day)"
+      - "Back or spinal injury"
+    modifications:
+      - "Hand doesn't reach floor: use block under bottom hand"
+      - "Balance issues: keep back heel against wall"
+      - "Less intense: keep bottom hand on shin instead"
+    props_needed:
+      - "block (optional)"
+
+  - id: pose_047
+    name_english: "Half Moon Pose"
+    name_sanskrit: "Ardha Chandrasana"
+    category: "balancing"
+    difficulty_level: "intermediate"
+    duration_default: 30
+    description: "A balancing pose that strengthens the entire body while improving coordination and concentration."
+    benefits:
+      - "Strengthens abdomen, ankles, thighs, buttocks, and spine"
+      - "Stretches groins, hamstrings, calves, shoulders, chest, and spine"
+      - "Improves coordination and sense of balance"
+      - "Relieves stress"
+      - "Improves digestion"
+      - "Reduces anxiety and fatigue"
+    target_areas:
+      - "legs"
+      - "core"
+      - "ankles"
+      - "hips"
+      - "chest"
+    instructions:
+      - "Begin in Triangle Pose on right side"
+      - "Bend right knee slightly"
+      - "Walk left foot forward about 12 inches"
+      - "Place right hand on floor 12 inches in front of right foot"
+      - "Transfer weight onto right leg"
+      - "Straighten right leg as you lift left leg parallel to floor"
+      - "Rotate torso and hips open to left"
+      - "Extend left arm straight up toward ceiling"
+      - "Stack left hip over right hip"
+      - "Flex left foot"
+      - "Gaze at left hand or forward for better balance"
+      - "Hold for 15-30 seconds"
+      - "Lower with control and repeat on opposite side"
+    contraindications:
+      - "Headache"
+      - "Low blood pressure"
+      - "Neck problems (gaze forward, not up)"
+    modifications:
+      - "Use block under bottom hand for support"
+      - "Practice with back against wall"
+      - "Keep bottom hand on shin instead of floor"
+      - "Slightly bend standing leg"
+    props_needed:
+      - "block (recommended)"
+      - "wall (optional)"
+
+  - id: pose_048
+    name_english: "Warrior III"
+    name_sanskrit: "Virabhadrasana III"
+    category: "balancing"
+    difficulty_level: "intermediate"
+    duration_default: 30
+    description: "A powerful balancing pose that builds full-body strength, stability, and focus while challenging coordination."
+    benefits:
+      - "Strengthens ankles, legs, shoulders, and back muscles"
+      - "Tones abdomen"
+      - "Improves balance and posture"
+      - "Builds mental focus and concentration"
+      - "Energizes entire body"
+      - "Improves coordination"
+    target_areas:
+      - "legs"
+      - "ankles"
+      - "core"
+      - "shoulders"
+      - "back"
+    instructions:
+      - "Stand in Mountain Pose"
+      - "Step right foot back into Warrior I position"
+      - "Shift weight onto left leg"
+      - "Lean torso forward and lift right leg back simultaneously"
+      - "Create one straight line from raised heel to fingertips"
+      - "Square hips toward floor"
+      - "Extend arms forward, alongside ears"
+      - "Flex back foot and press through heel"
+      - "Keep standing leg strong and straight"
+      - "Gaze down at floor or slightly forward"
+      - "Hold for 15-30 seconds"
+      - "Lower with control and repeat on opposite side"
+    contraindications:
+      - "High blood pressure"
+      - "Heart conditions"
+    modifications:
+      - "Balance support: place hands on wall or chair"
+      - "Less intense: keep hands on hips or prayer at chest"
+      - "Build strength: keep back toes on floor initially"
+      - "Use block under hands if hinging forward"
+    props_needed:
+      - "wall or chair (optional)"
+      - "block (optional)"
+
+  - id: pose_049
+    name_english: "Revolved Side Angle Pose"
+    name_sanskrit: "Parivrtta Parsvakonasana"
+    category: "twist"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "An intense standing twist that combines strength, balance, and spinal rotation for a challenging full-body pose."
+    benefits:
+      - "Strengthens and stretches legs, knees, and ankles"
+      - "Stretches groins, spine, chest, lungs, and shoulders"
+      - "Stimulates abdominal organs"
+      - "Increases stamina"
+      - "Improves digestion and elimination"
+      - "Improves balance"
+      - "Therapeutic for lower backache and sciatica"
+    target_areas:
+      - "legs"
+      - "spine"
+      - "chest"
+      - "shoulders"
+      - "abdomen"
+    instructions:
+      - "Stand with feet 3-4 feet apart"
+      - "Turn right foot out 90 degrees, left foot in 45 degrees"
+      - "Bend right knee over ankle to 90 degrees"
+      - "Bring hands to prayer position at heart center"
+      - "Exhale and rotate torso to right"
+      - "Hook left elbow outside right knee"
+      - "Press elbow against knee and knee against elbow"
+      - "Keep left leg straight and strong"
+      - "Option to place bottom hand on floor and extend top arm overhead"
+      - "Twist from thoracic spine"
+      - "Gaze up or forward"
+      - "Hold for 30-45 seconds"
+      - "Inhale to come up, repeat on opposite side"
+    contraindications:
+      - "Headache"
+      - "High or low blood pressure"
+      - "Insomnia (practice earlier in day)"
+    modifications:
+      - "Easier: keep hands in prayer at chest"
+      - "Support: place bottom hand on block inside front foot"
+      - "Balance: practice with back heel against wall"
+    props_needed:
+      - "block (optional)"
+
+  - id: pose_050
+    name_english: "Standing Split"
+    name_sanskrit: "Urdhva Prasarita Eka Padasana"
+    category: "balancing"
+    difficulty_level: "intermediate"
+    duration_default: 30
+    description: "A challenging balance that deeply stretches the hamstrings while building strength in the standing leg."
+    benefits:
+      - "Stretches hamstrings, calves, and thighs"
+      - "Strengthens knees, ankles, and thighs"
+      - "Improves balance"
+      - "Calms the brain"
+      - "Stretches spine"
+      - "Strengthens standing leg"
+    target_areas:
+      - "hamstrings"
+      - "legs"
+      - "hips"
+      - "spine"
+      - "calves"
+    instructions:
+      - "Begin in Standing Forward Bend"
+      - "Place hands on floor or blocks"
+      - "Shift weight onto left leg"
+      - "Lift right leg up behind you"
+      - "Keep both legs straight"
+      - "Flex both feet"
+      - "Square hips toward floor initially"
+      - "As leg lifts higher, let right hip open naturally"
+      - "Press standing heel into floor"
+      - "Keep spine long"
+      - "Gaze at standing leg"
+      - "Hold for 15-30 seconds"
+      - "Lower leg with control and repeat on opposite side"
+    contraindications:
+      - "Hamstring injury"
+      - "Lower back injury"
+      - "Ankle injury"
+    modifications:
+      - "Use blocks under hands"
+      - "Bend standing leg slightly"
+      - "Don't lift back leg as high"
+      - "Practice with hands on chair"
+    props_needed:
+      - "blocks (recommended)"
+      - "chair (optional)"
+
+  - id: pose_051
+    name_english: "Eagle Pose"
+    name_sanskrit: "Garudasana"
+    category: "balancing"
+    difficulty_level: "intermediate"
+    duration_default: 30
+    description: "A standing balance that wraps arms and legs while building focus, strength, and flexibility in the shoulders and hips."
+    benefits:
+      - "Strengthens and stretches ankles and calves"
+      - "Stretches thighs, hips, shoulders, and upper back"
+      - "Improves concentration and sense of balance"
+      - "Opens shoulder blades"
+      - "Releases tension in shoulders and upper back"
+      - "Improves circulation"
+    target_areas:
+      - "ankles"
+      - "calves"
+      - "thighs"
+      - "hips"
+      - "shoulders"
+      - "upper back"
+    instructions:
+      - "Stand in Mountain Pose"
+      - "Bend knees slightly and lift left foot"
+      - "Cross left thigh over right thigh"
+      - "Hook left foot behind right calf if possible"
+      - "Extend arms forward at shoulder height"
+      - "Cross right arm over left arm at elbows"
+      - "Bend elbows and bring palms together"
+      - "Lift elbows to shoulder height"
+      - "Keep spine upright and sit deeper into standing leg"
+      - "Gaze forward at a fixed point"
+      - "Hold for 15-30 seconds"
+      - "Unwind slowly and repeat on opposite side"
+    contraindications:
+      - "Knee injury"
+      - "Ankle injury"
+      - "Shoulder injury"
+    modifications:
+      - "Can't hook foot: press toes into floor beside standing foot"
+      - "Arms won't reach: hold opposite shoulders instead"
+      - "Balance issues: practice near wall"
+    props_needed: []
+
+  - id: pose_052
+    name_english: "Bow Pose"
+    name_sanskrit: "Dhanurasana"
+    category: "backbend"
+    difficulty_level: "intermediate"
+    duration_default: 30
+    description: "A deep backbend that opens the entire front body while strengthening the back and improving flexibility."
+    benefits:
+      - "Stretches entire front of body, ankles, thighs, groins, abdomen, chest, and throat"
+      - "Strengthens back muscles"
+      - "Improves posture"
+      - "Stimulates organs of abdomen and neck"
+      - "Energizes the body"
+      - "Reduces stress and anxiety"
+    target_areas:
+      - "front body"
+      - "chest"
+      - "thighs"
+      - "abdomen"
+      - "back"
+      - "shoulders"
+    instructions:
+      - "Lie on belly with arms alongside body"
+      - "Bend knees and bring heels toward buttocks"
+      - "Reach back and hold outside of ankles"
+      - "Inhale and lift chest and thighs off floor simultaneously"
+      - "Kick feet into hands to deepen backbend"
+      - "Keep knees hip-width apart"
+      - "Gaze forward or slightly up"
+      - "Draw shoulders away from ears"
+      - "Hold for 15-30 seconds"
+      - "Release on exhale and rest"
+    contraindications:
+      - "High or low blood pressure"
+      - "Migraine"
+      - "Insomnia"
+      - "Serious lower back or neck injury"
+      - "Hernia"
+    modifications:
+      - "Can't reach ankles: use strap around ankles"
+      - "Less intense: lift only chest or only legs first"
+      - "Neck sensitive: keep gaze down"
+    props_needed:
+      - "strap (optional)"
+
+  - id: pose_053
+    name_english: "Lizard Pose"
+    name_sanskrit: "Utthan Pristhasana"
+    category: "hip_opener"
+    difficulty_level: "intermediate"
+    duration_default: 60
+    description: "A deep lunge variation that intensely opens the hips and strengthens the legs while improving flexibility."
+    benefits:
+      - "Deeply opens hips and hip flexors"
+      - "Stretches hamstrings, quadriceps, and groins"
+      - "Strengthens inner thigh muscles"
+      - "Prepares body for deeper hip openers"
+      - "Opens chest and shoulders"
+      - "Relieves stress and tension"
+    target_areas:
+      - "hips"
+      - "hip flexors"
+      - "groins"
+      - "hamstrings"
+      - "quadriceps"
+    instructions:
+      - "Start in Downward Facing Dog"
+      - "Step right foot forward to outside of right hand"
+      - "Lower left knee to floor"
+      - "Walk right foot slightly to right edge of mat"
+      - "Lower onto forearms if flexible enough"
+      - "Keep right knee tracking over ankle or slightly forward"
+      - "Press left hip forward and down"
+      - "Keep chest lifted"
+      - "Hold for 30-60 seconds"
+      - "Press through hands to come up, return to Down Dog"
+      - "Repeat on opposite side"
+    contraindications:
+      - "Hip injury"
+      - "Knee injury"
+      - "Lower back injury"
+    modifications:
+      - "Keep on hands instead of lowering to forearms"
+      - "Place blocks under forearms for support"
+      - "Keep back knee lifted for more intensity"
+      - "Blanket under back knee for padding"
+    props_needed:
+      - "blocks (optional)"
+      - "blanket (optional)"
+
+  - id: pose_054
+    name_english: "Reverse Warrior"
+    name_sanskrit: "Viparita Virabhadrasana"
+    category: "standing"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A graceful standing pose that combines strength with a side stretch, opening the side body and chest."
+    benefits:
+      - "Stretches side body, ribs, and waist"
+      - "Opens chest and shoulders"
+      - "Strengthens legs and ankles"
+      - "Increases flexibility in spine"
+      - "Improves breathing capacity"
+      - "Energizes the body"
+    target_areas:
+      - "side body"
+      - "legs"
+      - "chest"
+      - "shoulders"
+      - "spine"
+    instructions:
+      - "Begin in Warrior II on right side"
+      - "Turn right palm to face ceiling"
+      - "Inhale and reach right arm up and back"
+      - "Let left hand rest lightly on left leg"
+      - "Keep front knee bent at 90 degrees"
+      - "Keep hips low and stable"
+      - "Gaze up at right hand or forward if neck is sensitive"
+      - "Keep left leg straight and strong"
+      - "Hold for 30-45 seconds"
+      - "Return to Warrior II, repeat on opposite side"
+    contraindications:
+      - "Neck problems (keep gaze forward)"
+      - "Shoulder injury"
+      - "High blood pressure"
+    modifications:
+      - "Less intense: don't lean back as far"
+      - "Neck sensitive: gaze forward or down"
+      - "Back hand on hip instead of leg"
+    props_needed: []
+
+  - id: pose_055
+    name_english: "Fish Pose"
+    name_sanskrit: "Matsyasana"
+    category: "backbend"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "A chest-opening backbend that stretches the throat and abdomen while stimulating the thyroid gland."
+    benefits:
+      - "Stretches deep hip flexors and intercostals"
+      - "Stretches and stimulates organs of belly and throat"
+      - "Stretches and strengthens muscles of back and neck"
+      - "Improves posture"
+      - "Stimulates thyroid gland"
+      - "Relieves tension in neck and shoulders"
+    target_areas:
+      - "chest"
+      - "throat"
+      - "abdomen"
+      - "hip flexors"
+      - "neck"
+    instructions:
+      - "Lie on back with legs extended"
+      - "Slide hands palms down under hips"
+      - "Press forearms and elbows into floor"
+      - "Inhale and lift chest toward ceiling"
+      - "Tilt head back and rest crown lightly on floor"
+      - "Keep most weight on elbows, not on head"
+      - "Keep legs active, pressing through heels"
+      - "Hold for 15-45 seconds"
+      - "Release by lifting head, then lowering chest to floor"
+    contraindications:
+      - "High or low blood pressure"
+      - "Migraine"
+      - "Insomnia"
+      - "Serious lower back or neck injury"
+    modifications:
+      - "Support: place folded blanket under back"
+      - "Less intense: keep head off floor, supported on block"
+      - "Restorative version: practice with bolster under back"
+    props_needed:
+      - "blanket or block (optional)"
+      - "bolster (optional)"
+
+  - id: pose_056
+    name_english: "Seated Wide-Legged Forward Bend"
+    name_sanskrit: "Upavistha Konasana"
+    category: "forward_bend"
+    difficulty_level: "intermediate"
+    duration_default: 60
+    description: "A seated forward fold with wide legs that deeply stretches the hamstrings and inner thighs."
+    benefits:
+      - "Stretches insides and backs of legs"
+      - "Stretches spine"
+      - "Stimulates abdominal organs"
+      - "Strengthens spine"
+      - "Calms the brain"
+      - "Releases groins"
+    target_areas:
+      - "hamstrings"
+      - "inner thighs"
+      - "groins"
+      - "spine"
+      - "back"
+    instructions:
+      - "Sit on floor with legs extended in wide V shape"
+      - "Press backs of legs into floor"
+      - "Flex feet and press through heels"
+      - "Place hands on floor in front of you"
+      - "Inhale and lengthen spine"
+      - "Exhale and walk hands forward"
+      - "Keep spine long as you fold forward"
+      - "Rest on forearms or extend arms fully"
+      - "Gaze forward or down"
+      - "Hold for 30-60 seconds"
+      - "Walk hands back to come up"
+    contraindications:
+      - "Lower back injury"
+      - "Hamstring injury"
+    modifications:
+      - "Sit on folded blanket for pelvic support"
+      - "Bend knees slightly if needed"
+      - "Don't fold as far forward"
+      - "Use bolster under torso for support"
+    props_needed:
+      - "blanket (optional)"
+      - "bolster (optional)"
+
+  - id: pose_057
+    name_english: "Lord of the Dance Pose Full Expression"
+    name_sanskrit: "Natarajasana Full"
+    category: "balancing"
+    difficulty_level: "intermediate"
+    duration_default: 45
+    description: "An intermediate progression of King Dancer that deepens the backbend and balance challenge."
+    benefits:
+      - "Strengthens legs and ankles"
+      - "Stretches shoulders, chest, thighs, groins, and abdomen"
+      - "Improves balance and concentration"
+      - "Opens hip flexors deeply"
+      - "Strengthens back muscles"
+      - "Improves posture and grace"
+    target_areas:
+      - "legs"
+      - "chest"
+      - "shoulders"
+      - "thighs"
+      - "hip flexors"
+      - "back"
+    instructions:
+      - "Stand in Mountain Pose"
+      - "Shift weight onto left foot"
+      - "Bend right knee and bring right heel toward buttock"
+      - "Reach back with right hand and hold inside of right foot"
+      - "Extend left arm forward and up"
+      - "Begin to kick foot into hand while leaning forward"
+      - "Keep standing leg strong"
+      - "Lift right thigh back and up"
+      - "Reach forward through left hand"
+      - "Hold for 30-45 seconds"
+      - "Release with control, repeat on opposite side"
+    contraindications:
+      - "Low blood pressure"
+      - "Shoulder injury"
+      - "Ankle injury"
+    modifications:
+      - "Use strap around foot if can't reach"
+      - "Hold outer edge of foot instead of inside"
+      - "Practice near wall for balance support"
+      - "Keep free hand on hip"
+    props_needed:
+      - "strap (optional)"
+      - "wall (optional)"
+
+  - id: pose_058
+    name_english: "Revolved Head to Knee Pose"
+    name_sanskrit: "Parivrtta Janu Sirsasana"
+    category: "twist"
+    difficulty_level: "intermediate"
+    duration_default: 60
+    description: "A seated twist that combines a side stretch with spinal rotation, opening the side body and shoulders."
+    benefits:
+      - "Stretches spine, shoulders, and hamstrings"
+      - "Stimulates abdominal organs"
+      - "Improves digestion"
+      - "Stretches groins and side body"
+      - "Calms the brain"
+      - "Relieves mild depression and anxiety"
+    target_areas:
+      - "spine"
+      - "side body"
+      - "shoulders"
+      - "hamstrings"
+      - "groins"
+    instructions:
+      - "Sit on floor with legs extended"
+      - "Bend right knee and place sole of right foot against left inner thigh"
+      - "Let right knee fall open to side"
+      - "Rotate torso to face left leg"
+      - "Reach left arm overhead and toward left foot"
+      - "Reach right arm inside right thigh toward left foot"
+      - "Turn chest up toward ceiling"
+      - "Gaze up or straight ahead"
+      - "Hold for 30-60 seconds"
+      - "Inhale to come up, repeat on opposite side"
+    contraindications:
+      - "Back injury"
+      - "Knee injury"
+    modifications:
+      - "Use strap around extended foot"
+      - "Keep extended leg slightly bent"
+      - "Sit on folded blanket"
+      - "Don't reach as far forward"
+    props_needed:
+      - "strap (optional)"
+      - "blanket (optional)"
+
+  - id: pose_059
+    name_english: "Supported Shoulderstand"
+    name_sanskrit: "Salamba Sarvangasana Variation"
+    category: "inversion"
+    difficulty_level: "intermediate"
+    duration_default: 90
+    description: "A supported version of shoulder stand that provides inversion benefits with additional stability."
+    benefits:
+      - "Calms the brain and relieves stress"
+      - "Stimulates thyroid and abdominal organs"
+      - "Improves digestion"
+      - "Stretches shoulders and neck"
+      - "Tones legs and buttocks"
+      - "Reduces fatigue"
+      - "Relieves symptoms of menopause"
+    target_areas:
+      - "shoulders"
+      - "neck"
+      - "spine"
+      - "legs"
+      - "thyroid"
+    instructions:
+      - "Place folded blankets under shoulders with edge at shoulder line"
+      - "Lie on back with shoulders on blankets, head on floor"
+      - "Bend knees and place feet flat"
+      - "Press arms into floor and lift legs toward ceiling"
+      - "Support lower back with hands"
+      - "Walk hands higher up back toward shoulder blades"
+      - "Straighten legs toward ceiling"
+      - "Keep weight on shoulders and arms, not neck"
+      - "Hold for 60-90 seconds"
+      - "Bend knees and slowly roll down"
+    contraindications:
+      - "Diarrhea"
+      - "Headache"
+      - "High blood pressure"
+      - "Menstruation"
+      - "Neck injury"
+      - "Pregnancy (if not already practicing)"
+    modifications:
+      - "Keep knees bent"
+      - "Practice with legs up wall first"
+      - "Use more blankets for neck protection"
+    props_needed:
+      - "blankets (essential)"
+
+  - id: pose_060
+    name_english: "Side Crow Pose"
+    name_sanskrit: "Parsva Bakasana"
+    category: "arm_balance"
+    difficulty_level: "intermediate"
+    duration_default: 20
+    description: "A twisted arm balance that combines strength, balance, and core engagement in a challenging pose."
+    benefits:
+      - "Strengthens arms, wrists, and core"
+      - "Tones abdominal organs"
+      - "Improves balance and coordination"
+      - "Builds mental focus"
+      - "Strengthens spine through rotation"
+      - "Builds confidence"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "obliques"
+      - "shoulders"
+    instructions:
+      - "Start in a squat position"
+      - "Twist torso to right"
+      - "Place hands shoulder-width apart on floor to right"
+      - "Hook left elbow outside right thigh"
+      - "Lean weight onto hands"
+      - "Lift hips high and shift weight forward"
+      - "Lift both feet off floor"
+      - "Stack knees and feet together"
+      - "Gaze forward"
+      - "Hold for 10-20 seconds"
+      - "Lower with control, repeat on opposite side"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Carpal tunnel syndrome"
+    modifications:
+      - "Practice lifting one foot at a time"
+      - "Place block under feet for support"
+      - "Build strength with regular Crow first"
+    props_needed:
+      - "block (optional)"
+
+  # ADVANCED POSES (61-80)
+  - id: pose_061
+    name_english: "Flying Pigeon Pose"
+    name_sanskrit: "Eka Pada Galavasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 20
+    description: "An advanced arm balance that combines hip opening with upper body strength and balance."
+    benefits:
+      - "Strengthens arms, wrists, and core"
+      - "Opens hips and groins"
+      - "Improves balance and focus"
+      - "Builds mental concentration"
+      - "Stretches outer hip"
+      - "Develops coordination"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "hips"
+      - "core"
+      - "shoulders"
+    instructions:
+      - "Start in a squat"
+      - "Cross right ankle over left thigh near knee"
+      - "Place hands shoulder-width apart on floor"
+      - "Lean weight onto hands"
+      - "Hook right shin onto back of left upper arm"
+      - "Lift left foot off floor"
+      - "Extend left leg straight back"
+      - "Engage core and press into hands"
+      - "Gaze forward"
+      - "Hold for 10-20 seconds"
+      - "Lower with control, repeat on opposite side"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Hip injury"
+    modifications:
+      - "Keep back foot on floor initially"
+      - "Place blocks under hands for more height"
+      - "Practice Pigeon Pose first to open hips"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_062
+    name_english: "Scorpion Pose"
+    name_sanskrit: "Vrschikasana"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 20
+    description: "An advanced inversion that combines forearm balance with a deep backbend, requiring significant strength and flexibility."
+    benefits:
+      - "Strengthens arms, shoulders, and back"
+      - "Improves balance and concentration"
+      - "Opens chest and shoulders"
+      - "Strengthens core"
+      - "Improves circulation"
+      - "Builds confidence and mental strength"
+    target_areas:
+      - "arms"
+      - "shoulders"
+      - "back"
+      - "core"
+      - "chest"
+    instructions:
+      - "Start in Forearm Stand at wall"
+      - "Once stable, begin to arch back"
+      - "Bend knees and bring feet toward head"
+      - "Keep strong pressure through forearms"
+      - "Lift head to gaze forward"
+      - "Continue arching until feet approach head"
+      - "Keep core engaged"
+      - "Hold for 10-20 seconds if possible"
+      - "Carefully lower legs back to Forearm Stand"
+      - "Come down with control"
+    contraindications:
+      - "Back injury"
+      - "Shoulder injury"
+      - "High blood pressure"
+      - "Heart conditions"
+      - "Neck injury"
+    modifications:
+      - "Practice against wall initially"
+      - "Build up through Forearm Stand and backbending separately"
+      - "Use spotter for safety"
+    props_needed:
+      - "wall (essential for learning)"
+
+  - id: pose_063
+    name_english: "Peacock Pose"
+    name_sanskrit: "Mayurasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 15
+    description: "A challenging arm balance that strengthens the wrists and arms while building core power and detoxifying the body."
+    benefits:
+      - "Strengthens wrists, forearms, and core"
+      - "Stimulates digestive organs"
+      - "Improves digestion and eliminates toxins"
+      - "Tones abdominal organs"
+      - "Improves concentration"
+      - "Builds upper body strength"
+    target_areas:
+      - "wrists"
+      - "forearms"
+      - "core"
+      - "abdomen"
+      - "shoulders"
+    instructions:
+      - "Kneel on floor"
+      - "Place hands on floor with fingers pointing toward feet"
+      - "Bend elbows and bring them together"
+      - "Lean torso forward and rest abdomen on elbows"
+      - "Straighten legs behind you one at a time"
+      - "Shift weight forward onto hands"
+      - "Lift legs parallel to floor"
+      - "Keep body parallel to floor"
+      - "Gaze forward or down"
+      - "Hold for 5-15 seconds"
+      - "Lower with control"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "High blood pressure"
+      - "Heart conditions"
+      - "Hernia"
+    modifications:
+      - "Practice with knees bent initially"
+      - "Keep toes on floor while building strength"
+      - "Use padding under knees for practice"
+    props_needed:
+      - "blanket (optional for knees)"
+
+  - id: pose_064
+    name_english: "Eight Angle Pose"
+    name_sanskrit: "Astavakrasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 15
+    description: "An intricate arm balance that requires significant core strength, arm strength, and hip flexibility."
+    benefits:
+      - "Strengthens wrists, arms, and core"
+      - "Improves balance and coordination"
+      - "Builds mental focus and determination"
+      - "Tones abdominal muscles"
+      - "Increases body awareness"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "hips"
+      - "shoulders"
+    instructions:
+      - "Start seated with legs extended"
+      - "Bend right knee and place right foot on floor"
+      - "Thread right arm under right leg"
+      - "Place both hands on floor beside hips"
+      - "Hook right ankle over left ankle"
+      - "Lean forward and shift weight onto hands"
+      - "Lift hips off floor"
+      - "Bend elbows and lean forward"
+      - "Extend legs to right side"
+      - "Hold for 10-15 seconds"
+      - "Release and repeat on opposite side"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Lower back injury"
+    modifications:
+      - "Keep hips on floor while building strength"
+      - "Practice Crow Pose first to build arm strength"
+      - "Use blocks under hands for more height"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_065
+    name_english: "Handstand"
+    name_sanskrit: "Adho Mukha Vrksasana"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "A powerful inversion that builds total body strength, balance, and confidence while improving focus."
+    benefits:
+      - "Strengthens shoulders, arms, and wrists"
+      - "Strengthens core"
+      - "Improves balance and concentration"
+      - "Calms the brain"
+      - "Relieves stress and mild depression"
+      - "Builds confidence"
+      - "Improves circulation"
+    target_areas:
+      - "shoulders"
+      - "arms"
+      - "wrists"
+      - "core"
+      - "spine"
+    instructions:
+      - "Start in Downward Facing Dog facing wall"
+      - "Walk feet closer to hands"
+      - "Place hands about 6 inches from wall"
+      - "Lift one leg high"
+      - "Use momentum to kick other leg up"
+      - "Bring both legs together against wall"
+      - "Press strongly through hands"
+      - "Engage core and draw ribs in"
+      - "Point toes toward ceiling"
+      - "Hold for 10-30 seconds"
+      - "Lower one leg at a time with control"
+      - "Rest in Child's Pose"
+    contraindications:
+      - "Back injury"
+      - "Headache"
+      - "Heart conditions"
+      - "High blood pressure"
+      - "Menstruation"
+      - "Shoulder or neck injury"
+    modifications:
+      - "Practice at wall for support"
+      - "Build strength with Downward Dog hold"
+      - "Practice kicks without going all the way up"
+      - "Use spotter when learning"
+    props_needed:
+      - "wall (essential for learning)"
+
+  - id: pose_066
+    name_english: "Full Wheel Pose"
+    name_sanskrit: "Chakrasana"
+    category: "backbend"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "The full expression of Wheel with legs straight, creating a deep energizing backbend."
+    benefits:
+      - "Stretches chest and lungs deeply"
+      - "Strengthens arms, wrists, legs, buttocks, abdomen, and spine"
+      - "Stimulates thyroid and pituitary"
+      - "Increases energy and counteracts depression"
+      - "Therapeutic for asthma, back pain, and osteoporosis"
+      - "Opens shoulders and hip flexors"
+    target_areas:
+      - "spine"
+      - "chest"
+      - "shoulders"
+      - "legs"
+      - "arms"
+      - "hip flexors"
+    instructions:
+      - "Lie on back with knees bent, feet hip-width apart"
+      - "Place hands by ears, fingers pointing toward shoulders"
+      - "Press into hands and feet to lift into Wheel"
+      - "Walk feet slightly wider for stability"
+      - "Press strongly into hands to lift chest higher"
+      - "Straighten arms as much as possible"
+      - "Keep legs strong and active"
+      - "Lift hips high toward ceiling"
+      - "Hold for 15-30 seconds"
+      - "Tuck chin and lower down carefully"
+      - "Hug knees to chest"
+    contraindications:
+      - "Back injury"
+      - "Carpal tunnel syndrome"
+      - "Diarrhea"
+      - "Headache"
+      - "Heart problems"
+      - "High or low blood pressure"
+    modifications:
+      - "Practice Bridge Pose to build strength"
+      - "Come onto crown of head first"
+      - "Use blocks under hands for more height"
+      - "Keep feet and knees hip-width for easier balance"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_067
+    name_english: "Heron Pose"
+    name_sanskrit: "Krounchasana"
+    category: "forward_bend"
+    difficulty_level: "advanced"
+    duration_default: 45
+    description: "An intense seated hamstring stretch that requires flexibility and balance while sitting upright."
+    benefits:
+      - "Stretches hamstrings and calves deeply"
+      - "Strengthens back and core"
+      - "Stimulates abdominal organs and heart"
+      - "Improves posture"
+      - "Therapeutic for flat feet"
+    target_areas:
+      - "hamstrings"
+      - "calves"
+      - "back"
+      - "core"
+    instructions:
+      - "Sit in Staff Pose"
+      - "Bend left knee and tuck left foot beside left hip"
+      - "Bend right knee and hold foot with both hands"
+      - "Inhale and slowly straighten right leg toward ceiling"
+      - "Bring leg as close to torso as possible"
+      - "Keep spine long and upright"
+      - "Keep shoulders relaxed"
+      - "Gaze forward"
+      - "Hold for 30-45 seconds"
+      - "Release and repeat on opposite side"
+    contraindications:
+      - "Hamstring injury"
+      - "Knee injury"
+      - "Ankle injury"
+    modifications:
+      - "Use strap around foot"
+      - "Keep lifted leg bent"
+      - "Sit on folded blanket"
+      - "Lean back slightly for easier balance"
+    props_needed:
+      - "strap (optional)"
+      - "blanket (optional)"
+
+  - id: pose_068
+    name_english: "One-Legged King Pigeon Pose Full"
+    name_sanskrit: "Eka Pada Rajakapotasana Full"
+    category: "backbend"
+    difficulty_level: "advanced"
+    duration_default: 45
+    description: "The full expression of Pigeon combining deep hip opening with an intense backbend."
+    benefits:
+      - "Deeply opens hips and hip flexors"
+      - "Stretches thighs, groins, abdomen, chest, shoulders, and neck"
+      - "Stimulates abdominal organs"
+      - "Opens shoulders and chest"
+      - "Releases emotional tension"
+    target_areas:
+      - "hips"
+      - "hip flexors"
+      - "thighs"
+      - "chest"
+      - "shoulders"
+      - "spine"
+    instructions:
+      - "Begin in Pigeon Pose on right side"
+      - "Bend left knee and bring foot toward head"
+      - "Reach back with left hand and hold left foot"
+      - "Reach right arm overhead and back"
+      - "Hold foot with both hands if possible"
+      - "Draw foot toward head"
+      - "Lift chest and arch back"
+      - "Keep right hip grounded"
+      - "Hold for 30-45 seconds"
+      - "Release slowly and repeat on opposite side"
+    contraindications:
+      - "Knee injury"
+      - "Ankle injury"
+      - "Hip injury"
+      - "Sacroiliac issues"
+    modifications:
+      - "Use strap around back foot"
+      - "Keep back leg on floor without bending"
+      - "Build up flexibility gradually"
+      - "Place blanket under front hip"
+    props_needed:
+      - "strap (optional)"
+      - "blanket (optional)"
+
+  - id: pose_069
+    name_english: "Yogic Sleep Pose"
+    name_sanskrit: "Yoganidrasana"
+    category: "hip_opener"
+    difficulty_level: "advanced"
+    duration_default: 60
+    description: "An extremely deep hip opener where both legs are brought behind the head, requiring significant flexibility."
+    benefits:
+      - "Deeply opens hips and groins"
+      - "Stretches spine and back"
+      - "Stimulates abdominal organs"
+      - "Calms the nervous system"
+      - "Improves flexibility dramatically"
+    target_areas:
+      - "hips"
+      - "groins"
+      - "spine"
+      - "back"
+      - "hamstrings"
+    instructions:
+      - "Lie on back with knees bent"
+      - "Draw right knee toward chest and then toward right shoulder"
+      - "Bring right leg behind head, resting shin at back of neck"
+      - "Repeat with left leg"
+      - "Clasp hands in front of chest or behind back"
+      - "Breathe steadily"
+      - "Hold for 30-60 seconds if accessible"
+      - "Carefully release one leg at a time"
+    contraindications:
+      - "Hip injury"
+      - "Knee injury"
+      - "Neck injury"
+      - "Spine issues"
+      - "High blood pressure"
+    modifications:
+      - "Work with one leg at a time"
+      - "Keep legs in front of shoulders instead of behind head"
+      - "Practice Plow and Shoulder Stand first"
+      - "Work with teacher guidance"
+    props_needed: []
+
+  - id: pose_070
+    name_english: "Forearm Wheel Pose"
+    name_sanskrit: "Dwi Pada Viparita Dandasana"
+    category: "backbend"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "An intense backbend performed on the forearms, deepening the chest and shoulder opening."
+    benefits:
+      - "Deeply stretches chest, shoulders, and spine"
+      - "Strengthens arms, legs, and back"
+      - "Stimulates thyroid and pituitary glands"
+      - "Increases spinal flexibility"
+      - "Opens front body completely"
+      - "Energizes and uplifts"
+    target_areas:
+      - "spine"
+      - "chest"
+      - "shoulders"
+      - "arms"
+      - "legs"
+    instructions:
+      - "Begin in Wheel Pose"
+      - "Walk feet slightly wider for stability"
+      - "Lower onto crown of head briefly"
+      - "Place one forearm on floor, then the other"
+      - "Walk feet closer if needed"
+      - "Press strongly through forearms"
+      - "Lift chest as high as possible"
+      - "Hold for 15-30 seconds"
+      - "Press back up to hands"
+      - "Lower down carefully"
+    contraindications:
+      - "Back injury"
+      - "Shoulder injury"
+      - "High or low blood pressure"
+      - "Heart problems"
+      - "Neck injury"
+    modifications:
+      - "Master regular Wheel first"
+      - "Practice against wall"
+      - "Use chair or props for support when learning"
+    props_needed:
+      - "chair or wall (optional for learning)"
+
+  - id: pose_071
+    name_english: "Splits"
+    name_sanskrit: "Hanumanasana"
+    category: "forward_bend"
+    difficulty_level: "advanced"
+    duration_default: 60
+    description: "A deep stretch requiring full hamstring and hip flexor flexibility, named after the monkey god Hanuman's legendary leap."
+    benefits:
+      - "Stretches thighs, hamstrings, and groins deeply"
+      - "Stimulates abdominal organs"
+      - "Improves circulation in legs"
+      - "Develops patience and determination"
+      - "Opens hips deeply"
+    target_areas:
+      - "hamstrings"
+      - "hip flexors"
+      - "groins"
+      - "thighs"
+    instructions:
+      - "Start in Low Lunge with right foot forward"
+      - "Place hands on blocks or floor on either side"
+      - "Begin to straighten front leg"
+      - "Simultaneously slide back leg straight behind you"
+      - "Keep hips square to front"
+      - "Continue sliding until legs are in full split"
+      - "Flex front foot, point back toes"
+      - "Hold for 30-60 seconds"
+      - "Press through hands to come out"
+      - "Repeat on opposite side"
+    contraindications:
+      - "Hamstring injury"
+      - "Hip injury"
+      - "Groin injury"
+    modifications:
+      - "Use blocks under hands for support"
+      - "Place blankets under front thigh and back knee"
+      - "Don't go all the way down - work gradually"
+      - "Practice lunges and hamstring stretches first"
+    props_needed:
+      - "blocks (recommended)"
+      - "blankets (recommended)"
+
+  - id: pose_072
+    name_english: "Feathered Peacock Pose"
+    name_sanskrit: "Pincha Mayurasana Advanced"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "The full freestanding forearm balance away from the wall, requiring complete control and strength."
+    benefits:
+      - "Strengthens shoulders, arms, and back"
+      - "Improves balance and focus"
+      - "Calms the brain"
+      - "Builds confidence"
+      - "Stretches shoulders and chest"
+      - "Improves circulation"
+    target_areas:
+      - "shoulders"
+      - "arms"
+      - "core"
+      - "back"
+    instructions:
+      - "Start in Dolphin Pose"
+      - "Walk feet closer to elbows"
+      - "Lift one leg high"
+      - "Press strongly through forearms"
+      - "Engage core completely"
+      - "Kick second leg up to meet first"
+      - "Find balance point over shoulders"
+      - "Point toes toward ceiling"
+      - "Gaze between hands"
+      - "Hold for 10-30 seconds"
+      - "Lower legs with control"
+    contraindications:
+      - "Shoulder injury"
+      - "Neck injury"
+      - "High blood pressure"
+      - "Heart conditions"
+      - "Headache"
+    modifications:
+      - "Practice at wall first"
+      - "Use strap around arms to prevent splaying"
+      - "Build shoulder strength with Dolphin holds"
+      - "Work with spotter"
+    props_needed:
+      - "wall (for practice)"
+      - "strap (optional)"
+
+  - id: pose_073
+    name_english: "Twisted Flying Crow"
+    name_sanskrit: "Eka Pada Koundinyasana I"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 20
+    description: "An advanced arm balance combining twist, strength, and extension in a challenging pose."
+    benefits:
+      - "Strengthens arms, wrists, and core"
+      - "Improves balance and concentration"
+      - "Tones abdominal organs"
+      - "Builds confidence"
+      - "Develops coordination"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "shoulders"
+      - "obliques"
+    instructions:
+      - "Start in Low Lunge with right foot forward"
+      - "Twist torso to right"
+      - "Hook left shoulder outside right thigh"
+      - "Place hands shoulder-width apart on floor"
+      - "Bend elbows to create shelf with arms"
+      - "Shift weight onto hands"
+      - "Lift back foot off floor"
+      - "Straighten both legs"
+      - "Hover in balance"
+      - "Hold for 10-20 seconds"
+      - "Lower with control, repeat on opposite side"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Elbow injury"
+    modifications:
+      - "Keep back foot on floor while building strength"
+      - "Practice Side Crow first"
+      - "Use blocks under feet for support"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_074
+    name_english: "Upward Plank Pose"
+    name_sanskrit: "Purvottanasana"
+    category: "backbend"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "A reverse plank that opens the front body while building significant arm and leg strength."
+    benefits:
+      - "Strengthens arms, wrists, and legs"
+      - "Stretches shoulders, chest, and front ankles"
+      - "Strengthens back muscles"
+      - "Opens front body"
+      - "Improves posture"
+      - "Counterpose for forward bends"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "legs"
+      - "chest"
+      - "shoulders"
+      - "front body"
+    instructions:
+      - "Sit in Staff Pose"
+      - "Place hands on floor behind hips, fingers pointing toward feet"
+      - "Bend knees and place feet flat on floor"
+      - "Press into hands and feet to lift hips"
+      - "Straighten legs one at a time"
+      - "Point toes and press tops of feet toward floor"
+      - "Lift hips as high as possible"
+      - "Let head drop back if comfortable"
+      - "Hold for 15-30 seconds"
+      - "Lower down with control"
+    contraindications:
+      - "Wrist injury"
+      - "Neck injury (keep head neutral)"
+      - "Shoulder injury"
+    modifications:
+      - "Keep knees bent in Reverse Table Top"
+      - "Keep head in neutral position"
+      - "Build up strength gradually"
+    props_needed: []
+
+  - id: pose_075
+    name_english: "Noose Pose"
+    name_sanskrit: "Pasasana"
+    category: "twist"
+    difficulty_level: "advanced"
+    duration_default: 45
+    description: "A deep squatting twist that combines hip flexibility with spinal rotation and binding."
+    benefits:
+      - "Stretches ankles, thighs, and groins"
+      - "Stretches and strengthens spine"
+      - "Opens chest and shoulders"
+      - "Improves digestion"
+      - "Stimulates abdominal organs"
+      - "Improves posture"
+    target_areas:
+      - "spine"
+      - "ankles"
+      - "thighs"
+      - "groins"
+      - "shoulders"
+    instructions:
+      - "Begin in Garland Pose squat"
+      - "Shift weight onto right foot"
+      - "Twist torso to right"
+      - "Reach left arm outside right thigh"
+      - "Wrap left arm around thighs"
+      - "Reach right arm behind back"
+      - "Clasp hands behind back if possible"
+      - "Keep heels down if possible"
+      - "Gaze over right shoulder"
+      - "Hold for 30-45 seconds"
+      - "Release and repeat on opposite side"
+    contraindications:
+      - "Knee injury"
+      - "Back injury"
+      - "Ankle injury"
+    modifications:
+      - "Use strap between hands"
+      - "Place blanket under heels"
+      - "Don't bind, keep hands in prayer"
+      - "Sit on block for support"
+    props_needed:
+      - "strap (optional)"
+      - "blanket (optional)"
+      - "block (optional)"
+
+  - id: pose_076
+    name_english: "One-Handed Tiger Pose"
+    name_sanskrit: "Eka Hasta Bhujasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 15
+    description: "A one-armed balance that requires exceptional core strength and hip flexibility."
+    benefits:
+      - "Strengthens arms, wrists, and core"
+      - "Improves balance dramatically"
+      - "Opens hips"
+      - "Builds mental focus"
+      - "Tones abdominal muscles"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "hips"
+      - "shoulders"
+    instructions:
+      - "Start seated with legs extended"
+      - "Bend right knee and thread right arm under right thigh"
+      - "Place right hand on floor beside hip"
+      - "Lean forward and place left hand on floor"
+      - "Shift weight onto hands"
+      - "Lift hips off floor"
+      - "Extend left leg forward"
+      - "Eventually lift left hand off floor"
+      - "Balance on right hand only"
+      - "Hold for 10-15 seconds"
+      - "Lower and repeat on opposite side"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Hip injury"
+    modifications:
+      - "Keep both hands down"
+      - "Keep hips lower to floor"
+      - "Build strength with regular arm balances first"
+    props_needed: []
+
+  - id: pose_077
+    name_english: "Tortoise Pose"
+    name_sanskrit: "Kurmasana"
+    category: "forward_bend"
+    difficulty_level: "advanced"
+    duration_default: 60
+    description: "An intense seated forward fold where arms extend under the legs, requiring deep hip and hamstring flexibility."
+    benefits:
+      - "Deeply stretches back, shoulders, and legs"
+      - "Calms the nervous system"
+      - "Relieves stress and mild depression"
+      - "Stretches hips and groins"
+      - "Stimulates abdominal organs"
+      - "Encourages introspection"
+    target_areas:
+      - "back"
+      - "shoulders"
+      - "hamstrings"
+      - "hips"
+      - "spine"
+    instructions:
+      - "Sit with legs extended in wide V"
+      - "Bend knees and bring feet toward you"
+      - "Slide arms under knees, palms down"
+      - "Slowly straighten legs as much as possible"
+      - "Walk hands back and out to sides"
+      - "Fold torso forward between legs"
+      - "Rest forehead on floor if possible"
+      - "Extend arms fully under legs"
+      - "Hold for 30-60 seconds"
+      - "Carefully slide arms out to release"
+    contraindications:
+      - "Back injury"
+      - "Shoulder injury"
+      - "Hip injury"
+      - "Sciatica"
+    modifications:
+      - "Keep knees bent"
+      - "Don't extend arms as far"
+      - "Place bolster under torso"
+      - "Sit on blanket for elevation"
+    props_needed:
+      - "bolster (optional)"
+      - "blanket (optional)"
+
+  - id: pose_078
+    name_english: "Destroyer of the Universe Pose"
+    name_sanskrit: "Bhairavasana"
+    category: "balancing"
+    difficulty_level: "advanced"
+    duration_default: 30
+    description: "An extremely challenging balance combining leg flexibility with arm strength and equilibrium."
+    benefits:
+      - "Improves balance significantly"
+      - "Strengthens standing leg and core"
+      - "Stretches hamstrings deeply"
+      - "Opens hips and shoulders"
+      - "Builds mental focus and determination"
+    target_areas:
+      - "hamstrings"
+      - "hips"
+      - "legs"
+      - "core"
+      - "shoulders"
+    instructions:
+      - "Stand in Mountain Pose"
+      - "Shift weight onto left leg"
+      - "Bend right knee and hold right foot with right hand"
+      - "Extend right leg out to side"
+      - "Hold outside edge of foot"
+      - "Slowly straighten right leg to side at hip height or higher"
+      - "Extend left arm overhead or out to side for balance"
+      - "Keep standing leg strong"
+      - "Gaze forward or at a fixed point"
+      - "Hold for 15-30 seconds"
+      - "Release with control, repeat on opposite side"
+    contraindications:
+      - "Hamstring injury"
+      - "Hip injury"
+      - "Knee injury"
+      - "Ankle injury"
+    modifications:
+      - "Use strap around foot"
+      - "Don't lift leg as high"
+      - "Keep knee bent"
+      - "Practice near wall"
+    props_needed:
+      - "strap (optional)"
+      - "wall (optional)"
+
+  - id: pose_079
+    name_english: "Shoulder Pressing Pose"
+    name_sanskrit: "Bhujapidasana"
+    category: "arm_balance"
+    difficulty_level: "advanced"
+    duration_default: 20
+    description: "An arm balance where the shoulders support the legs, requiring significant upper body strength and hip flexibility."
+    benefits:
+      - "Strengthens arms, wrists, and core"
+      - "Tones abdominal organs"
+      - "Improves balance and coordination"
+      - "Opens hips and groins"
+      - "Builds mental focus"
+    target_areas:
+      - "arms"
+      - "wrists"
+      - "core"
+      - "hips"
+      - "shoulders"
+    instructions:
+      - "Start in a wide squat"
+      - "Place hands shoulder-width apart on floor"
+      - "Bring thighs as high on upper arms as possible"
+      - "Lean weight onto hands"
+      - "Lift feet off floor"
+      - "Cross ankles if possible"
+      - "Squeeze inner thighs against arms"
+      - "Straighten arms as much as possible"
+      - "Gaze forward"
+      - "Hold for 10-20 seconds"
+      - "Lower with control"
+    contraindications:
+      - "Wrist injury"
+      - "Shoulder injury"
+      - "Lower back injury"
+    modifications:
+      - "Keep feet on floor while building strength"
+      - "Use blocks under feet"
+      - "Don't straighten arms fully"
+      - "Practice Crow Pose first"
+    props_needed:
+      - "blocks (optional)"
+
+  - id: pose_080
+    name_english: "Formidable Face Pose"
+    name_sanskrit: "Gandha Bherundasana"
+    category: "inversion"
+    difficulty_level: "advanced"
+    duration_default: 15
+    description: "An extremely advanced pose combining a deep backbend with balancing on the chin and chest."
+    benefits:
+      - "Strengthens neck, arms, and back profoundly"
+      - "Improves spinal flexibility dramatically"
+      - "Builds exceptional mental focus"
+      - "Opens chest completely"
+      - "Requires and builds patience"
+    target_areas:
+      - "neck"
+      - "arms"
+      - "back"
+      - "spine"
+      - "chest"
+    instructions:
+      - "Begin lying on belly"
+      - "Place hands beside chest"
+      - "Press into hands and lift into Cobra"
+      - "Continue lifting into Upward Dog"
+      - "Walk hands toward feet"
+      - "Bend knees deeply and arch back"
+      - "Lower chin and chest to floor"
+      - "Lift hands off floor"
+      - "Balance on chin and chest"
+      - "Hold for 5-15 seconds if accessible"
+      - "Place hands down and carefully release"
+    contraindications:
+      - "Neck injury"
+      - "Back injury"
+      - "Shoulder injury"
+      - "High blood pressure"
+      - "Heart conditions"
+    modifications:
+      - "Work extensively on prerequisite poses first"
+      - "Practice under direct teacher supervision only"
+      - "Master Wheel and Forearm Wheel first"
+      - "Do not attempt without proper preparation"
+    props_needed: []
