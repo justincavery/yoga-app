@@ -1,0 +1,8 @@
+# Railway Project Configuration
+# This file defines the multi-service structure for YogaFlow
+
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "echo 'YogaFlow deployment'"
