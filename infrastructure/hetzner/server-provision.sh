@@ -96,6 +96,18 @@ else
     log_info "Deploy user already exists"
 fi
 
+# Grant deploy user sudo privileges for deployment tasks
+log_info "Configuring sudo access for deploy user..."
+cat > /etc/sudoers.d/deploy <<EOF
+# Allow deploy user to manage services for deployment
+deploy ALL=(ALL) NOPASSWD: /bin/systemctl stop nginx
+deploy ALL=(ALL) NOPASSWD: /bin/systemctl disable nginx
+deploy ALL=(ALL) NOPASSWD: /bin/systemctl is-active nginx
+deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart docker
+EOF
+chmod 0440 /etc/sudoers.d/deploy
+log_info "Sudo configuration completed"
+
 # Set up SSH for deploy user
 log_info "Setting up SSH for deploy user..."
 mkdir -p /home/deploy/.ssh

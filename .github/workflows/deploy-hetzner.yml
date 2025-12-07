@@ -145,6 +145,13 @@ jobs:
           ssh deploy@${{ secrets.HETZNER_SERVER_IP }} << 'ENDSSH'
             set -e
 
+            # Stop system Nginx if running (Docker will handle web serving)
+            if sudo systemctl is-active --quiet nginx; then
+              echo "Stopping system Nginx to free ports 80/443 for Docker..."
+              sudo systemctl stop nginx
+              sudo systemctl disable nginx
+            fi
+
             # Navigate to application directory
             cd /opt/yogaflow
 
