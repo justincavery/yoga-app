@@ -159,6 +159,12 @@ jobs:
             tar -xzf /tmp/deployment.tar.gz
             rm /tmp/deployment.tar.gz
 
+            # Generate self-signed SSL certificates if they don't exist
+            if [[ ! -f /opt/yogaflow/ssl/nginx-selfsigned.crt ]]; then
+              echo "Generating self-signed SSL certificates..."
+              sudo ./infrastructure/hetzner/generate-ssl-certs.sh
+            fi
+
             # Pull latest images
             docker compose -f docker-compose.prod.yml pull
 

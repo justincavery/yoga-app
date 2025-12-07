@@ -90,7 +90,8 @@ services:
     container_name: yogaflow-nginx
     restart: unless-stopped
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     ports:
       - "80:80"
       - "443:443"
