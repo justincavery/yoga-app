@@ -159,6 +159,9 @@ jobs:
             tar -xzf /tmp/deployment.tar.gz
             rm /tmp/deployment.tar.gz
 
+            # Stop containers to allow SSL cert generation before mounting
+            docker compose -f docker-compose.prod.yml down 2>/dev/null || true
+
             # Check if SSL certificates exist, if not, create directory and generate them
             if [[ ! -f /opt/yogaflow/ssl/nginx-selfsigned.crt ]]; then
               echo "Generating self-signed SSL certificates..."
@@ -170,6 +173,8 @@ jobs:
               chmod 644 /opt/yogaflow/ssl/nginx-selfsigned.crt
               chmod 600 /opt/yogaflow/ssl/nginx-selfsigned.key
               echo "✓ SSL certificates generated"
+            else
+              echo "✓ SSL certificates already exist"
             fi
 
             # Pull latest images
