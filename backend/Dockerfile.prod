@@ -54,18 +54,19 @@ USER yogaflow
 # Expose port
 EXPOSE 8000
 
-# Health check
+# Health check - use PORT variable if set, default to 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+    CMD curl -f http://localhost:${PORT:-8000}/health || exit 1
 
 # Production command using gunicorn with uvicorn workers
-CMD ["gunicorn", "app.main:app", \
-     "--workers", "4", \
-     "--worker-class", "uvicorn.workers.UvicornWorker", \
-     "--bind", "0.0.0.0:8000", \
-     "--access-logfile", "-", \
-     "--error-logfile", "-", \
-     "--log-level", "info", \
-     "--timeout", "120", \
-     "--graceful-timeout", "30", \
-     "--keep-alive", "5"]
+# Use PORT environment variable for Railway compatibility
+CMD gunicorn app.main:app \
+     --workers 4 \
+     --worker-class uvicorn.workers.UvicornWorker \
+     --bind 0.0.0.0:${PORT:-8000} \
+     --access-logfile - \
+     --error-logfile - \
+     --log-level info \
+     --timeout 120 \
+     --graceful-timeout 30 \
+     --keep-alive 5

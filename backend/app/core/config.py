@@ -106,6 +106,11 @@ class Settings(BaseSettings):
     cdn_enabled: bool = False
     cdn_base_url: str = "http://localhost"
 
+    # Monitoring (Sentry)
+    sentry_dsn: Optional[str] = None
+    sentry_environment: Optional[str] = None
+    sentry_traces_sample_rate: float = 0.1
+
 
 @lru_cache
 def get_settings() -> Settings:

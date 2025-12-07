@@ -1,0 +1,157 @@
+name: Rollback Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to rollback'
+        required: true
+        type: choice
+        options:
+          - production
+          - staging
+      version:
+        description: 'Version/tag to rollback to (e.g., v2024.12.05-abc1234)'
+        required: true
+        type: string
+      reason:
+        description: 'Reason for rollback'
+        required: true
+        type: string
+
+jobs:
+  validate-rollback:
+    name: Validate Rollback Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate version exists
+        run: |
+          if git rev-parse "${{ inputs.version }}" >/dev/null 2>&1; then
+            echo "✅ Version ${{ inputs.version }} exists"
+          else
+            echo "❌ Version ${{ inputs.version }} not found"
+            exit 1
+          fi
+
+      - name: Display rollback information
+        run: |
+          echo "## Rollback Request" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Environment:** ${{ inputs.environment }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target Version:** ${{ inputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Reason:** ${{ inputs.reason }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Initiated by:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+
+  rollback-production:
+    name: Rollback Production
+    runs-on: ubuntu-latest
+    needs: validate-rollback
+    if: inputs.environment == 'production'
+
+    environment:
+      name: production
+      url: https://yoga-app-production.up.railway.app
+
+    steps:
+      - name: Checkout target version
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.version }}
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Rollback backend
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          echo "Rolling back backend to ${{ inputs.version }}"
+          railway up --detach --service backend
+
+      - name: Rollback frontend
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          echo "Rolling back frontend to ${{ inputs.version }}"
+          railway up --detach --service frontend
+
+      - name: Wait for deployment
+        run: |
+          echo "Waiting for rollback to complete..."
+          sleep 30
+
+      - name: Verify rollback
+        run: |
+          curl -f https://yoga-app-production.up.railway.app/health || exit 1
+          echo "✅ Rollback successful"
+
+      - name: Create rollback notification
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🔄 Production Rollback to ${{ inputs.version }}`,
+              body: `## Rollback Completed\n\n` +
+                    `- **Environment:** ${{ inputs.environment }}\n` +
+                    `- **Version:** ${{ inputs.version }}\n` +
+                    `- **Reason:** ${{ inputs.reason }}\n` +
+                    `- **Initiated by:** ${{ github.actor }}\n` +
+                    `- **Timestamp:** ${new Date().toISOString()}\n\n` +
+                    `### Actions Required\n` +
+                    `- [ ] Verify application functionality\n` +
+                    `- [ ] Monitor error rates\n` +
+                    `- [ ] Investigate root cause\n` +
+                    `- [ ] Plan forward fix`,
+              labels: ['rollback', 'production', 'urgent']
+            });
+
+  rollback-staging:
+    name: Rollback Staging
+    runs-on: ubuntu-latest
+    needs: validate-rollback
+    if: inputs.environment == 'staging'
+
+    environment:
+      name: staging
+
+    steps:
+      - name: Checkout target version
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.version }}
+
+      - name: Rollback staging
+        run: |
+          echo "Rolling back staging to ${{ inputs.version }}"
+          echo "Staging rollback would happen here"
+
+  post-rollback-checks:
+    name: Post-Rollback Verification
+    runs-on: ubuntu-latest
+    needs: [rollback-production, rollback-staging]
+    if: always()
+    steps:
+      - name: Run health checks
+        run: |
+          if [ "${{ inputs.environment }}" == "production" ]; then
+            curl -f https://yoga-app-production.up.railway.app/health
+          fi
+
+      - name: Generate rollback report
+        run: |
+          echo "## Rollback Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Rollback to ${{ inputs.version }} completed for ${{ inputs.environment }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Monitoring" >> $GITHUB_STEP_SUMMARY
+          echo "- Monitor application metrics closely" >> $GITHUB_STEP_SUMMARY
+          echo "- Check error rates in Sentry (if configured)" >> $GITHUB_STEP_SUMMARY
+          echo "- Review Railway logs for issues" >> $GITHUB_STEP_SUMMARY

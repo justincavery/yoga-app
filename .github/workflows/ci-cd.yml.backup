@@ -1,0 +1,17 @@
+# DEPRECATED: This file has been replaced by ci-cd-production.yml
+#
+# The new production-grade CI/CD pipeline is in:
+# - .github/workflows/ci-cd-production.yml (main deployment)
+# - .github/workflows/pull-request.yml (PR checks)
+# - .github/workflows/rollback.yml (rollback capability)
+# - .github/workflows/health-check.yml (monitoring)
+#
+# This file is kept as backup and will be removed after successful deployment.
+#
+# To migrate:
+# 1. Configure GitHub Secrets (RAILWAY_TOKEN)
+# 2. Push to main branch
+# 3. New workflows will automatically trigger
+# 4. After successful deployment, this file can be deleted
+#
+# See: .github/GITHUB_ACTIONS_SETUP.md for setup instructions

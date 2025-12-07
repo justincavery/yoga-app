@@ -1,61 +1,75 @@
 version: '3.8'
 
 # Production Docker Compose Configuration for YogaFlow
-# This configuration is optimized for production deployment
+# Optimized for Hetzner CPX21 deployment
 
 services:
   # PostgreSQL Database
   postgres:
-    image: postgres:14-alpine
-    container_name: yogaflow-postgres-prod
-    restart: always
+    image: postgres:16-alpine
+    container_name: yogaflow-postgres
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-yogaflow_prod}
-      POSTGRES_USER: ${POSTGRES_USER:-yogaflow_prod}
+      POSTGRES_USER: ${POSTGRES_USER:-yogaflow}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
-      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
-    ports:
-      - "127.0.0.1:5432:5432"  # Only bind to localhost for security
+      POSTGRES_DB: ${POSTGRES_DB:-yogaflow}
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./backups:/backups  # Mount backup directory
+      - /opt/yogaflow/postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-yogaflow_prod} -d ${POSTGRES_DB:-yogaflow_prod}"]
-      interval: 30s
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-yogaflow}"]
+      interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 30s
     networks:
       - yogaflow-network
-    # Resource limits
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 2G
-        reservations:
-          cpus: '1'
-          memory: 1G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   # Backend API
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile.prod
-    container_name: yogaflow-backend-prod
-    restart: always
-    env_file:
-      - ./backend/.env.production
-    environment:
-      - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER:-yogaflow_prod}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-yogaflow_prod}
-    ports:
-      - "127.0.0.1:8000:8000"  # Only bind to localhost (nginx will proxy)
-    volumes:
-      - ./backend/uploads:/app/uploads
-      - ./backend/logs:/app/logs
+    container_name: yogaflow-backend
+    restart: unless-stopped
     depends_on:
       postgres:
         condition: service_healthy
+    environment:
+      # Application
+      ENVIRONMENT: ${ENVIRONMENT:-production}
+      SECRET_KEY: ${SECRET_KEY:?SECRET_KEY must be set}
+      DEBUG: ${DEBUG:-false}
+
+      # Database
+      DATABASE_URL: ${DATABASE_URL}
+
+      # CORS
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS}
+
+      # Email (optional)
+      EMAIL_ENABLED: ${EMAIL_ENABLED:-false}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+
+      # Monitoring (optional)
+      SENTRY_DSN: ${SENTRY_DSN:-}
+      SENTRY_ENVIRONMENT: ${ENVIRONMENT:-production}
+
+      # Logging
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      LOG_FORMAT: json
+    volumes:
+      - /opt/yogaflow/uploads:/app/uploads
+      - /opt/yogaflow/logs:/app/logs
+    expose:
+      - "8000"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
@@ -64,34 +78,29 @@ services:
       start_period: 40s
     networks:
       - yogaflow-network
-    # Resource limits
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 1G
-        reservations:
-          cpus: '0.5'
-          memory: 512M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
-  # Nginx (Reverse Proxy & CDN)
+  # Nginx (Reverse Proxy & Static Frontend)
   nginx:
     image: nginx:alpine
-    container_name: yogaflow-nginx-prod
-    restart: always
+    container_name: yogaflow-nginx
+    restart: unless-stopped
+    depends_on:
+      - backend
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./infrastructure/nginx/nginx-prod.conf:/etc/nginx/nginx.conf:ro
-      - ./infrastructure/nginx/ssl:/etc/nginx/ssl:ro  # SSL certificates
-      - ./content/images:/app/content/images:ro
-      - ./backend/uploads:/app/uploads:ro
-      - ./frontend/dist:/app/frontend:ro  # Serve static frontend
-      - nginx_cache:/var/cache/nginx
-    depends_on:
-      backend:
-        condition: service_healthy
+      - ./infrastructure/hetzner/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./infrastructure/hetzner/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./frontend/dist:/usr/share/nginx/html:ro
+      - /opt/yogaflow/ssl:/etc/nginx/ssl:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/www/certbot:/var/www/certbot:ro
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
       interval: 30s
@@ -99,32 +108,11 @@ services:
       retries: 3
     networks:
       - yogaflow-network
-    # Resource limits
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 512M
-
-  # Database backup service (runs daily backups)
-  backup:
-    image: postgres:14-alpine
-    container_name: yogaflow-backup
-    restart: "no"
-    environment:
-      - PGHOST=postgres
-      - PGPORT=5432
-      - PGDATABASE=${POSTGRES_DB:-yogaflow_prod}
-      - PGUSER=${POSTGRES_USER:-yogaflow_prod}
-      - PGPASSWORD=${POSTGRES_PASSWORD}
-    volumes:
-      - ./backups:/backups
-      - ./infrastructure/scripts/backup.sh:/backup.sh:ro
-    command: /bin/sh -c "/backup.sh"
-    depends_on:
-      - postgres
-    networks:
-      - yogaflow-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 networks:
   yogaflow-network:

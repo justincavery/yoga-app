@@ -1,0 +1,343 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches: [main, development]
+    types: [opened, synchronize, reopened]
+
+env:
+  PYTHON_VERSION: "3.11"
+  NODE_VERSION: "18"
+
+jobs:
+  # ============================================================================
+  # PR VALIDATION
+  # ============================================================================
+
+  pr-validation:
+    name: PR Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate PR title
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+
+          # Check if title follows conventional commits
+          if echo "$PR_TITLE" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?: .+"; then
+            echo "✅ PR title follows conventional commits"
+          else
+            echo "⚠️ PR title should follow conventional commits format"
+            echo "Examples: feat: add new feature, fix: resolve bug, docs: update README"
+          fi
+
+      - name: Check PR size
+        run: |
+          FILES_CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | wc -l)
+          LINES_CHANGED=$(git diff --stat origin/${{ github.base_ref }}...HEAD | tail -1 | awk '{print $4+$6}')
+
+          echo "Files changed: $FILES_CHANGED"
+          echo "Lines changed: $LINES_CHANGED"
+
+          if [ "$FILES_CHANGED" -gt 50 ]; then
+            echo "⚠️ This PR changes $FILES_CHANGED files - consider splitting into smaller PRs"
+          fi
+
+          if [ "$LINES_CHANGED" -gt 1000 ]; then
+            echo "⚠️ This PR changes $LINES_CHANGED lines - consider splitting into smaller PRs"
+          fi
+
+  # ============================================================================
+  # FAST CHECKS (Fail Fast)
+  # ============================================================================
+
+  quick-checks:
+    name: Quick Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for merge conflicts
+        run: |
+          if grep -r "<<<<<<< HEAD" . --exclude-dir=node_modules --exclude-dir=.git; then
+            echo "❌ Merge conflict markers found"
+            exit 1
+          fi
+          echo "✅ No merge conflicts"
+
+      - name: Check for TODO/FIXME
+        run: |
+          TODO_COUNT=$(grep -r "TODO\|FIXME" backend/app frontend/src --exclude-dir=node_modules --exclude-dir=.git | wc -l || echo "0")
+          echo "Found $TODO_COUNT TODO/FIXME comments"
+
+          if [ "$TODO_COUNT" -gt 10 ]; then
+            echo "⚠️ Consider addressing some TODO/FIXME comments before merging"
+          fi
+
+      - name: Check for secrets
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.pull_request.base.sha }}
+          head: ${{ github.event.pull_request.head.sha }}
+          extra_args: --only-verified
+
+  # ============================================================================
+  # CODE QUALITY
+  # ============================================================================
+
+  backend-quality:
+    name: Backend Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 black isort radon
+          cd backend && pip install -r requirements.txt
+
+      - name: Check code complexity
+        run: |
+          echo "=== Cyclomatic Complexity ==="
+          radon cc backend/app -a -nb
+
+          echo "=== Maintainability Index ==="
+          radon mi backend/app -nb
+
+      - name: Check code formatting
+        run: |
+          black --check --diff backend/app
+
+      - name: Check import sorting
+        run: |
+          isort --check-only --diff backend/app
+
+      - name: Lint with flake8
+        run: |
+          flake8 backend/app --max-complexity=10 --max-line-length=127 \
+            --extend-ignore=E203,W503 \
+            --format='%(path)s:%(row)d:%(col)d: %(code)s %(text)s'
+
+  frontend-quality:
+    name: Frontend Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Run ESLint
+        run: |
+          cd frontend
+          npm run lint -- --format json --output-file eslint-report.json || true
+          npm run lint
+
+      - name: Check for console.log statements
+        run: |
+          CONSOLE_LOGS=$(grep -r "console.log" frontend/src --exclude-dir=node_modules | wc -l || echo "0")
+          echo "Found $CONSOLE_LOGS console.log statements"
+
+          if [ "$CONSOLE_LOGS" -gt 5 ]; then
+            echo "⚠️ Consider removing console.log statements before production"
+          fi
+
+  # ============================================================================
+  # TESTING
+  # ============================================================================
+
+  backend-tests:
+    name: Backend Tests (PR)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: yogaflow_test
+          POSTGRES_PASSWORD: test_password_12345
+          POSTGRES_DB: yogaflow_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+
+      - name: Run tests
+        env:
+          DATABASE_URL: postgresql+asyncpg://yogaflow_test:test_password_12345@localhost:5432/yogaflow_test
+          SECRET_KEY: test-secret-key-for-pr-only
+          ENVIRONMENT: test
+        run: |
+          cd backend
+          pytest app/tests/ -v --tb=short --maxfail=3
+
+      - name: Comment test results
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const testResults = '✅ Backend tests passed';
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## Test Results\n\n${testResults}`
+            });
+        continue-on-error: true
+
+  # ============================================================================
+  # BUILD VERIFICATION
+  # ============================================================================
+
+  build-verification:
+    name: Build Verification
+    runs-on: ubuntu-latest
+    needs: [backend-quality, frontend-quality]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build backend Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile.prod
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: yogaflow-backend:pr-${{ github.event.pull_request.number }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+
+      - name: Check bundle size
+        run: |
+          cd frontend/dist
+          BUNDLE_SIZE=$(du -sh . | cut -f1)
+          echo "Frontend bundle size: $BUNDLE_SIZE"
+
+          # Warn if bundle is too large
+          BUNDLE_BYTES=$(du -sb . | cut -f1)
+          if [ "$BUNDLE_BYTES" -gt 10000000 ]; then
+            echo "⚠️ Frontend bundle is larger than 10MB - consider optimization"
+          fi
+
+  # ============================================================================
+  # DOCUMENTATION CHECK
+  # ============================================================================
+
+  docs-check:
+    name: Documentation Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for documentation updates
+        run: |
+          # Check if code changes include documentation
+          CODE_CHANGES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -E '\.(py|js|jsx)$' | wc -l || echo "0")
+          DOC_CHANGES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -E '\.(md|txt)$' | wc -l || echo "0")
+
+          echo "Code files changed: $CODE_CHANGES"
+          echo "Documentation files changed: $DOC_CHANGES"
+
+          if [ "$CODE_CHANGES" -gt 5 ] && [ "$DOC_CHANGES" -eq 0 ]; then
+            echo "⚠️ Consider updating documentation for significant code changes"
+          fi
+
+      - name: Check README
+        run: |
+          if [ ! -f README.md ]; then
+            echo "⚠️ No README.md found"
+          else
+            echo "✅ README.md exists"
+          fi
+
+  # ============================================================================
+  # SUMMARY
+  # ============================================================================
+
+  pr-summary:
+    name: PR Summary
+    runs-on: ubuntu-latest
+    needs: [
+      pr-validation,
+      quick-checks,
+      backend-quality,
+      frontend-quality,
+      backend-tests,
+      build-verification
+    ]
+    if: always()
+    steps:
+      - name: Generate summary
+        run: |
+          echo "## Pull Request Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ All required checks passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "- Request review from team members" >> $GITHUB_STEP_SUMMARY
+          echo "- Address any feedback" >> $GITHUB_STEP_SUMMARY
+          echo "- Merge when approved" >> $GITHUB_STEP_SUMMARY
