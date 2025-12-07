@@ -159,10 +159,17 @@ jobs:
             tar -xzf /tmp/deployment.tar.gz
             rm /tmp/deployment.tar.gz
 
-            # Generate self-signed SSL certificates if they don't exist
+            # Check if SSL certificates exist, if not, create directory and generate them
             if [[ ! -f /opt/yogaflow/ssl/nginx-selfsigned.crt ]]; then
               echo "Generating self-signed SSL certificates..."
-              sudo ./infrastructure/hetzner/generate-ssl-certs.sh
+              mkdir -p /opt/yogaflow/ssl
+              openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+                -keyout /opt/yogaflow/ssl/nginx-selfsigned.key \
+                -out /opt/yogaflow/ssl/nginx-selfsigned.crt \
+                -subj "/C=DE/ST=Hessen/L=Falkenstein/O=YogaFlow/OU=IT/CN=yogaflow.local" 2>/dev/null
+              chmod 644 /opt/yogaflow/ssl/nginx-selfsigned.crt
+              chmod 600 /opt/yogaflow/ssl/nginx-selfsigned.key
+              echo "✓ SSL certificates generated"
             fi
 
             # Pull latest images
