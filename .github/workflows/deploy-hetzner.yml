@@ -202,6 +202,17 @@ jobs:
               sleep 2
             done
 
+            # Seed database if empty
+            echo "Checking database..."
+            POSE_COUNT=$(curl -s http://localhost:8000/api/v1/poses | jq -r '.total' 2>/dev/null || echo "0")
+            if [[ "$POSE_COUNT" -eq 0 ]]; then
+              echo "Database is empty - seeding with poses..."
+              chmod +x infrastructure/hetzner/seed-database.sh
+              ./infrastructure/hetzner/seed-database.sh
+            else
+              echo "Database already has $POSE_COUNT poses"
+            fi
+
             # Clean up old images
             docker image prune -af --filter "until=24h"
 
@@ -216,6 +227,16 @@ jobs:
           # Check if the application is responding
           curl -f https://${{ secrets.HETZNER_SERVER_IP }}/health || \
           curl -f http://${{ secrets.HETZNER_SERVER_IP }}/health
+
+          # Verify poses are loaded
+          POSE_COUNT=$(curl -s https://${{ secrets.HETZNER_SERVER_IP }}/api/v1/poses | jq -r '.total' || \
+                       curl -s http://${{ secrets.HETZNER_SERVER_IP }}/api/v1/poses | jq -r '.total')
+          echo "Poses in database: $POSE_COUNT"
+          if [[ "$POSE_COUNT" -gt 0 ]]; then
+            echo "✅ Database has $POSE_COUNT poses"
+          else
+            echo "⚠️ Warning: Database appears to be empty"
+          fi
 
       - name: Notify deployment status
         if: always()
