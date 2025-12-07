@@ -155,12 +155,15 @@ jobs:
             # Navigate to application directory
             cd /opt/yogaflow
 
+            # Stop containers before extracting new files
+            if [[ -f docker-compose.prod.yml ]]; then
+              echo "Stopping existing containers..."
+              docker compose -f docker-compose.prod.yml down || true
+            fi
+
             # Extract deployment package
             tar -xzf /tmp/deployment.tar.gz
             rm /tmp/deployment.tar.gz
-
-            # Stop containers to allow SSL cert generation before mounting
-            docker compose -f docker-compose.prod.yml down 2>/dev/null || true
 
             # Check if SSL certificates exist, if not, create directory and generate them
             if [[ ! -f /opt/yogaflow/ssl/nginx-selfsigned.crt ]]; then
@@ -169,12 +172,14 @@ jobs:
               openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
                 -keyout /opt/yogaflow/ssl/nginx-selfsigned.key \
                 -out /opt/yogaflow/ssl/nginx-selfsigned.crt \
-                -subj "/C=DE/ST=Hessen/L=Falkenstein/O=YogaFlow/OU=IT/CN=yogaflow.local" 2>/dev/null
+                -subj "/C=DE/ST=Hessen/L=Falkenstein/O=YogaFlow/OU=IT/CN=yogaflow.local"
               chmod 644 /opt/yogaflow/ssl/nginx-selfsigned.crt
               chmod 600 /opt/yogaflow/ssl/nginx-selfsigned.key
               echo "✓ SSL certificates generated"
+              ls -lh /opt/yogaflow/ssl/
             else
               echo "✓ SSL certificates already exist"
+              ls -lh /opt/yogaflow/ssl/
             fi
 
             # Pull latest images
