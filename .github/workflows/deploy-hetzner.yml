@@ -133,6 +133,7 @@ jobs:
           tar -czf deployment.tar.gz \
             backend/ \
             frontend/dist/ \
+            content/ \
             docker-compose.prod.yml \
             infrastructure/hetzner/
 
