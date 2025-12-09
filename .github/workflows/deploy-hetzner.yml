@@ -163,9 +163,9 @@ jobs:
               docker compose -f docker-compose.prod.yml down || true
             fi
 
-            # Remove old files that may have wrong permissions
+            # Remove old files that may have wrong permissions (use sudo for root-owned files)
             echo "Cleaning old files..."
-            rm -rf content/ backend/ frontend/ infrastructure/ || true
+            sudo rm -rf content/ backend/ frontend/ infrastructure/ || true
 
             # Extract deployment package
             tar -xzf /tmp/deployment.tar.gz
