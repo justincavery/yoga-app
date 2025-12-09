@@ -163,8 +163,12 @@ jobs:
               docker compose -f docker-compose.prod.yml down || true
             fi
 
-            # Extract deployment package (overwrite existing files)
-            tar -xzf /tmp/deployment.tar.gz --overwrite
+            # Remove old files that may have wrong permissions
+            echo "Cleaning old files..."
+            rm -rf content/ backend/ frontend/ infrastructure/ || true
+
+            # Extract deployment package
+            tar -xzf /tmp/deployment.tar.gz
             rm /tmp/deployment.tar.gz
 
             # Check if SSL certificates exist, if not, create directory and generate them
