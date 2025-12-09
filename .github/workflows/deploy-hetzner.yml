@@ -163,8 +163,8 @@ jobs:
               docker compose -f docker-compose.prod.yml down || true
             fi
 
-            # Extract deployment package
-            tar -xzf /tmp/deployment.tar.gz
+            # Extract deployment package (overwrite existing files)
+            tar -xzf /tmp/deployment.tar.gz --overwrite
             rm /tmp/deployment.tar.gz
 
             # Check if SSL certificates exist, if not, create directory and generate them
