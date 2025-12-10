@@ -235,7 +235,7 @@ class ApiClient {
     if (this.useMock) {
       return this.mockGetStats();
     }
-    return this.request('/history/stats', {
+    return this.request('/stats', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
