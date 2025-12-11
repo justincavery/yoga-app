@@ -451,7 +451,6 @@ function History() {
             }
           }
         `}</style>
-        </div>
       </Container>
     </div>
   );
