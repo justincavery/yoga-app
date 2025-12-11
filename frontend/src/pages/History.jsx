@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Clock, TrendingUp } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Calendar, Clock, TrendingUp, LogOut } from 'lucide-react';
 import PracticeCalendar from '../components/PracticeCalendar';
 import { Container } from '../components/layout';
 import { Card, Badge, Button, Input, Spinner } from '../components/ui';
+import MobileNav from '../components/MobileNav';
 import apiClient from '../lib/api';
 import useAuthStore from '../store/authStore';
 
 function History() {
-  const { accessToken: token } = useAuthStore();
+  const navigate = useNavigate();
+  const { user, accessToken: token, logout } = useAuthStore();
   const [loading, setLoading] = useState(true);
   const [sessionsLoading, setSessionsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -103,6 +106,11 @@ function History() {
       setSessionsLoading(false);
     }
   }
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   function handleDayClick(date) {
     setSelectedDate(date);
@@ -214,12 +222,48 @@ function History() {
   }
 
   return (
-    <div className="history-page mobile-responsive">
+    <div className="min-h-screen bg-neutral-50">
+      {/* Header */}
+      <header className="bg-white border-b border-neutral-200 shadow-sm">
+        <Container>
+          <div className="py-4 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <h1 className="text-2xl font-bold text-primary-600">YogaFlow</h1>
+              <nav className="hidden sm:flex items-center gap-4 ml-8">
+                <Link to="/dashboard" className="text-neutral-700 hover:text-primary-600 font-medium">
+                  Dashboard
+                </Link>
+                <Link to="/poses" className="text-neutral-700 hover:text-primary-600 font-medium">
+                  Poses
+                </Link>
+                <Link to="/sequences" className="text-neutral-700 hover:text-primary-600 font-medium">
+                  Sequences
+                </Link>
+                <Link to="/history" className="text-primary-600 font-medium">
+                  History
+                </Link>
+              </nav>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-right hidden sm:block">
+                <p className="text-sm font-medium text-neutral-900">{user?.name}</p>
+                <p className="text-xs text-neutral-600">{user?.email}</p>
+              </div>
+              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />} className="hidden sm:flex">
+                Logout
+              </Button>
+              <MobileNav />
+            </div>
+          </div>
+        </Container>
+      </header>
+
+      {/* Main Content */}
       <Container>
         <div className="py-8">
           {/* Page Header */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Practice History</h1>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Practice History</h2>
             <p className="text-gray-600">Track your yoga practice journey</p>
           </div>
 
@@ -407,6 +451,7 @@ function History() {
             }
           }
         `}</style>
+        </div>
       </Container>
     </div>
   );

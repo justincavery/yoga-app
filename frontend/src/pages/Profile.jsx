@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { User, Lock, Calendar, Mail, Award } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { User, Lock, Calendar, Mail, Award, LogOut } from 'lucide-react';
 import { Button, Card, Input } from '../components/ui';
 import { Container } from '../components/layout';
+import MobileNav from '../components/MobileNav';
 import useAuthStore from '../store/authStore';
 import apiClient from '../lib/api';
 import toast from 'react-hot-toast';
 
 export default function Profile() {
   const navigate = useNavigate();
-  const { accessToken: token, setUser } = useAuthStore();
+  const { user, accessToken: token, logout, setUser } = useAuthStore();
 
   // Profile state
   const [profile, setProfile] = useState(null);
@@ -216,6 +217,11 @@ export default function Profile() {
     });
   };
 
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   if (loading) {
     return (
       <Container>
@@ -243,13 +249,53 @@ export default function Profile() {
   }
 
   return (
-    <Container>
-      <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Profile</h1>
-          <p className="mt-2 text-sm text-gray-600">Manage your account settings and preferences</p>
-        </div>
+    <div className="min-h-screen bg-neutral-50">
+      {/* Header */}
+      <header className="bg-white border-b border-neutral-200 shadow-sm">
+        <Container>
+          <div className="py-4 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <h1 className="text-2xl font-bold text-primary-600">YogaFlow</h1>
+              <nav className="hidden sm:flex items-center gap-4 ml-8">
+                <Link to="/dashboard" className="text-neutral-700 hover:text-primary-600 font-medium">
+                  Dashboard
+                </Link>
+                <Link to="/poses" className="text-neutral-700 hover:text-primary-600 font-medium">
+                  Poses
+                </Link>
+                <Link to="/sequences" className="text-neutral-700 hover:text-primary-600 font-medium">
+                  Sequences
+                </Link>
+                <Link to="/history" className="text-neutral-700 hover:text-primary-600 font-medium">
+                  History
+                </Link>
+                <Link to="/profile" className="text-primary-600 font-medium">
+                  Profile
+                </Link>
+              </nav>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-right hidden sm:block">
+                <p className="text-sm font-medium text-neutral-900">{user?.name}</p>
+                <p className="text-xs text-neutral-600">{user?.email}</p>
+              </div>
+              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />} className="hidden sm:flex">
+                Logout
+              </Button>
+              <MobileNav />
+            </div>
+          </div>
+        </Container>
+      </header>
+
+      {/* Main Content */}
+      <Container>
+        <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+          {/* Page Header */}
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-gray-900">Profile</h2>
+            <p className="mt-2 text-sm text-gray-600">Manage your account settings and preferences</p>
+          </div>
 
         <div className="space-y-6">
           {/* User Information Card */}
@@ -438,7 +484,8 @@ export default function Profile() {
             </form>
           </Card>
         </div>
-      </div>
-    </Container>
+        </div>
+      </Container>
+    </div>
   );
 }

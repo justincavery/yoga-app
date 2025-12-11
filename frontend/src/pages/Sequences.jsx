@@ -1,8 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { LogOut, Search, X, Filter, Clock, Users } from 'lucide-react';
+import { LogOut, Search, X, Filter, Clock, Users, Layers } from 'lucide-react';
 import { Button, Card, Badge, Input, Select, Spinner } from '../components/ui';
 import { Container } from '../components/layout';
+import MobileNav from '../components/MobileNav';
 import useAuthStore from '../store/authStore';
 import apiClient from '../lib/api';
 
@@ -159,9 +160,10 @@ export default function Sequences() {
                 <p className="text-sm font-medium text-neutral-900">{user?.name}</p>
                 <p className="text-xs text-neutral-600">{user?.email}</p>
               </div>
-              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />}>
+              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />} className="hidden sm:flex">
                 Logout
               </Button>
+              <MobileNav />
             </div>
           </div>
         </Container>
@@ -263,10 +265,28 @@ export default function Sequences() {
           {/* Empty State */}
           {!isLoading && sequences.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-neutral-600 mb-4">No sequences found matching your criteria</p>
-              <Button variant="outline" onClick={handleClearFilters}>
-                Clear Filters
-              </Button>
+              {activeFilterCount > 0 ? (
+                <>
+                  <p className="text-neutral-600 mb-4">No sequences found matching your criteria</p>
+                  <Button variant="outline" onClick={handleClearFilters}>
+                    Clear Filters
+                  </Button>
+                </>
+              ) : (
+                <div className="max-w-md mx-auto">
+                  <div className="w-16 h-16 bg-neutral-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Layers className="text-neutral-400" size={32} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900 mb-2">No Sequences Available Yet</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Sequences are curated collections of poses designed for specific goals and skill levels.
+                    While we prepare our sequence library, you can explore individual poses.
+                  </p>
+                  <Button onClick={() => navigate('/poses')}>
+                    Browse Poses
+                  </Button>
+                </div>
+              )}
             </div>
           )}
 

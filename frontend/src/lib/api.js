@@ -164,6 +164,15 @@ class ApiClient {
 
   // Helper to transform pose data from API format to frontend format
   transformPose(pose) {
+    // Split benefits and contraindications if they're strings
+    const benefits = typeof pose.benefits === 'string'
+      ? pose.benefits.split('\n').filter(b => b.trim()).map(b => b.replace(/^[•\-\*]\s*/, '').trim())
+      : pose.benefits || [];
+
+    const contraindications = typeof pose.contraindications === 'string'
+      ? pose.contraindications.split('\n').filter(c => c.trim()).map(c => c.replace(/^[•\-\*]\s*/, '').trim())
+      : pose.contraindications || [];
+
     return {
       id: pose.pose_id,
       name: pose.name_english,
@@ -172,8 +181,8 @@ class ApiClient {
       category: pose.category,
       description: pose.description,
       image_url: pose.image_urls?.[0] || 'https://placeholder.com/300',
-      benefits: pose.benefits,
-      contraindications: pose.contraindications,
+      benefits,
+      contraindications,
       instructions: pose.instructions,
       target_areas: pose.target_areas,
     };

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { LogOut, Search, X, Filter } from 'lucide-react';
 import { Button, Card, Badge, Input, Select, Spinner } from '../components/ui';
 import { Container } from '../components/layout';
+import MobileNav from '../components/MobileNav';
 import useAuthStore from '../store/authStore';
 import apiClient from '../lib/api';
 
@@ -129,9 +130,10 @@ export default function Poses() {
                 <p className="text-sm font-medium text-neutral-900">{user?.name}</p>
                 <p className="text-xs text-neutral-600">{user?.email}</p>
               </div>
-              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />}>
+              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />} className="hidden sm:flex">
                 Logout
               </Button>
+              <MobileNav />
             </div>
           </div>
         </Container>

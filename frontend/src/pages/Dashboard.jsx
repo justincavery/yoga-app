@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { LogOut, TrendingUp, Clock, Flame, Play, History, BookOpen, Activity } from 'lucide-react';
 import { Button, Card, Badge } from '../components/ui';
 import { Container } from '../components/layout';
+import MobileNav from '../components/MobileNav';
 import useAuthStore from '../store/authStore';
 import apiClient from '../lib/api';
 
@@ -123,9 +124,10 @@ export default function Dashboard() {
                 <p className="text-sm font-medium text-neutral-900">{user?.name}</p>
                 <p className="text-xs text-neutral-600">{user?.email}</p>
               </div>
-              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />}>
+              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />} className="hidden sm:flex">
                 Logout
               </Button>
+              <MobileNav />
             </div>
           </div>
         </Container>
@@ -143,14 +145,15 @@ export default function Dashboard() {
           </div>
 
           {/* Stats Cards */}
-          {statsError ? (
-            <div className="mb-8 p-4 bg-error-50 border border-error-200 rounded-lg">
-              <p className="text-error-900 font-medium">Unable to load statistics</p>
-              <p className="text-error-700 text-sm mt-1">
-                Please refresh the page or try again later.
+          {statsError && stats === null ? (
+            <div className="mb-8 p-4 bg-primary-50 border border-primary-200 rounded-lg">
+              <p className="text-primary-900 font-medium">Welcome to YogaFlow!</p>
+              <p className="text-primary-700 text-sm mt-1">
+                Start your first practice session to begin tracking your progress.
               </p>
             </div>
-          ) : (
+          ) : null}
+          {(stats || statsError) && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {/* Total Sessions */}
               <Card role="article">
