@@ -7,7 +7,7 @@ import apiClient from '../lib/api';
 import useAuthStore from '../store/authStore';
 
 function History() {
-  const { token } = useAuthStore();
+  const { accessToken: token } = useAuthStore();
   const [loading, setLoading] = useState(true);
   const [sessionsLoading, setSessionsLoading] = useState(false);
   const [error, setError] = useState(null);

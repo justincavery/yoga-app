@@ -8,7 +8,7 @@ import apiClient from '../lib/api';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { user, token, logout } = useAuthStore();
+  const { user, accessToken: token, logout } = useAuthStore();
   const [stats, setStats] = useState(null);
   const [recentSessions, setRecentSessions] = useState([]);
   const [loading, setLoading] = useState(true);

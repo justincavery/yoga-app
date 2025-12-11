@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 
 export default function Profile() {
   const navigate = useNavigate();
-  const { token, setUser } = useAuthStore();
+  const { accessToken: token, setUser } = useAuthStore();
 
   // Profile state
   const [profile, setProfile] = useState(null);
