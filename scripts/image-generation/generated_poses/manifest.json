@@ -1,0 +1,24 @@
+{
+  "Downward Dog": {
+    "paths": [
+      "generated_poses/Downward_Dog_1.jpg",
+      "generated_poses/Downward_Dog_2.jpg",
+      "generated_poses/Downward_Dog_3.jpg",
+      "generated_poses/Downward_Dog_4.jpg",
+      "generated_poses/Downward_Dog_5.jpg",
+      "generated_poses/Downward_Dog_6.jpg"
+    ],
+    "count": 6
+  },
+  "Warrior 2": {
+    "paths": [
+      "generated_poses/Warrior_2_1.jpg",
+      "generated_poses/Warrior_2_2.jpg",
+      "generated_poses/Warrior_2_3.jpg",
+      "generated_poses/Warrior_2_4.jpg",
+      "generated_poses/Warrior_2_5.jpg",
+      "generated_poses/Warrior_2_6.jpg"
+    ],
+    "count": 6
+  }
+}

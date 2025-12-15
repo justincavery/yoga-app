@@ -1,0 +1,135 @@
+{
+  "character_templates": {
+    "professional_instructor": "professional yoga instructor, athletic build, wearing navy blue yoga outfit",
+    "casual_practitioner": "yoga practitioner, comfortable athletic wear, serene expression",
+    "male_instructor": "male yoga instructor, athletic build, wearing gray yoga outfit",
+    "senior_instructor": "experienced yoga teacher, mature, wearing traditional yoga attire",
+    "diverse_group": "diverse group of yoga practitioners, various body types, colorful yoga outfits"
+  },
+
+  "environment_templates": {
+    "modern_studio": "modern yoga studio, wooden floor, large windows, natural lighting",
+    "minimalist_studio": "minimalist yoga studio, white walls, soft lighting, peaceful atmosphere",
+    "outdoor_beach": "beach setting, ocean background, golden hour lighting, yoga mat on sand",
+    "outdoor_deck": "wooden deck outdoors, trees in background, morning light",
+    "home_practice": "home interior, living room with plants, cozy atmosphere",
+    "traditional_studio": "traditional yoga studio, meditation cushions, warm lighting, peaceful"
+  },
+
+  "lighting_styles": {
+    "natural_window": "natural window lighting, soft shadows",
+    "golden_hour": "golden hour lighting, warm tones",
+    "studio_lighting": "professional studio lighting, even illumination",
+    "soft_diffused": "soft diffused lighting, gentle",
+    "morning_light": "bright morning light, fresh atmosphere",
+    "sunset": "sunset lighting, warm orange tones"
+  },
+
+  "quality_modifiers": [
+    "professional photography",
+    "high quality",
+    "detailed",
+    "sharp focus",
+    "8k resolution",
+    "perfect anatomy",
+    "realistic",
+    "photorealistic"
+  ],
+
+  "negative_prompts": {
+    "standard": "blurry, low quality, deformed, disfigured, extra limbs, bad anatomy, poorly drawn hands, mutation, watermark, signature, text, error, cropped",
+    "strict": "blurry, low quality, deformed, disfigured, extra limbs, bad anatomy, poorly drawn hands, mutation, watermark, signature, text, error, cropped, worst quality, low resolution, beginner, amateur, distorted, twisted limbs, unnatural pose",
+    "minimal": "blurry, low quality, deformed, extra limbs, watermark"
+  },
+
+  "pose_specific_angles": {
+    "Downward Dog": "side profile view, full body, showing proper form",
+    "Warrior 2": "side view, arms extended, full body in frame",
+    "Tree Pose": "front view, standing on one leg, full body",
+    "Triangle Pose": "side view, arm reaching up, full body",
+    "Child's Pose": "side angle, peaceful expression, mat visible",
+    "Mountain Pose": "front view, standing tall, full body",
+    "Plank Pose": "side profile, straight line from head to heels",
+    "Cobra Pose": "side angle, chest lifted, face visible",
+    "Seated Forward Fold": "side view, reaching towards feet",
+    "Bridge Pose": "side view, hips lifted, full body",
+    "Warrior 1": "diagonal angle, arms raised, full body",
+    "Extended Side Angle": "side view, one arm extended overhead",
+    "Half Moon": "side view, balanced on one leg, full extension",
+    "Camel Pose": "front three-quarter view, backbend visible",
+    "Crow Pose": "front view, arms bent, balancing",
+    "Pigeon Pose": "side angle, hip opening visible, peaceful expression"
+  },
+
+  "example_full_prompts": {
+    "basic": "{character}, performing {pose_name}, {environment}, {lighting}, professional photography, high quality, detailed",
+
+    "detailed": "{character}, performing {pose_name} yoga pose, {angle}, {environment}, {lighting}, perfect form, {quality_modifiers}",
+
+    "cinematic": "{character}, demonstrating {pose_name}, {angle}, {environment}, {lighting}, cinematic composition, shallow depth of field, professional photography, award winning, masterpiece",
+
+    "educational": "{character}, demonstrating proper {pose_name} form, {angle}, educational yoga photography, clear body positioning, {environment}, {lighting}, instructional quality, professional"
+  },
+
+  "midjourney_parameters": {
+    "portrait_aspect": "--ar 2:3",
+    "landscape_aspect": "--ar 3:2",
+    "square_aspect": "--ar 1:1",
+    "style_raw": "--style raw",
+    "version": "--v 6",
+    "character_reference": "--cref {image_url} --cw 100"
+  },
+
+  "common_poses": [
+    "Downward Dog",
+    "Warrior 1",
+    "Warrior 2",
+    "Tree Pose",
+    "Triangle Pose",
+    "Child's Pose",
+    "Mountain Pose",
+    "Plank Pose",
+    "Cobra Pose",
+    "Cat Pose",
+    "Cow Pose",
+    "Bridge Pose",
+    "Seated Forward Fold",
+    "Pigeon Pose",
+    "Corpse Pose",
+    "Chair Pose",
+    "Extended Side Angle",
+    "Warrior 3",
+    "Half Moon",
+    "Crow Pose",
+    "Camel Pose",
+    "Boat Pose",
+    "Fish Pose",
+    "Bow Pose",
+    "Locust Pose"
+  ],
+
+  "usage_examples": {
+    "replicate_sdxl": {
+      "prompt": "professional yoga instructor, athletic build, wearing navy blue yoga outfit, performing Downward Dog, side profile view, modern yoga studio, natural window lighting, professional photography, high quality, detailed, sharp focus",
+      "negative_prompt": "blurry, low quality, deformed, disfigured, extra limbs, bad anatomy, poorly drawn hands, mutation, watermark, signature",
+      "num_outputs": 4,
+      "width": 768,
+      "height": 1024,
+      "guidance_scale": 7.5
+    },
+
+    "midjourney": {
+      "prompt": "professional yoga instructor, athletic build, wearing navy blue yoga outfit, performing Downward Dog pose, side profile view, modern yoga studio, wooden floor, large windows, natural lighting, professional photography, high quality --ar 2:3 --style raw --v 6",
+      "character_consistency": "[paste image URL] professional yoga instructor performing Warrior 2 pose --ar 2:3 --cref [paste image URL again] --cw 100 --v 6"
+    },
+
+    "local_stable_diffusion": {
+      "prompt": "professional yoga instructor, performing Tree Pose, yoga studio, natural lighting, professional photo, high quality",
+      "negative_prompt": "blurry, low quality, deformed, extra limbs, bad anatomy",
+      "steps": 20,
+      "cfg_scale": 7,
+      "width": 512,
+      "height": 768
+    }
+  }
+}

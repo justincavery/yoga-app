@@ -1,0 +1,13 @@
+{
+  "pose_skeletons": {
+    "Downward Dog (simple)": "pose_skeletons/Downward_Dog_simple.jpg",
+    "Warrior 2 (simple)": "pose_skeletons/Warrior_2_simple.jpg",
+    "Warrior 1 (simple)": "pose_skeletons/Warrior_1_simple.jpg",
+    "Tree Pose (simple)": "pose_skeletons/Tree_Pose_simple.jpg",
+    "Triangle Pose (simple)": "pose_skeletons/Triangle_Pose_simple.jpg",
+    "Child's Pose (simple)": "pose_skeletons/Child's_Pose_simple.jpg",
+    "Mountain Pose (simple)": "pose_skeletons/Mountain_Pose_simple.jpg",
+    "Plank Pose (simple)": "pose_skeletons/Plank_Pose_simple.jpg"
+  },
+  "instructions": "Use these skeleton images with ControlNet for accurate pose generation"
+}

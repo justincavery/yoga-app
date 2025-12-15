@@ -1,0 +1,22 @@
+# Requirements for image generation scripts
+
+# For Replicate API (cloud generation)
+replicate>=0.20.0
+requests>=2.31.0
+pillow>=10.0.0
+
+# For local Stable Diffusion generation
+# Uncomment if using local generation:
+# torch>=2.0.0
+# diffusers>=0.25.0
+# transformers>=4.35.0
+# accelerate>=0.25.0
+# controlnet-aux>=0.0.7
+
+# For pose extraction from images/videos
+# Uncomment if extracting poses from reference images:
+# mediapipe>=0.10.0
+# opencv-python>=4.8.0
+
+# Database connection
+psycopg2-binary>=2.9.0

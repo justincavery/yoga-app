@@ -24,5 +24,12 @@ export default defineConfig({
   // Performance optimizations
   server: {
     port: 3000,
+    proxy: {
+      // Proxy image requests to backend
+      '/images': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+      },
+    },
   },
 })

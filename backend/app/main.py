@@ -3,8 +3,10 @@ Main FastAPI application for YogaFlow backend.
 Entry point for the API server.
 """
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from pathlib import Path
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
@@ -19,6 +21,7 @@ from app.middleware.error_handler import (
     http_exception_handler,
     general_exception_handler,
 )
+from app.core.rate_limit import setup_rate_limiting, limiter, custom_rate_limit_exceeded_handler
 from app.api.v1.endpoints import auth, poses, upload, sequences, sessions, history, profile
 try:
     from app.api.v1.admin import sequences as admin_sequences
@@ -41,12 +44,22 @@ async def lifespan(app: FastAPI):
 
     # Initialize database
     await init_database()
+
+    # Initialize token blacklist (Redis)
+    from app.services.token_blacklist import init_token_blacklist
+    await init_token_blacklist()
+
     logger.info("Application startup complete")
 
     yield
 
     # Shutdown
     logger.info("Shutting down YogaFlow API")
+
+    # Close token blacklist
+    from app.services.token_blacklist import close_token_blacklist
+    await close_token_blacklist()
+
     await close_database()
     logger.info("Application shutdown complete")
 
@@ -62,10 +75,16 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# Set up rate limiting
+setup_rate_limiting(app)
+
 # CORS middleware (REQ-NF-SEC-* for security)
+# Uses get_cors_origins() which filters localhost in production
+cors_origins = settings.get_cors_origins()
+logger.info("CORS configured", allowed_origins=cors_origins, environment=settings.environment)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.allowed_origins_list,
+    allow_origins=cors_origins,
     allow_credentials=settings.cors_allow_credentials,
     allow_methods=settings.cors_allow_methods_list,
     allow_headers=settings.cors_allow_headers_list,
@@ -92,6 +111,12 @@ app.include_router(upload.router, prefix=settings.api_v1_prefix)
 app.include_router(profile.router, prefix=settings.api_v1_prefix)
 if HAS_ADMIN_SEQUENCES:
     app.include_router(admin_sequences.router, prefix=settings.api_v1_prefix)
+
+# Mount static files for development (images, etc.)
+content_dir = Path(__file__).parent.parent.parent / "content"
+if content_dir.exists():
+    app.mount("/images", StaticFiles(directory=str(content_dir / "images")), name="images")
+    logger.info("Static files mounted", path=str(content_dir / "images"))
 
 
 @app.get("/", tags=["Root"])
