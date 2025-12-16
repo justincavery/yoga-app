@@ -98,14 +98,19 @@ async def update_pose_images():
             pose = result.scalar_one_or_none()
 
             if pose:
+                # Generate thumbnail filename
+                thumb_filename = filename.replace(".jpg", "-thumb.jpg")
+
                 # Update image URLs with both full-size and thumbnail
                 image_urls = [
                     f"{CDN_BASE}/{filename}",
+                    f"{CDN_BASE}/{thumb_filename}",
                 ]
 
                 pose.image_urls = image_urls
                 print(f"✓ Updated: {pose_name}")
                 print(f"  Image: {filename}")
+                print(f"  Thumb: {thumb_filename}")
                 updated_count += 1
             else:
                 print(f"✗ Not found in database: {pose_name}")
