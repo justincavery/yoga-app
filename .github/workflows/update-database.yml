@@ -1,0 +1,39 @@
+name: Update Database
+
+on:
+  workflow_dispatch:  # Manual trigger only
+
+jobs:
+  update-db:
+    name: Update Pose Images in Database
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HETZNER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.HETZNER_SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Update database on server
+        run: |
+          ssh deploy@${{ secrets.HETZNER_SERVER_IP }} << 'ENDSSH'
+            set -e
+
+            echo "Updating pose images in database..."
+
+            cd /opt/yogaflow
+
+            # Copy update script to container
+            docker cp backend/scripts/update_pose_images.py yogaflow-backend:/app/scripts/
+
+            # Run update script inside container
+            docker exec yogaflow-backend python scripts/update_pose_images.py
+
+            echo "✓ Database updated successfully!"
+          ENDSSH
