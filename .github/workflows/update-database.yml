@@ -29,11 +29,16 @@ jobs:
 
             cd /opt/yogaflow
 
-            # Copy update script to container
-            docker cp backend/scripts/update_pose_images.py yogaflow-backend:/app/scripts/
+            # Check if backend container is running
+            if ! docker ps | grep -q yogaflow-backend; then
+              echo "Error: Backend container is not running"
+              docker ps -a | grep yogaflow
+              exit 1
+            fi
 
-            # Run update script inside container
-            docker exec yogaflow-backend python scripts/update_pose_images.py
+            # Run update script inside container (script already exists from Docker build)
+            echo "Running database update script..."
+            docker exec yogaflow-backend python /app/scripts/update_pose_images.py
 
             echo "✓ Database updated successfully!"
           ENDSSH

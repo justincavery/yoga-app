@@ -72,7 +72,8 @@ services:
       DATABASE_URL: ${DATABASE_URL}
 
       # Redis
-      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
 
       # CORS
       ALLOWED_ORIGINS: ${ALLOWED_ORIGINS}
