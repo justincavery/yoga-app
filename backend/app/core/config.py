@@ -57,10 +57,12 @@ class Settings(BaseSettings):
     # Security - Rate Limiting (auth endpoints)
     rate_limit_per_minute: int = 5
 
-    # CORS
+    # CORS - Security Configuration
+    # In production, set ALLOWED_ORIGINS to your actual frontend domain(s)
+    # Example: ALLOWED_ORIGINS=https://yogaflow.app,https://www.yogaflow.app
     cors_allow_credentials: bool = True
-    cors_allow_methods: str = "GET,POST,PUT,DELETE,PATCH"
-    cors_allow_headers: str = "*"
+    cors_allow_methods: str = "GET,POST,PUT,DELETE,PATCH,OPTIONS"
+    cors_allow_headers: str = "Authorization,Content-Type,Accept,Origin,X-Requested-With"
 
     @property
     def cors_allow_methods_list(self) -> list[str]:
@@ -71,8 +73,47 @@ class Settings(BaseSettings):
     def cors_allow_headers_list(self) -> list[str]:
         """Parse allowed headers from comma-separated string."""
         if self.cors_allow_headers == "*":
-            return ["*"]
+            # Even with "*", explicitly list headers for clarity
+            return ["Authorization", "Content-Type", "Accept", "Origin", "X-Requested-With"]
         return [header.strip() for header in self.cors_allow_headers.split(",") if header.strip()]
+
+    def get_cors_origins(self) -> list[str]:
+        """
+        Get CORS allowed origins based on environment.
+
+        In production, restricts to explicitly configured origins.
+        In development, allows localhost variations.
+
+        Returns:
+            list[str]: List of allowed origin URLs
+        """
+        # Always start with configured origins
+        origins = self.allowed_origins_list
+
+        # In production, ensure we don't have wildcard patterns
+        if self.environment == "production":
+            # Filter out any localhost or wildcard entries in production
+            origins = [
+                o for o in origins
+                if not o.startswith("http://localhost")
+                and not o.startswith("http://127.0.0.1")
+                and o != "*"
+            ]
+
+            # Ensure frontend_url is included if it's a valid production URL
+            if self.frontend_url and self.frontend_url not in origins:
+                if not self.frontend_url.startswith("http://localhost"):
+                    origins.append(self.frontend_url)
+
+            # If no valid production origins, raise a warning
+            if not origins:
+                import logging
+                logging.warning(
+                    "CORS: No production origins configured! "
+                    "Set ALLOWED_ORIGINS environment variable to your frontend domain."
+                )
+
+        return origins
 
     # Logging
     log_level: str = "INFO"
@@ -110,6 +151,31 @@ class Settings(BaseSettings):
     sentry_dsn: Optional[str] = None
     sentry_environment: Optional[str] = None
     sentry_traces_sample_rate: float = 0.1
+
+    # Redis Configuration (for rate limiting and token blacklist)
+    redis_host: Optional[str] = None
+    redis_port: int = 6379
+    redis_password: Optional[str] = None
+
+    @property
+    def redis_url(self) -> str:
+        """
+        Build Redis connection URL from components.
+
+        Returns:
+            str: Redis connection URL
+        """
+        if self.redis_host:
+            if self.redis_password:
+                return f"redis://:{self.redis_password}@{self.redis_host}:{self.redis_port}"
+            else:
+                return f"redis://{self.redis_host}:{self.redis_port}"
+        return "redis://localhost:6379"
+
+    # Rate Limiting
+    rate_limit_auth_per_minute: int = 5
+    rate_limit_public_per_minute: int = 100
+    rate_limit_authenticated_per_hour: int = 1000
 
 
 @lru_cache
