@@ -20,18 +20,53 @@ IMAGE_POSE_MAPPING = {
     "childs-pose.jpg": "Child's Pose",  # ID 2
     "downward-facing-dog.jpg": "Downward Facing Dog",  # ID 3
     "cat-pose.jpg": "Cat-Cow Pose",  # ID 4
+    "cow-pose.jpg": "Cat-Cow Pose",  # ID 4 (alternative)
+    "corpse-pose.jpg": "Corpse Pose",  # ID 5
+    "easy-pose.jpg": "Easy Pose",  # ID 6
     "standing-forward-fold.jpg": "Standing Forward Bend",  # ID 7
-    "tree-pose.jpg": "Tree Pose",  # ID 10
     "warrior-1.jpg": "Warrior I",  # ID 8
+    "bridge-pose.jpg": "Bridge Pose",  # ID 9
+    "tree-pose.jpg": "Tree Pose",  # ID 10
     "warrior-2.jpg": "Warrior II",  # ID 11
-    "warrior-3.jpg": "Warrior III",  # ID 48
     "triangle-pose.jpg": "Triangle Pose",  # ID 12
     "extended-side-angle.jpg": "Extended Side Angle Pose",  # ID 13
+    "seated-forward-bend.jpg": "Seated Forward Bend",  # ID 14
+    "boat-pose.jpg": "Boat Pose",  # ID 15
+    "cobra-pose.jpg": "Cobra Pose",  # ID 16
+    "camel-pose.jpg": "Camel Pose",  # ID 17
+    "seated-spinal-twist.jpg": "Seated Spinal Twist",  # ID 18
+    "dolphin-pose.jpg": "Dolphin Pose",  # ID 19
+    "pigeon-pose.jpg": "Pigeon Pose",  # ID 20
+    "crow-pose.jpg": "Crow Pose",  # ID 21
+    "headstand.jpg": "Headstand",  # ID 22
+    "wheel-pose.jpg": "Wheel Pose",  # ID 23
+    "side-plank.jpg": "Side Plank",  # ID 24
+    "bound-angle-pose.jpg": "Bound Angle Pose",  # ID 28
+    "plow-pose.jpg": "Plow Pose",  # ID 29
+    "shoulder-stand.jpg": "Shoulder Stand",  # ID 30
+    "legs-up-the-wall.jpg": "Legs Up the Wall",  # ID 33
+    "happy-baby.jpg": "Happy Baby Pose",  # ID 34
+    "garland-pose.jpg": "Garland Pose",  # ID 39
+    "locust-pose.jpg": "Locust Pose",  # ID 40
+    "wide-legged-forward-fold.jpg": "Wide-Legged Forward Bend",  # ID 41
+    "reclining-hand-to-big-toe.jpg": "Reclining Hand to Big Toe Pose",  # ID 44
+    "low-lunge.jpg": "Low Lunge",  # ID 45
+    "revolved-triangle.jpg": "Revolved Triangle Pose",  # ID 46
     "half-moon.jpg": "Half Moon Pose",  # ID 47
+    "warrior-3.jpg": "Warrior III",  # ID 48
+    "standing-split.jpg": "Standing Split",  # ID 50
+    "bow-pose.jpg": "Bow Pose",  # ID 52
+    "lizard-pose.jpg": "Lizard Pose",  # ID 53
+    "reverse-warrior.jpg": "Reverse Warrior",  # ID 54
+    "fish-pose.jpg": "Fish Pose",  # ID 55
+    "handstand.jpg": "Handstand",  # ID 65
     # Note: The following images don't have exact matches in current database:
     # - chair-pose.jpg (no Chair Pose in DB)
+    # - chaturanga.jpg (no Chaturanga in DB)
     # - plank-pose.jpg (no Plank Pose in DB)
+    # - forearm-plank.jpg (no Forearm Plank in DB)
     # - upward-facing-dog.jpg (no Upward Facing Dog in DB, Cobra is different)
+    # - high-lunge.jpg (no High Lunge in DB, Low Lunge exists)
 }
 
 # CDN base URL (will be handled by backend CDN service)
