@@ -69,7 +69,7 @@ services:
       DEBUG: ${DEBUG:-false}
 
       # Database
-      DATABASE_URL: ${DATABASE_URL}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://${POSTGRES_USER:-yogaflow}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-yogaflow}}
 
       # Redis
       REDIS_HOST: redis
