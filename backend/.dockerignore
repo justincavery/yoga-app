@@ -50,8 +50,8 @@ docs/
 .gitlab-ci.yml
 .travis.yml
 
-# Scripts
-scripts/
+# Scripts (commented out - we need these for database seeding and updates)
+# scripts/
 
 # Alembic (migrations handled separately)
 alembic.ini
