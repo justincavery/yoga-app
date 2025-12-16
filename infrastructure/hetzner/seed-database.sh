@@ -67,7 +67,7 @@ fi
 
 # Run the import script inside the backend container
 log_info "Running database import..."
-docker exec yogaflow-backend python -m scripts.import_poses_auto $FORCE_FLAG
+docker exec yogaflow-backend python /app/scripts/import_poses_auto.py $FORCE_FLAG
 
 # Check if import was successful
 if [[ $? -eq 0 ]]; then
