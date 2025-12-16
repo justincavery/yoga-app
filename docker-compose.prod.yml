@@ -127,7 +127,7 @@ services:
       - ./infrastructure/hetzner/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./infrastructure/hetzner/nginx/conf.d:/etc/nginx/conf.d:ro
       - ./frontend/dist:/usr/share/nginx/html:ro
-      - ./content/images:/usr/share/nginx/html/images:ro
+      - ./content/images:/var/www/images:ro
       - /opt/yogaflow/ssl:/etc/nginx/ssl:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
       - /var/www/certbot:/var/www/certbot:ro
