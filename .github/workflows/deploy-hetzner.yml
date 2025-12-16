@@ -194,19 +194,49 @@ jobs:
             # Build and deploy with zero-downtime
             docker compose -f docker-compose.prod.yml up -d --build --remove-orphans
 
+            # Capture docker compose exit code
+            COMPOSE_EXIT=$?
+            if [ $COMPOSE_EXIT -ne 0 ]; then
+              echo "ERROR: Docker compose failed with exit code $COMPOSE_EXIT"
+              echo "Container status:"
+              docker ps -a | grep yogaflow
+              echo "Backend logs:"
+              docker logs yogaflow-backend || echo "Backend container not found"
+              exit 1
+            fi
+
             # Wait for services to be healthy
             echo "Waiting for services to be healthy..."
             sleep 10
 
             # Check backend health
+            BACKEND_HEALTHY=false
             for i in {1..30}; do
               if docker exec yogaflow-backend curl -f http://localhost:8000/health > /dev/null 2>&1; then
                 echo "Backend is healthy!"
+                BACKEND_HEALTHY=true
                 break
               fi
               echo "Waiting for backend... ($i/30)"
               sleep 2
             done
+
+            # If backend didn't become healthy, show logs and fail
+            if [ "$BACKEND_HEALTHY" = false ]; then
+              echo "ERROR: Backend failed to become healthy"
+              echo "Container status:"
+              docker ps -a | grep yogaflow
+              echo ""
+              echo "Backend logs (last 100 lines):"
+              docker logs --tail=100 yogaflow-backend
+              echo ""
+              echo "Postgres logs:"
+              docker logs --tail=50 yogaflow-postgres
+              echo ""
+              echo "Redis logs:"
+              docker logs --tail=50 yogaflow-redis
+              exit 1
+            fi
 
             # Seed database if empty
             echo "Checking database..."
