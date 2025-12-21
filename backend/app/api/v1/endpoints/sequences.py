@@ -3,7 +3,7 @@ Sequence API endpoints for YogaFlow.
 Handles CRUD operations, search, and filtering for practice sequences.
 """
 from typing import Optional
-from fastapi import APIRouter, status, HTTPException, Query
+from fastapi import APIRouter, status, HTTPException, Query, Request
 from sqlalchemy import select, func, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -21,6 +21,7 @@ from app.models.sequence import Sequence, SequencePose, FocusArea, YogaStyle
 from app.models.pose import DifficultyLevel
 from app.api.dependencies import DatabaseSession
 from app.core.logging_config import logger
+from app.core.rate_limit import public_rate_limit
 
 router = APIRouter(prefix="/sequences", tags=["Sequences"])
 
@@ -32,7 +33,9 @@ router = APIRouter(prefix="/sequences", tags=["Sequences"])
     summary="List sequences with pagination and filtering",
     description="Get a paginated list of sequences with optional search and filtering"
 )
+@public_rate_limit
 async def list_sequences(
+    request: Request,
     db_session: DatabaseSession,
     page: int = Query(1, ge=1, description="Page number (starts at 1)"),
     page_size: int = Query(20, ge=1, le=100, description="Number of items per page (max 100)"),
@@ -159,7 +162,9 @@ async def list_sequences(
     summary="Get sequences grouped by categories",
     description="Get counts of sequences grouped by difficulty, focus area, style, and duration ranges"
 )
+@public_rate_limit
 async def get_sequence_categories(
+    request: Request,
     db_session: DatabaseSession
 ) -> SequenceCategoriesResponse:
     """
@@ -239,7 +244,8 @@ async def get_sequence_categories(
     summary="Get available focus areas",
     description="Get list of all available focus areas for sequences"
 )
-async def get_focus_areas() -> FocusAreasResponse:
+@public_rate_limit
+async def get_focus_areas(request: Request) -> FocusAreasResponse:
     """
     Get list of available focus areas.
 
@@ -267,7 +273,8 @@ async def get_focus_areas() -> FocusAreasResponse:
     summary="Get available yoga styles",
     description="Get list of all available yoga styles for sequences"
 )
-async def get_styles() -> StylesResponse:
+@public_rate_limit
+async def get_styles(request: Request) -> StylesResponse:
     """
     Get list of available yoga styles.
 
@@ -295,7 +302,9 @@ async def get_styles() -> StylesResponse:
     summary="Get single sequence details",
     description="Get detailed information about a specific sequence including all poses"
 )
+@public_rate_limit
 async def get_sequence(
+    request: Request,
     sequence_id: int,
     db_session: DatabaseSession
 ) -> SequenceResponse:

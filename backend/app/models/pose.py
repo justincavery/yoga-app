@@ -2,7 +2,7 @@
 Pose model for YogaFlow application.
 Represents individual yoga poses/asanas.
 """
-from datetime import datetime
+from datetime import datetime, timezone
 from sqlalchemy import Column, DateTime, Integer, String, Enum, JSON, Text
 import enum
 
@@ -61,8 +61,8 @@ class Pose(Base):
     contraindications = Column(Text, nullable=True)
     target_areas = Column(JSON, nullable=True)  # Array of target muscle groups
     image_urls = Column(JSON, nullable=False)  # Array of image URLs (minimum 1)
-    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc), nullable=False)
 
     def __repr__(self) -> str:
         return f"<Pose(pose_id={self.pose_id}, name_english='{self.name_english}', name_sanskrit='{self.name_sanskrit}')>"

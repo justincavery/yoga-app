@@ -8,6 +8,7 @@ from app.models.sequence import Sequence, SequencePose, FocusArea, YogaStyle
 from app.models.practice_session import PracticeSession, CompletionStatus
 from app.models.favorites import UserFavorite
 from app.models.achievement import Achievement, UserAchievement, AchievementType
+from app.models.pose_relationship import PoseRelationship, RelationshipType
 
 __all__ = [
     "User",
@@ -25,4 +26,6 @@ __all__ = [
     "Achievement",
     "UserAchievement",
     "AchievementType",
+    "PoseRelationship",
+    "RelationshipType",
 ]

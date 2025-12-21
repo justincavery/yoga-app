@@ -3,7 +3,7 @@ Pose API endpoints for YogaFlow.
 Handles CRUD operations, search, and filtering for yoga poses.
 """
 from typing import Optional
-from fastapi import APIRouter, status, HTTPException, Query
+from fastapi import APIRouter, status, HTTPException, Query, Request, Response
 from sqlalchemy import select, or_, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -16,6 +16,7 @@ from app.schemas.pose import (
 from app.models.pose import Pose, PoseCategory, DifficultyLevel
 from app.api.dependencies import DatabaseSession, AdminUser
 from app.core.logging_config import logger
+from app.core.rate_limit import public_rate_limit, authenticated_rate_limit
 
 router = APIRouter(prefix="/poses", tags=["Poses"])
 
@@ -25,12 +26,17 @@ router = APIRouter(prefix="/poses", tags=["Poses"])
     response_model=PoseListResponse,
     status_code=status.HTTP_200_OK,
     summary="List poses with pagination and filtering",
-    description="Get a paginated list of poses with optional search and filtering"
+    description="Get a paginated list of poses with optional search and filtering. Supports both page-based and offset-based pagination."
 )
+@public_rate_limit
 async def list_poses(
+    request: Request,
+    response: Response,
     db_session: DatabaseSession,
-    page: int = Query(1, ge=1, description="Page number (starts at 1)"),
-    page_size: int = Query(20, ge=1, le=100, description="Number of items per page (max 100)"),
+    page: Optional[int] = Query(None, ge=1, description="Page number (starts at 1) - for page-based pagination"),
+    page_size: Optional[int] = Query(None, ge=1, le=100, description="Number of items per page (max 100) - for page-based pagination"),
+    offset: Optional[int] = Query(None, ge=0, description="Number of items to skip - for offset-based pagination (infinite scroll)"),
+    limit: Optional[int] = Query(None, ge=1, le=100, description="Maximum number of items to return (default: 20, max: 100) - for offset-based pagination"),
     search: Optional[str] = Query(None, description="Search by name (English or Sanskrit)"),
     category: Optional[PoseCategory] = Query(None, description="Filter by category"),
     difficulty: Optional[DifficultyLevel] = Query(None, description="Filter by difficulty level"),
@@ -39,16 +45,37 @@ async def list_poses(
     """
     List all poses with pagination, search, and filtering.
 
+    Supports two pagination modes:
+    1. Page-based: Use 'page' and 'page_size' parameters
+    2. Offset-based (for infinite scroll): Use 'offset' and 'limit' parameters
+
     Query Parameters:
-    - page: Page number (default: 1)
-    - page_size: Items per page (default: 20, max: 100)
+    - page: Page number (default: 1) - optional for page-based pagination
+    - page_size: Items per page (default: 20, max: 100) - optional for page-based pagination
+    - offset: Number of items to skip (default: 0) - optional for offset-based pagination
+    - limit: Maximum items to return (default: 20, max: 100) - optional for offset-based pagination
     - search: Search by pose name (English or Sanskrit)
     - category: Filter by category (standing, seated, balancing, etc.)
     - difficulty: Filter by difficulty (beginner, intermediate, advanced)
     - target_area: Filter by target body area
 
     Returns paginated list of poses with total count and page information.
+    Response includes X-Total-Count header with total number of poses.
     """
+    # Determine pagination mode and calculate offset/limit
+    if offset is not None or limit is not None:
+        # Offset-based pagination (infinite scroll)
+        pagination_offset = offset if offset is not None else 0
+        pagination_limit = limit if limit is not None else 20
+        current_page = None
+        current_page_size = None
+    else:
+        # Page-based pagination (traditional)
+        current_page = page if page is not None else 1
+        current_page_size = page_size if page_size is not None else 20
+        pagination_offset = (current_page - 1) * current_page_size
+        pagination_limit = current_page_size
+
     # Build query
     query = select(Pose)
 
@@ -81,8 +108,7 @@ async def list_poses(
     total = result.scalar() or 0
 
     # Apply pagination
-    offset = (page - 1) * page_size
-    query = query.offset(offset).limit(page_size)
+    query = query.offset(pagination_offset).limit(pagination_limit)
 
     # Order by name for consistent results
     query = query.order_by(Pose.name_english)
@@ -91,14 +117,19 @@ async def list_poses(
     result = await db_session.execute(query)
     poses = result.scalars().all()
 
-    # Calculate total pages
-    total_pages = (total + page_size - 1) // page_size if total > 0 else 0
+    # Calculate total pages (only for page-based pagination)
+    if current_page is not None:
+        total_pages = (total + pagination_limit - 1) // pagination_limit if total > 0 else 0
+    else:
+        total_pages = None
 
     logger.info(
         "Poses listed",
         total=total,
-        page=page,
-        page_size=page_size,
+        offset=pagination_offset,
+        limit=pagination_limit,
+        page=current_page,
+        page_size=current_page_size,
         filters={
             "search": search,
             "category": category.value if category else None,
@@ -107,12 +138,15 @@ async def list_poses(
         }
     )
 
+    # Add X-Total-Count header for infinite scroll
+    response.headers["X-Total-Count"] = str(total)
+
     return PoseListResponse(
         poses=[PoseResponse.model_validate(pose) for pose in poses],
         total=total,
-        page=page,
-        page_size=page_size,
-        total_pages=total_pages
+        page=current_page if current_page is not None else 1,
+        page_size=pagination_limit,
+        total_pages=total_pages if total_pages is not None else 0
     )
 
 
@@ -123,7 +157,9 @@ async def list_poses(
     summary="Get single pose details",
     description="Get detailed information about a specific pose"
 )
+@public_rate_limit
 async def get_pose(
+    request: Request,
     pose_id: int,
     db_session: DatabaseSession
 ) -> PoseResponse:
@@ -155,6 +191,105 @@ async def get_pose(
     return PoseResponse.model_validate(pose)
 
 
+@router.get(
+    "/{pose_id}/related",
+    response_model=dict,
+    status_code=status.HTTP_200_OK,
+    summary="Get related poses",
+    description="Get similar poses and progression poses for a specific pose"
+)
+@public_rate_limit
+async def get_related_poses(
+    request: Request,
+    pose_id: int,
+    db_session: DatabaseSession
+) -> dict:
+    """
+    Get related poses for a specific pose.
+
+    Returns:
+    - similar: List of 2 similar poses (same category, similar difficulty)
+    - progressions: List of 2 progression poses (next difficulty level, related muscle groups)
+
+    Algorithm for similar poses:
+    - Same category
+    - Similar difficulty level (same or ±1 level)
+    - Different pose
+
+    Algorithm for progression poses:
+    - Related muscle groups (overlapping target_areas)
+    - Higher difficulty level
+    - Different pose
+    """
+    # First, verify the pose exists
+    pose_query = select(Pose).where(Pose.pose_id == pose_id)
+    result = await db_session.execute(pose_query)
+    current_pose = result.scalar_one_or_none()
+
+    if not current_pose:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Pose with ID {pose_id} not found"
+        )
+
+    # Get similar poses (same category, similar difficulty)
+    difficulty_map = {
+        DifficultyLevel.BEGINNER: 0,
+        DifficultyLevel.INTERMEDIATE: 1,
+        DifficultyLevel.ADVANCED: 2
+    }
+    current_difficulty_level = difficulty_map.get(current_pose.difficulty_level, 1)
+
+    # Build query for similar poses
+    similar_query = select(Pose).where(
+        Pose.pose_id != pose_id,
+        Pose.category == current_pose.category
+    )
+
+    # Filter by similar difficulty (same or ±1 level)
+    allowed_difficulties = []
+    for diff, level in difficulty_map.items():
+        if abs(level - current_difficulty_level) <= 1:
+            allowed_difficulties.append(diff)
+
+    if allowed_difficulties:
+        similar_query = similar_query.where(Pose.difficulty_level.in_(allowed_difficulties))
+
+    similar_query = similar_query.order_by(Pose.name_english).limit(2)
+    result = await db_session.execute(similar_query)
+    similar_poses = result.scalars().all()
+
+    # Get progression poses (higher difficulty, related muscle groups)
+    progression_query = select(Pose).where(
+        Pose.pose_id != pose_id
+    )
+
+    # Filter by higher difficulty
+    higher_difficulties = [diff for diff, level in difficulty_map.items() if level > current_difficulty_level]
+    if higher_difficulties:
+        progression_query = progression_query.where(Pose.difficulty_level.in_(higher_difficulties))
+    else:
+        # Already at max difficulty, just get similar difficulty different poses
+        progression_query = progression_query.where(Pose.difficulty_level == current_pose.difficulty_level)
+
+    # Order by difficulty and name for consistent results
+    progression_query = progression_query.order_by(Pose.difficulty_level, Pose.name_english).limit(2)
+    result = await db_session.execute(progression_query)
+    progression_poses = result.scalars().all()
+
+    logger.info(
+        "Related poses retrieved",
+        pose_id=pose_id,
+        similar_count=len(similar_poses),
+        progression_count=len(progression_poses)
+    )
+
+    return {
+        "similar": [PoseResponse.model_validate(pose) for pose in similar_poses],
+        "progressions": [PoseResponse.model_validate(pose) for pose in progression_poses]
+    }
+
+
 @router.post(
     "",
     response_model=PoseResponse,
@@ -162,7 +297,9 @@ async def get_pose(
     summary="Create new pose (admin only)",
     description="Create a new yoga pose. Requires admin authentication."
 )
+@authenticated_rate_limit
 async def create_pose(
+    request: Request,
     pose_data: PoseCreate,
     db_session: DatabaseSession,
     admin_user: AdminUser
@@ -219,7 +356,9 @@ async def create_pose(
     summary="Update pose (admin only)",
     description="Update an existing yoga pose. Requires admin authentication."
 )
+@authenticated_rate_limit
 async def update_pose(
+    request: Request,
     pose_id: int,
     pose_data: PoseUpdate,
     db_session: DatabaseSession,
@@ -268,7 +407,9 @@ async def update_pose(
     summary="Delete pose (admin only)",
     description="Delete a yoga pose. Requires admin authentication."
 )
+@authenticated_rate_limit
 async def delete_pose(
+    request: Request,
     pose_id: int,
     db_session: DatabaseSession,
     admin_user: AdminUser
