@@ -251,7 +251,7 @@ jobs:
 
             # Apply database migrations
             echo "Applying database migrations..."
-            docker exec yogaflow-backend alembic upgrade head
+            docker exec -w /app yogaflow-backend alembic upgrade head
 
             # Populate pose instructions and sequences if not already done
             echo "Checking for sequences..."
