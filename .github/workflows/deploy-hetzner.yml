@@ -249,6 +249,25 @@ jobs:
               echo "Database already has $POSE_COUNT poses"
             fi
 
+            # Apply database migrations
+            echo "Applying database migrations..."
+            docker exec yogaflow-backend alembic upgrade head
+
+            # Populate pose instructions and sequences if not already done
+            echo "Checking for sequences..."
+            SEQUENCE_COUNT=$(docker exec yogaflow-postgres psql -U yogaflow -d yogaflow_prod -t -c "SELECT COUNT(*) FROM sequences WHERE is_preset = true;" 2>/dev/null | xargs || echo "0")
+            if [[ "$SEQUENCE_COUNT" -eq 0 ]]; then
+              echo "Populating pose instructions and sequences..."
+              docker exec -i yogaflow-postgres psql -U yogaflow -d yogaflow_prod < backend/scripts/populate_pose_instructions_batch1.sql
+              docker exec -i yogaflow-postgres psql -U yogaflow -d yogaflow_prod < backend/scripts/populate_pose_instructions_batch2.sql
+              docker exec -i yogaflow-postgres psql -U yogaflow -d yogaflow_prod < backend/scripts/populate_pose_instructions_batch3.sql
+              docker exec -i yogaflow-postgres psql -U yogaflow -d yogaflow_prod < backend/scripts/populate_pose_instructions_batch4.sql
+              docker exec -i yogaflow-postgres psql -U yogaflow -d yogaflow_prod < backend/scripts/populate_sequences.sql
+              echo "✅ Populated pose instructions and 15 sequences"
+            else
+              echo "Database already has $SEQUENCE_COUNT sequences"
+            fi
+
             # Clean up old images
             docker image prune -af --filter "until=24h"
 
@@ -272,6 +291,16 @@ jobs:
             echo "✅ Database has $POSE_COUNT poses"
           else
             echo "⚠️ Warning: Database appears to be empty"
+          fi
+
+          # Verify sequences are loaded
+          SEQUENCE_COUNT=$(curl -s https://${{ secrets.HETZNER_SERVER_IP }}/api/v1/sequences | jq -r '.total' || \
+                           curl -s http://${{ secrets.HETZNER_SERVER_IP }}/api/v1/sequences | jq -r '.total')
+          echo "Sequences in database: $SEQUENCE_COUNT"
+          if [[ "$SEQUENCE_COUNT" -gt 0 ]]; then
+            echo "✅ Database has $SEQUENCE_COUNT sequences"
+          else
+            echo "⚠️ Warning: No sequences found in database"
           fi
 
       - name: Notify deployment status
