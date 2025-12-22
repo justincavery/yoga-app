@@ -235,15 +235,15 @@ class ApiClient {
         // We need to flatten it for the frontend
         const pose = sequencePose.pose || {};
 
-        // Handle instructions - convert array to string if needed
-        let instructions = pose.description;
-        if (pose.instructions && Array.isArray(pose.instructions)) {
-          instructions = pose.instructions.join('\n• ');
-          if (instructions) {
-            instructions = '• ' + instructions;
+        // Keep instructions as array for proper rendering
+        let instructions = pose.instructions;
+        if (!instructions || !Array.isArray(instructions)) {
+          // Fallback to holding_cues or description
+          instructions = pose.holding_cues || pose.description;
+          // If it's a string, convert to single-item array
+          if (typeof instructions === 'string') {
+            instructions = [instructions];
           }
-        } else if (pose.holding_cues) {
-          instructions = pose.holding_cues;
         }
 
         return {

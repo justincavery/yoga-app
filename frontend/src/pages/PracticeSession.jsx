@@ -438,7 +438,20 @@ export default function PracticeSession() {
             </h2>
             <p className="text-xl text-neutral-400 mb-4">{currentPose.sanskrit_name}</p>
             {currentPose.instructions && (
-              <p className="text-neutral-300 max-w-2xl mx-auto">{currentPose.instructions}</p>
+              <div className="text-neutral-300 max-w-2xl mx-auto">
+                {Array.isArray(currentPose.instructions) ? (
+                  <ul className="text-left space-y-2">
+                    {currentPose.instructions.map((instruction, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <span className="text-primary-400 mr-2">•</span>
+                        <span>{instruction}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{currentPose.instructions}</p>
+                )}
+              </div>
             )}
           </div>
 
