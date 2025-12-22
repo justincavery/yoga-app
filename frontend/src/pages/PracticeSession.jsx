@@ -46,6 +46,7 @@ export default function PracticeSession() {
   const timerRef = useRef(null);
   const warningAudioRef = useRef(null);
   const transitionAudioRef = useRef(null);
+  const poseAudioRef = useRef(null);
 
   // Fetch sequence on mount
   useEffect(() => {
@@ -57,6 +58,7 @@ export default function PracticeSession() {
     // Create audio elements for warning and transition sounds
     warningAudioRef.current = new Audio();
     transitionAudioRef.current = new Audio();
+    poseAudioRef.current = new Audio();
 
     // Set initial volume
     if (warningAudioRef.current) {
@@ -65,6 +67,9 @@ export default function PracticeSession() {
     if (transitionAudioRef.current) {
       transitionAudioRef.current.volume = settings.volume;
     }
+    if (poseAudioRef.current) {
+      poseAudioRef.current.volume = settings.volume;
+    }
 
     return () => {
       if (warningAudioRef.current) {
@@ -72,6 +77,9 @@ export default function PracticeSession() {
       }
       if (transitionAudioRef.current) {
         transitionAudioRef.current.pause();
+      }
+      if (poseAudioRef.current) {
+        poseAudioRef.current.pause();
       }
     };
   }, []);
@@ -84,7 +92,18 @@ export default function PracticeSession() {
     if (transitionAudioRef.current) {
       transitionAudioRef.current.volume = settings.volume;
     }
+    if (poseAudioRef.current) {
+      poseAudioRef.current.volume = settings.volume;
+    }
   }, [settings.volume]);
+
+  // Play audio when sequence loads (initial pose)
+  useEffect(() => {
+    if (sequence && sequence.poses && sequence.poses.length > 0 && currentPoseIndex === 0 && !isPaused) {
+      // Play audio for the first pose when the session starts
+      playPoseAudio(sequence.poses[0].name);
+    }
+  }, [sequence]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -236,6 +255,9 @@ export default function PracticeSession() {
       setCurrentPoseIndex(nextIndex);
       setTimeRemaining(sequence.poses[nextIndex].duration + settings.preparationTime);
       setShowNextPosePreview(false);
+
+      // Play audio for the new pose
+      playPoseAudio(sequence.poses[nextIndex].name);
     }
   };
 
@@ -246,6 +268,9 @@ export default function PracticeSession() {
     setCurrentPoseIndex(prevIndex);
     setTimeRemaining(sequence.poses[prevIndex].duration + settings.preparationTime);
     setShowNextPosePreview(false);
+
+    // Play audio for the previous pose
+    playPoseAudio(sequence.poses[prevIndex].name);
   };
 
   const handlePauseResume = () => {
@@ -307,6 +332,36 @@ export default function PracticeSession() {
         // In a real implementation, this would play a transition sound file
         // For testing purposes, we just trigger play
         transitionAudioRef.current.play().catch(() => {
+          // Silently fail if audio playback is blocked
+        });
+      }
+    } catch (error) {
+      // Ignore audio errors
+    }
+  };
+
+  const getAudioFileName = (poseName) => {
+    // Format: lowercase, replace spaces with hyphens, remove apostrophes
+    return poseName.toLowerCase().replace(/ /g, '-').replace(/'/g, '');
+  };
+
+  const getAudioUrl = (poseName) => {
+    const filename = getAudioFileName(poseName);
+    return `/content/audio/poses/${filename}.mp3`;
+  };
+
+  const playPoseAudio = (poseName) => {
+    if (isMuted) return;
+
+    try {
+      if (poseAudioRef.current) {
+        // Stop any currently playing audio
+        poseAudioRef.current.pause();
+        poseAudioRef.current.currentTime = 0;
+
+        // Set the new audio source and play
+        poseAudioRef.current.src = getAudioUrl(poseName);
+        poseAudioRef.current.play().catch(() => {
           // Silently fail if audio playback is blocked
         });
       }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, LogOut, CheckCircle } from 'lucide-react';
+import { ArrowLeft, LogOut, CheckCircle, Volume2 } from 'lucide-react';
 import { Button, Card, Badge, Spinner } from '../components/ui';
 import { Container } from '../components/layout';
 import MobileNav from '../components/MobileNav';
@@ -56,6 +56,16 @@ export default function PoseDetail() {
       default:
         return 'default';
     }
+  };
+
+  const getAudioFileName = (poseName) => {
+    // Format: lowercase, replace spaces with hyphens, remove apostrophes
+    return poseName.toLowerCase().replace(/ /g, '-').replace(/'/g, '');
+  };
+
+  const getAudioUrl = (poseName) => {
+    const filename = getAudioFileName(poseName);
+    return `/content/audio/poses/${filename}.mp3`;
   };
 
   return (
@@ -117,7 +127,7 @@ export default function PoseDetail() {
           {!isLoading && !error && pose && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Left Column - Image */}
-              <div className="order-1">
+              <div className="order-1 space-y-6">
                 <Card>
                   <div className="aspect-square bg-neutral-100 overflow-hidden">
                     <img
@@ -126,6 +136,24 @@ export default function PoseDetail() {
                       className="w-full h-full object-cover"
                     />
                   </div>
+                </Card>
+
+                {/* Audio Player */}
+                <Card>
+                  <Card.Content padding="lg">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Volume2 size={20} className="text-primary-600" />
+                      <h2 className="text-lg font-semibold text-neutral-900">Guided Audio</h2>
+                    </div>
+                    <audio
+                      controls
+                      className="w-full"
+                      preload="metadata"
+                      src={getAudioUrl(pose.name)}
+                    >
+                      Your browser does not support the audio element.
+                    </audio>
+                  </Card.Content>
                 </Card>
               </div>
 
