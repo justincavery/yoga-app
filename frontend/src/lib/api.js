@@ -214,7 +214,7 @@ class ApiClient {
 
   // Transform sequence data from API format to frontend format
   transformSequence(sequence) {
-    return {
+    const transformed = {
       id: sequence.sequence_id,
       name: sequence.name,
       description: sequence.description,
@@ -227,6 +227,32 @@ class ApiClient {
       image_url: sequence.image_url || 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop',
       created_at: sequence.created_at,
     };
+
+    // Transform nested poses array if present
+    if (sequence.poses && Array.isArray(sequence.poses)) {
+      transformed.poses = sequence.poses.map(sequencePose => {
+        // The API returns a nested structure: { pose_id, duration_seconds, pose: { ... } }
+        // We need to flatten it for the frontend
+        const pose = sequencePose.pose || {};
+        return {
+          id: pose.pose_id,
+          pose_id: sequencePose.pose_id,
+          position_order: sequencePose.position_order,
+          duration: sequencePose.duration_seconds,
+          name: pose.name_english,
+          sanskrit_name: pose.name_sanskrit,
+          difficulty: pose.difficulty_level,
+          category: pose.category,
+          image_url: pose.image_url || 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop',
+          description: pose.description,
+          instructions: pose.holding_cues || pose.description,
+          benefits: pose.benefits,
+          contraindications: pose.contraindications,
+        };
+      });
+    }
+
+    return transformed;
   }
 
   // Sequence endpoints
