@@ -7,7 +7,7 @@ set -e
 echo "=== Applying Database Schema Changes ==="
 
 # Add pose instruction fields (replaces alembic migration)
-docker exec yogaflow-postgres psql -U yogaflow -d yogaflow_prod << 'EOF'
+docker exec yogaflow-postgres psql -U yogaflow -d yogaflow << 'EOF'
 -- Add pose instruction fields
 ALTER TABLE poses ADD COLUMN IF NOT EXISTS entry_instructions TEXT[];
 ALTER TABLE poses ADD COLUMN IF NOT EXISTS exit_instructions TEXT[];
