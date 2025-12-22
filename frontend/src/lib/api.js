@@ -212,20 +212,45 @@ class ApiClient {
     return this.transformPose(pose);
   }
 
+  // Transform sequence data from API format to frontend format
+  transformSequence(sequence) {
+    return {
+      id: sequence.sequence_id,
+      name: sequence.name,
+      description: sequence.description,
+      difficulty: sequence.difficulty_level,
+      duration: sequence.duration_minutes,
+      category: sequence.style,
+      pose_count: sequence.pose_count,
+      focus_area: sequence.focus_area,
+      is_preset: sequence.is_preset,
+      image_url: sequence.image_url || 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop',
+      created_at: sequence.created_at,
+    };
+  }
+
   // Sequence endpoints
   async getSequences(filters = {}) {
     if (this.useMock) {
       return this.mockGetSequences(filters);
     }
     const params = new URLSearchParams(filters);
-    return this.request(`/sequences?${params}`);
+    const response = await this.request(`/sequences?${params}`);
+
+    // Transform sequences array if present
+    if (response.sequences && Array.isArray(response.sequences)) {
+      response.sequences = response.sequences.map(seq => this.transformSequence(seq));
+    }
+
+    return response;
   }
 
   async getSequenceById(sequenceId) {
     if (this.useMock) {
       return this.mockGetSequenceById(sequenceId);
     }
-    return this.request(`/sequences/${sequenceId}`);
+    const sequence = await this.request(`/sequences/${sequenceId}`);
+    return this.transformSequence(sequence);
   }
 
   // Practice session endpoints
