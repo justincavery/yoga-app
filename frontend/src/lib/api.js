@@ -302,6 +302,25 @@ class ApiClient {
     });
   }
 
+  async startSession(sequenceId) {
+    return this.request('/sessions/start', {
+      method: 'POST',
+      body: JSON.stringify({ sequence_id: sequenceId }),
+    });
+  }
+
+  async completeSession(sessionId, durationSeconds, posesCompleted, completionStatus = 'completed') {
+    return this.request('/sessions/complete', {
+      method: 'POST',
+      body: JSON.stringify({
+        session_id: sessionId,
+        duration_seconds: durationSeconds,
+        poses_completed: posesCompleted,
+        completion_status: completionStatus,
+      }),
+    });
+  }
+
   // Practice history and statistics endpoints
   async getStats(token) {
     if (this.useMock) {

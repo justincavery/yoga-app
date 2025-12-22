@@ -31,6 +31,10 @@ export default function PracticeSession() {
   const [isMuted, setIsMuted] = useState(false);
   const [showNextPosePreview, setShowNextPosePreview] = useState(false);
 
+  // Session tracking
+  const [sessionId, setSessionId] = useState(null);
+  const [sessionStartTime, setSessionStartTime] = useState(null);
+
   // Settings state
   const [settings, setSettings] = useState({
     preparationTime: 5, // seconds (5-30)
@@ -132,7 +136,7 @@ export default function PracticeSession() {
 
     // Initialize time remaining if not set
     if (timeRemaining === 0 && currentPoseIndex >= 0) {
-      setTimeRemaining(currentPose.duration);
+      setTimeRemaining(currentPose.duration + settings.preparationTime);
     }
 
     // Start timer
@@ -163,7 +167,7 @@ export default function PracticeSession() {
         clearInterval(timerRef.current);
       }
     };
-  }, [sequence, currentPoseIndex, isPaused, isCompleted, timeRemaining, settings.transitionWarningTime]);
+  }, [sequence, currentPoseIndex, isPaused, isCompleted, timeRemaining, settings.transitionWarningTime, settings.preparationTime]);
 
   const fetchSequence = async () => {
     setIsLoading(true);
@@ -173,12 +177,44 @@ export default function PracticeSession() {
       const response = await apiClient.getSequenceById(sequenceId);
       setSequence(response);
       if (response.poses && response.poses.length > 0) {
-        setTimeRemaining(response.poses[0].duration);
+        setTimeRemaining(response.poses[0].duration + settings.preparationTime);
+      }
+
+      // Start a practice session
+      try {
+        const sessionResponse = await apiClient.startSession(sequenceId);
+        setSessionId(sessionResponse.session_id);
+        setSessionStartTime(Date.now());
+      } catch (sessionErr) {
+        console.error('Failed to start session:', sessionErr);
+        // Don't block practice if session creation fails
       }
     } catch (err) {
       setError(err.message || 'Failed to load sequence');
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const saveCompletedSession = async () => {
+    if (!sessionId || !sessionStartTime) {
+      console.error('Cannot save session: missing session ID or start time');
+      return;
+    }
+
+    try {
+      const durationSeconds = Math.floor((Date.now() - sessionStartTime) / 1000);
+      const posesCompleted = sequence.poses.length;
+
+      await apiClient.completeSession(
+        sessionId,
+        durationSeconds,
+        posesCompleted,
+        'completed'
+      );
+    } catch (err) {
+      console.error('Failed to save session:', err);
+      // Don't block the completion screen if save fails
     }
   };
 
@@ -188,16 +224,17 @@ export default function PracticeSession() {
     const nextIndex = currentPoseIndex + 1;
 
     if (nextIndex >= sequence.poses.length) {
-      // Practice complete
+      // Practice complete - save session
+      saveCompletedSession();
       setIsCompleted(true);
       setShowNextPosePreview(false);
       if (timerRef.current) {
         clearInterval(timerRef.current);
       }
     } else {
-      // Move to next pose
+      // Move to next pose with preparation time
       setCurrentPoseIndex(nextIndex);
-      setTimeRemaining(sequence.poses[nextIndex].duration);
+      setTimeRemaining(sequence.poses[nextIndex].duration + settings.preparationTime);
       setShowNextPosePreview(false);
     }
   };
@@ -207,7 +244,7 @@ export default function PracticeSession() {
 
     const prevIndex = currentPoseIndex - 1;
     setCurrentPoseIndex(prevIndex);
-    setTimeRemaining(sequence.poses[prevIndex].duration);
+    setTimeRemaining(sequence.poses[prevIndex].duration + settings.preparationTime);
     setShowNextPosePreview(false);
   };
 
