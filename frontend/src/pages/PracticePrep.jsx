@@ -98,7 +98,7 @@ export default function PracticePrep() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 pb-24">
       <Container>
         <div className="py-8">
           {/* Page Header */}
@@ -152,10 +152,10 @@ export default function PracticePrep() {
             <Card className="mb-8">
               <Card.Content padding="lg">
                 <h3 className="text-xl font-bold text-neutral-900 mb-6">
-                  Poses in this Sequence
+                  Poses in this Sequence ({sequence.poses.length})
                 </h3>
 
-                <div className="space-y-3">
+                <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
                   {sequence.poses.map((pose, index) => (
                     <div
                       key={pose.id}
@@ -183,8 +183,13 @@ export default function PracticePrep() {
             </Card>
           )}
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+        </div>
+      </Container>
+
+      {/* Sticky Action Buttons */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-neutral-200 shadow-lg z-10">
+        <Container>
+          <div className="py-4 flex flex-col sm:flex-row gap-4">
             <Button
               onClick={handleStartPractice}
               icon={<Play size={20} />}
@@ -205,8 +210,8 @@ export default function PracticePrep() {
               Back to Sequences
             </Button>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 }

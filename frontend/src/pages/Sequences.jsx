@@ -1,15 +1,13 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { LogOut, Search, X, Filter, Clock, Users, Layers } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Search, X, Filter, Clock, Users, Layers } from 'lucide-react';
 import { Button, Card, Badge, Input, Select, Spinner } from '../components/ui';
 import { Container } from '../components/layout';
-import MobileNav from '../components/MobileNav';
-import useAuthStore from '../store/authStore';
+import PageHeader from '../components/PageHeader';
 import apiClient from '../lib/api';
 
 export default function Sequences() {
   const navigate = useNavigate();
-  const { user, logout } = useAuthStore();
 
   // State
   const [sequences, setSequences] = useState([]);
@@ -59,11 +57,6 @@ export default function Sequences() {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
   };
 
   const handleClearFilters = () => {
@@ -137,37 +130,7 @@ export default function Sequences() {
 
   return (
     <div className="min-h-screen bg-neutral-50">
-      {/* Header */}
-      <header className="bg-white border-b border-neutral-200 shadow-sm">
-        <Container>
-          <div className="py-4 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold text-primary-600">YogaFlow</h1>
-              <nav className="hidden sm:flex items-center gap-4 ml-8">
-                <Link to="/dashboard" className="text-neutral-700 hover:text-primary-600 font-medium">
-                  Dashboard
-                </Link>
-                <Link to="/poses" className="text-neutral-700 hover:text-primary-600 font-medium">
-                  Poses
-                </Link>
-                <Link to="/sequences" className="text-primary-600 font-medium">
-                  Sequences
-                </Link>
-              </nav>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="text-right hidden sm:block">
-                <p className="text-sm font-medium text-neutral-900">{user?.name}</p>
-                <p className="text-xs text-neutral-600">{user?.email}</p>
-              </div>
-              <Button variant="outline" size="sm" onClick={handleLogout} icon={<LogOut size={16} />} className="hidden sm:flex">
-                Logout
-              </Button>
-              <MobileNav />
-            </div>
-          </div>
-        </Container>
-      </header>
+      <PageHeader />
 
       {/* Main Content */}
       <Container>
@@ -196,6 +159,7 @@ export default function Sequences() {
               {/* Difficulty Filter */}
               <Select
                 name="difficulty"
+                placeholder="All difficulties"
                 value={difficultyFilter}
                 onChange={(event) => setDifficultyFilter(event.target.value)}
                 options={difficultyOptions}
@@ -206,6 +170,7 @@ export default function Sequences() {
               {/* Category Filter */}
               <Select
                 name="category"
+                placeholder="All categories"
                 value={categoryFilter}
                 onChange={(event) => setCategoryFilter(event.target.value)}
                 options={categoryOptions}
@@ -216,6 +181,7 @@ export default function Sequences() {
               {/* Duration Filter */}
               <Select
                 name="duration"
+                placeholder="All durations"
                 value={durationFilter}
                 onChange={(event) => setDurationFilter(event.target.value)}
                 options={durationOptions}

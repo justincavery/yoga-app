@@ -21,21 +21,17 @@ export default function MobileNav() {
   };
 
   const navItems = [
-    { path: '/dashboard', label: 'Dashboard', icon: Home },
-    { path: '/poses', label: 'Poses', icon: BookOpen },
-    { path: '/sequences', label: 'Sequences', icon: Layers },
     { path: '/history', label: 'History', icon: History },
-    { path: '/statistics', label: 'Statistics', icon: BarChart3 },
     { path: '/profile', label: 'Profile', icon: User },
   ];
 
   return (
     <>
-      {/* Mobile Menu Button - Only visible on mobile */}
+      {/* Menu Button - Always visible */}
       <button
         onClick={() => setIsOpen(true)}
-        className="sm:hidden p-2 text-neutral-700 hover:text-primary-600 transition-colors"
-        aria-label="Open navigation menu"
+        className="p-2 text-neutral-700 hover:text-primary-600 transition-colors"
+        aria-label="Open menu"
       >
         <Menu size={24} />
       </button>
@@ -43,7 +39,7 @@ export default function MobileNav() {
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 sm:hidden"
+          className="fixed inset-0 bg-black/50 z-40"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
@@ -51,7 +47,7 @@ export default function MobileNav() {
 
       {/* Slide-out Menu */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-72 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out sm:hidden ${
+        className={`fixed top-0 right-0 bottom-0 w-72 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
