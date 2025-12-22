@@ -234,6 +234,18 @@ class ApiClient {
         // The API returns a nested structure: { pose_id, duration_seconds, pose: { ... } }
         // We need to flatten it for the frontend
         const pose = sequencePose.pose || {};
+
+        // Handle instructions - convert array to string if needed
+        let instructions = pose.description;
+        if (pose.instructions && Array.isArray(pose.instructions)) {
+          instructions = pose.instructions.join('\n• ');
+          if (instructions) {
+            instructions = '• ' + instructions;
+          }
+        } else if (pose.holding_cues) {
+          instructions = pose.holding_cues;
+        }
+
         return {
           id: pose.pose_id,
           pose_id: sequencePose.pose_id,
@@ -243,9 +255,9 @@ class ApiClient {
           sanskrit_name: pose.name_sanskrit,
           difficulty: pose.difficulty_level,
           category: pose.category,
-          image_url: pose.image_url || 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop',
+          image_url: pose.image_urls?.[0] || 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop',
           description: pose.description,
-          instructions: pose.holding_cues || pose.description,
+          instructions: instructions,
           benefits: pose.benefits,
           contraindications: pose.contraindications,
         };
