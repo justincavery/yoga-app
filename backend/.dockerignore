@@ -53,9 +53,9 @@ docs/
 # Scripts (commented out - we need these for database seeding and updates)
 # scripts/
 
-# Alembic (migrations handled separately)
-alembic.ini
-alembic/versions/
+# Alembic files ARE needed in production for migrations
+# alembic.ini
+# alembic/versions/
 
 # Mac
 .DS_Store
