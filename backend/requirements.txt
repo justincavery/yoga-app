@@ -35,6 +35,7 @@ sentry-sdk[fastapi]>=2.0.0
 
 # Production Database
 asyncpg>=0.29.0
+psycopg2-binary>=2.9.9  # For Alembic migrations (sync driver)
 
 # Agent Coordination
 nats-py>=2.9.0

@@ -249,17 +249,14 @@ jobs:
               echo "Database already has $POSE_COUNT poses"
             fi
 
-            # Apply database schema changes (replaces alembic migration)
-            echo "Applying database schema changes..."
-            docker exec yogaflow-postgres psql -U yogaflow -d yogaflow << 'EOSQL'
-            -- Add pose instruction fields if they don't exist
-            ALTER TABLE poses ADD COLUMN IF NOT EXISTS entry_instructions TEXT[];
-            ALTER TABLE poses ADD COLUMN IF NOT EXISTS exit_instructions TEXT[];
-            ALTER TABLE poses ADD COLUMN IF NOT EXISTS holding_cues TEXT;
-            ALTER TABLE poses ADD COLUMN IF NOT EXISTS breathing_pattern TEXT;
-            ALTER TABLE poses ADD COLUMN IF NOT EXISTS has_side_variation BOOLEAN DEFAULT false;
-            EOSQL
-            echo "✅ Schema updated"
+            # Run database migrations with Alembic
+            echo "Running database migrations..."
+            docker exec yogaflow-backend alembic upgrade head
+
+            # Verify migration status
+            echo "Current migration version:"
+            docker exec yogaflow-backend alembic current
+            echo "✅ Migrations complete"
 
             # Populate pose instructions and sequences if not already done
             echo "Checking for sequences..."
