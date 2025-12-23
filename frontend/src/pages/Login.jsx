@@ -57,18 +57,31 @@ export default function Login() {
       // This prevents race condition where Dashboard loads before token is persisted
       const maxWaitTime = 2000; // 2 seconds max
       const startTime = Date.now();
+      let tokenFound = false;
+
+      console.log('[Login] Waiting for token to persist to localStorage...');
 
       while (Date.now() - startTime < maxWaitTime) {
         const storage = localStorage.getItem('auth-storage');
         if (storage) {
-          const parsed = JSON.parse(storage);
-          if (parsed?.state?.token) {
-            // Token is persisted, safe to navigate
-            break;
+          try {
+            const parsed = JSON.parse(storage);
+            if (parsed?.state?.accessToken) {
+              // Token is persisted, safe to navigate
+              console.log('[Login] Token found in localStorage after', Date.now() - startTime, 'ms');
+              tokenFound = true;
+              break;
+            }
+          } catch (e) {
+            console.error('[Login] Error parsing auth-storage:', e);
           }
         }
         // Wait 50ms before checking again
         await new Promise(resolve => setTimeout(resolve, 50));
+      }
+
+      if (!tokenFound) {
+        console.warn('[Login] Token not found in localStorage after', maxWaitTime, 'ms - navigating anyway');
       }
 
       navigate('/dashboard');
