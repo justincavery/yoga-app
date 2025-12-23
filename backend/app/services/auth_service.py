@@ -206,9 +206,11 @@ async def authenticate_user(
             detail="Account is inactive"
         )
 
-    # Successful login - reset failed attempts
-    user.failed_login_attempts = 0
-    user.account_locked_until = None
+    # Successful login - reset failed attempts (with backward compatibility)
+    if hasattr(user, 'failed_login_attempts'):
+        user.failed_login_attempts = 0
+    if hasattr(user, 'account_locked_until'):
+        user.account_locked_until = None
     user.last_login = datetime.now(timezone.utc)
     await db_session.flush()
 
