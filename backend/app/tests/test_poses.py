@@ -140,7 +140,7 @@ async def test_create_pose_without_auth(async_client):
             }
         )
 
-    assert response.status_code == 403  # Forbidden without auth
+    assert response.status_code == 401  # Unauthorized without auth
 
 
 @pytest.mark.asyncio
@@ -175,3 +175,132 @@ async def test_category_filter(test_pose, async_client):
     data = response.json()
     for pose in data["poses"]:
         assert pose["category"] == "standing"
+
+
+@pytest.mark.asyncio
+async def test_offset_limit_pagination(test_pose, async_client):
+    """Test offset-based pagination for infinite scroll."""
+    # Test with offset=0, limit=10
+    response = await async_client.get("/api/v1/poses?offset=0&limit=10")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert "poses" in data
+    assert "total" in data
+    assert len(data["poses"]) <= 10
+
+    # Check for X-Total-Count header
+    assert "x-total-count" in response.headers
+    assert int(response.headers["x-total-count"]) >= 1
+
+
+@pytest.mark.asyncio
+async def test_offset_pagination_skip(async_client, db_session: AsyncSession):
+    """Test offset pagination with multiple poses."""
+    # Create multiple test poses
+    poses = []
+    for index in range(5):
+        pose = Pose(
+            name_english=f"Test Pose {index}",
+            name_sanskrit=f"Test Asana {index}",
+            category=PoseCategory.STANDING,
+            difficulty_level=DifficultyLevel.BEGINNER,
+            description=f"Test pose {index}",
+            instructions=["Step 1", "Step 2"],
+            image_urls=["https://example.com/test.jpg"]
+        )
+        db_session.add(pose)
+        poses.append(pose)
+
+    await db_session.commit()
+
+    # Get first 2 poses
+    response1 = await async_client.get("/api/v1/poses?offset=0&limit=2")
+    assert response1.status_code == 200
+    data1 = response1.json()
+
+    # Get next 2 poses
+    response2 = await async_client.get("/api/v1/poses?offset=2&limit=2")
+    assert response2.status_code == 200
+    data2 = response2.json()
+
+    # Verify no overlap
+    pose_ids_1 = {p["pose_id"] for p in data1["poses"]}
+    pose_ids_2 = {p["pose_id"] for p in data2["poses"]}
+    assert len(pose_ids_1.intersection(pose_ids_2)) == 0
+
+
+@pytest.mark.asyncio
+async def test_get_related_poses(async_client, db_session: AsyncSession):
+    """Test getting related poses for a specific pose."""
+    # Create test poses with relationships
+    # Base pose
+    base_pose = Pose(
+        name_english="Mountain Pose",
+        name_sanskrit="Tadasana",
+        category=PoseCategory.STANDING,
+        difficulty_level=DifficultyLevel.BEGINNER,
+        description="Standing pose",
+        instructions=["Step 1", "Step 2"],
+        image_urls=["https://example.com/test.jpg"]
+    )
+    db_session.add(base_pose)
+
+    # Similar pose (same category, same difficulty)
+    similar_pose = Pose(
+        name_english="Tree Pose",
+        name_sanskrit="Vrksasana",
+        category=PoseCategory.STANDING,
+        difficulty_level=DifficultyLevel.BEGINNER,
+        description="Standing balance pose",
+        instructions=["Step 1", "Step 2"],
+        image_urls=["https://example.com/test2.jpg"]
+    )
+    db_session.add(similar_pose)
+
+    # Progression pose (higher difficulty)
+    progression_pose = Pose(
+        name_english="Warrior Pose",
+        name_sanskrit="Virabhadrasana",
+        category=PoseCategory.STANDING,
+        difficulty_level=DifficultyLevel.INTERMEDIATE,
+        description="Standing warrior pose",
+        instructions=["Step 1", "Step 2"],
+        image_urls=["https://example.com/test3.jpg"]
+    )
+    db_session.add(progression_pose)
+
+    await db_session.commit()
+    await db_session.refresh(base_pose)
+
+    # Test related poses endpoint
+    response = await async_client.get(f"/api/v1/poses/{base_pose.pose_id}/related")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert "similar" in data
+    assert "progressions" in data
+    assert isinstance(data["similar"], list)
+    assert isinstance(data["progressions"], list)
+
+
+@pytest.mark.asyncio
+async def test_get_related_poses_not_found(async_client):
+    """Test getting related poses for non-existent pose."""
+    response = await async_client.get("/api/v1/poses/99999/related")
+
+    assert response.status_code == 404
+
+
+@pytest.mark.asyncio
+async def test_backward_compatible_pagination(test_pose, async_client):
+    """Test that old page/page_size parameters still work."""
+    # Test traditional pagination
+    response = await async_client.get("/api/v1/poses?page=1&page_size=20")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data["page"] == 1
+    assert data["page_size"] == 20
+    assert "poses" in data
+    assert "total" in data

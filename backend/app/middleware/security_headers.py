@@ -46,18 +46,34 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
             response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
 
         # Content Security Policy
-        # Adjust CSP based on your needs
-        csp_directives = [
-            "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval'",  # Adjust for production
-            "style-src 'self' 'unsafe-inline'",
-            "img-src 'self' data: https:",
-            "font-src 'self' data:",
-            "connect-src 'self'",
-            "frame-ancestors 'none'",
-            "base-uri 'self'",
-            "form-action 'self'"
-        ]
+        # Production: Strict CSP without unsafe directives
+        # Development: More permissive for development tools
+        if self.environment == "production":
+            csp_directives = [
+                "default-src 'self'",
+                "script-src 'self'",  # No unsafe-inline or unsafe-eval in production
+                "style-src 'self'",  # No unsafe-inline in production
+                "img-src 'self' data: https:",  # Allow images from HTTPS and data URIs
+                "font-src 'self' data:",
+                "connect-src 'self'",  # API calls to same origin only
+                "frame-ancestors 'none'",  # Prevent embedding in iframes
+                "base-uri 'self'",
+                "form-action 'self'",
+                "upgrade-insecure-requests"  # Upgrade HTTP to HTTPS
+            ]
+        else:
+            # Development CSP - more permissive for hot reload, etc.
+            csp_directives = [
+                "default-src 'self'",
+                "script-src 'self' 'unsafe-inline' 'unsafe-eval'",  # Dev tools need this
+                "style-src 'self' 'unsafe-inline'",
+                "img-src 'self' data: https:",
+                "font-src 'self' data:",
+                "connect-src 'self' ws: wss:",  # WebSocket for hot reload
+                "frame-ancestors 'none'",
+                "base-uri 'self'",
+                "form-action 'self'"
+            ]
         response.headers["Content-Security-Policy"] = "; ".join(csp_directives)
 
         # Permissions Policy (formerly Feature-Policy)

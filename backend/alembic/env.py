@@ -19,6 +19,7 @@ from app.models.sequence import Sequence, SequencePose
 from app.models.practice_session import PracticeSession
 from app.models.favorites import UserFavorite
 from app.models.achievement import Achievement, UserAchievement
+from app.models.pose_relationship import PoseRelationship
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

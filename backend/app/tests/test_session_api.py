@@ -8,7 +8,7 @@ Tests cover:
 - GET /api/v1/sessions/current - Get current active session
 """
 import pytest
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -115,7 +115,7 @@ class TestCompleteSession:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(minutes=15),
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=15),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -156,7 +156,7 @@ class TestCompleteSession:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(minutes=8),
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=8),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -214,7 +214,7 @@ class TestCompleteSession:
         session = PracticeSession(
             user_id=intermediate_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow(),
+            started_at=datetime.now(timezone.utc),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -248,7 +248,7 @@ class TestCompleteSession:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(minutes=15),
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=15),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -290,7 +290,7 @@ class TestPauseSession:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(minutes=5),
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=5),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -342,7 +342,7 @@ class TestPauseSession:
         session = PracticeSession(
             user_id=intermediate_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow(),
+            started_at=datetime.now(timezone.utc),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -377,7 +377,7 @@ class TestGetCurrentSession:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(minutes=5),
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=5),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -412,8 +412,8 @@ class TestGetCurrentSession:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(hours=1),
-            completed_at=datetime.utcnow() - timedelta(minutes=45),
+            started_at=datetime.now(timezone.utc) - timedelta(hours=1),
+            completed_at=datetime.now(timezone.utc) - timedelta(minutes=45),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
@@ -443,14 +443,14 @@ class TestGetCurrentSession:
         old_session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(minutes=30),
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=30),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
         new_session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow() - timedelta(minutes=5),
+            started_at=datetime.now(timezone.utc) - timedelta(minutes=5),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -494,7 +494,7 @@ class TestSessionValidation:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow(),
+            started_at=datetime.now(timezone.utc),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )
@@ -526,7 +526,7 @@ class TestSessionValidation:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.utcnow(),
+            started_at=datetime.now(timezone.utc),
             completion_status=CompletionStatus.ABANDONED,
             duration_seconds=0
         )

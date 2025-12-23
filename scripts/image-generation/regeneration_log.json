@@ -1,0 +1,79 @@
+{
+  "timestamp": "2025-12-16T11:08:51.430255",
+  "model": "gemini-2.5-flash-image",
+  "total": 10,
+  "successful": 4,
+  "failed": 6,
+  "results": [
+    {
+      "pose_name": "Chaturanga",
+      "filename": "chaturanga.jpg",
+      "timestamp": "2025-12-16T10:58:41.552132",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in chaturanga pose, body lowered close to and parallel to the mat, elbows bent at 90 degrees pointing back towards hips, arms tight to ribs like bottom of a push-up, body in straight line from head to heels hovering just above the floor, side view, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "save_failed"
+    },
+    {
+      "pose_name": "Bridge Pose",
+      "filename": "bridge-pose.jpg",
+      "timestamp": "2025-12-16T10:59:47.709704",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in bridge pose, lying flat on her back on the mat, knees bent with feet flat on floor, hips lifted high creating a straight diagonal line from shoulders on the floor up to knees then down to feet, arms flat on mat by her sides, side view showing the bridge shape clearly, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "save_failed"
+    },
+    {
+      "pose_name": "Wheel Pose",
+      "filename": "wheel-pose.jpg",
+      "timestamp": "2025-12-16T11:00:58.098602",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in full wheel pose backbend, hands and feet planted on mat, body arched upward in deep backbend forming a wheel shape, hips and chest lifted high, head hanging down between arms, like halfway through a back flip, side view, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "save_failed"
+    },
+    {
+      "pose_name": "Seated Spinal Twist",
+      "filename": "seated-spinal-twist.jpg",
+      "timestamp": "2025-12-16T11:02:03.172462",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in seated spinal twist, sitting on mat with right leg extended, left foot crossed over and placed on the outside of right knee, torso twisted to the left, right elbow pressing against outside of left knee, left hand behind for support, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Boat Pose",
+      "filename": "boat-pose.jpg",
+      "timestamp": "2025-12-16T11:03:11.345384",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in boat pose, sitting on yoga mat on the floor, balanced on sit bones, legs lifted and extended at 45 degrees, arms reaching forward parallel to legs, forming V-shape, torso and legs creating a boat shape, clearly grounded on the mat, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "save_failed"
+    },
+    {
+      "pose_name": "Crow Pose",
+      "filename": "crow-pose.jpg",
+      "timestamp": "2025-12-16T11:04:19.801792",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in crow pose, hands planted on mat shoulder-width apart, elbows bent, knees pressed firmly into the backs of upper arms, body leaning forward over hands, feet lifted off ground, balanced on hands in arm balance, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "save_failed"
+    },
+    {
+      "pose_name": "Camel Pose",
+      "filename": "camel-pose.jpg",
+      "timestamp": "2025-12-16T11:05:27.440862",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in deep camel pose, kneeling upright on mat, leaning back in deep backbend, hands reaching back to firmly grip ankles, chest lifted and open, head tilted back, thighs perpendicular to floor, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Bow Pose",
+      "filename": "bow-pose.jpg",
+      "timestamp": "2025-12-16T11:06:32.902493",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bow pose, lying on her belly on the mat, hands holding both ankles behind her, chest and thighs lifted up off the mat creating a bow shape with the body, weight balanced on the abdomen, side view, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Plow Pose",
+      "filename": "plow-pose.jpg",
+      "timestamp": "2025-12-16T11:07:38.448979",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in plow pose, lying on her shoulders with legs extended over head, toes touching the floor behind her head, legs straight, hips above shoulders, hands supporting lower back or flat on mat, side view, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Bound Angle Pose",
+      "filename": "bound-angle-pose.jpg",
+      "timestamp": "2025-12-16T11:08:45.680432",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bound angle pose, sitting on mat with soles of feet pressed together in front, knees dropped out to sides, hands holding feet, upright posture, one person with two feet only, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "save_failed"
+    }
+  ]
+}

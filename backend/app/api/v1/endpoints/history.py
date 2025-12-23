@@ -2,9 +2,9 @@
 Practice History API endpoints for YogaFlow.
 Handles history retrieval, statistics, and calendar view.
 """
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional
-from fastapi import APIRouter, status, Query
+from fastapi import APIRouter, status, Query, Request
 from sqlalchemy import select, func, extract
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -23,6 +23,7 @@ from app.models.sequence import Sequence
 from app.api.dependencies import DatabaseSession, CurrentUser
 from app.services.practice_history import PracticeHistoryService
 from app.core.logging_config import logger
+from app.core.rate_limit import authenticated_rate_limit
 
 router = APIRouter(tags=["Practice History"])
 
@@ -34,7 +35,9 @@ router = APIRouter(tags=["Practice History"])
     summary="Get practice session history",
     description="Get paginated list of practice sessions with optional filtering"
 )
+@authenticated_rate_limit
 async def get_history(
+    request: Request,
     current_user: CurrentUser,
     db_session: DatabaseSession,
     page: int = Query(1, ge=1, description="Page number (starts at 1)"),
@@ -126,7 +129,9 @@ async def get_history(
     summary="Get practice statistics",
     description="Get comprehensive practice statistics for the current user"
 )
+@authenticated_rate_limit
 async def get_stats(
+    request: Request,
     current_user: CurrentUser,
     db_session: DatabaseSession,
 ) -> PracticeStatisticsResponse:
@@ -171,7 +176,9 @@ async def get_stats(
     summary="Get calendar view of practice history",
     description="Get practice sessions grouped by date for calendar visualization"
 )
+@authenticated_rate_limit
 async def get_calendar(
+    request: Request,
     current_user: CurrentUser,
     db_session: DatabaseSession,
     start_date: Optional[datetime] = Query(None, description="Start date for calendar range"),
@@ -193,7 +200,7 @@ async def get_calendar(
 
     # Default date range: last 90 days
     if end_date is None:
-        end_date = datetime.utcnow()
+        end_date = datetime.now(timezone.utc)
     if start_date is None:
         start_date = end_date - timedelta(days=90)
 

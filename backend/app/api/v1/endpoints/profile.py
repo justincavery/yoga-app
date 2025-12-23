@@ -2,7 +2,7 @@
 Profile management API endpoints for YogaFlow.
 Handles user profile viewing and updating.
 """
-from fastapi import APIRouter, status, HTTPException
+from fastapi import APIRouter, status, HTTPException, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 
@@ -11,6 +11,7 @@ from app.api.dependencies import DatabaseSession, CurrentUser
 from app.models.user import User, ExperienceLevel
 from app.core.security import verify_password, hash_password, validate_password_strength
 from app.core.logging_config import logger
+from app.core.rate_limit import authenticated_rate_limit, auth_rate_limit
 
 router = APIRouter(prefix="/profile", tags=["Profile"])
 
@@ -22,7 +23,8 @@ router = APIRouter(prefix="/profile", tags=["Profile"])
     summary="Get user profile",
     description="Get current user's profile information"
 )
-async def get_profile(current_user: CurrentUser) -> UserResponse:
+@authenticated_rate_limit
+async def get_profile(request: Request, current_user: CurrentUser) -> UserResponse:
     """
     Get current user profile information.
 
@@ -40,7 +42,9 @@ async def get_profile(current_user: CurrentUser) -> UserResponse:
     summary="Update user profile",
     description="Update current user's profile information"
 )
+@authenticated_rate_limit
 async def update_profile(
+    request: Request,
     profile_update: UserUpdate,
     current_user: CurrentUser,
     db_session: DatabaseSession
@@ -122,7 +126,9 @@ async def update_profile(
     summary="Change password",
     description="Change current user's password"
 )
+@auth_rate_limit
 async def change_password(
+    request: Request,
     password_change: PasswordChange,
     current_user: CurrentUser,
     db_session: DatabaseSession

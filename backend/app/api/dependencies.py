@@ -32,7 +32,7 @@ async def get_current_active_user(
         User: Current authenticated user
 
     Raises:
-        HTTPException: If authentication fails
+        HTTPException: If authentication fails or token is blacklisted
 
     Example:
         @app.get("/profile")
@@ -40,7 +40,25 @@ async def get_current_active_user(
             return current_user
     """
     token = credentials.credentials
+
+    # Check if token is blacklisted (logout/revoked)
+    from app.services.token_blacklist import token_blacklist
+    if await token_blacklist.is_blacklisted(token):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Token has been revoked. Please login again."
+        )
+
+    # Get user from token
     user = await get_current_user(token, db_session)
+
+    # Check if all user's tokens are blacklisted (e.g., after password change)
+    if await token_blacklist.is_user_blacklisted(user.user_id):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="All sessions invalidated. Please login again."
+        )
+
     return user
 
 

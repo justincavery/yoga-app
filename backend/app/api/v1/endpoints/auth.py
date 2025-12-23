@@ -2,7 +2,7 @@
 Authentication API endpoints for YogaFlow.
 Handles user registration, login, and logout.
 """
-from fastapi import APIRouter, status, HTTPException
+from fastapi import APIRouter, status, HTTPException, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.schemas.user import (
@@ -24,6 +24,7 @@ from app.services.auth_service import (
 )
 from app.api.dependencies import DatabaseSession, CurrentUser
 from app.core.logging_config import log_auth_event
+from app.core.rate_limit import auth_rate_limit, limiter
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
@@ -35,7 +36,9 @@ router = APIRouter(prefix="/auth", tags=["Authentication"])
     summary="Register new user",
     description="Create a new user account with email and password"
 )
+@auth_rate_limit
 async def register(
+    request: Request,
     user_data: UserRegister,
     db_session: DatabaseSession
 ) -> AuthResponse:
@@ -75,7 +78,9 @@ async def register(
     summary="User login",
     description="Authenticate user and return JWT tokens"
 )
+@auth_rate_limit
 async def login(
+    request: Request,
     login_data: UserLogin,
     db_session: DatabaseSession
 ) -> AuthResponse:
@@ -105,20 +110,33 @@ async def login(
     "/logout",
     status_code=status.HTTP_200_OK,
     summary="User logout",
-    description="Logout current user (client should discard tokens)"
+    description="Logout current user and invalidate token"
 )
-async def logout(current_user: CurrentUser) -> dict:
+async def logout(
+    request: Request,
+    current_user: CurrentUser
+) -> dict:
     """
-    Logout current user.
+    Logout current user and blacklist their access token.
 
-    Note: JWTs are stateless, so server-side logout is informational only.
-    Client must discard the access and refresh tokens.
+    The token is added to a Redis blacklist and will be rejected for
+    any future requests until it naturally expires.
 
-    In production, consider implementing:
-    - Token blacklist in Redis
-    - Token revocation list
-    - Short-lived tokens with refresh mechanism
+    Client should also discard the access and refresh tokens locally.
     """
+    from app.services.token_blacklist import token_blacklist
+    from app.core.config import settings
+
+    # Extract token from Authorization header
+    auth_header = request.headers.get("Authorization", "")
+    if auth_header.startswith("Bearer "):
+        token = auth_header[7:]  # Remove "Bearer " prefix
+
+        # Blacklist the token with TTL matching remaining token lifetime
+        # Tokens expire in access_token_expire_minutes
+        ttl_seconds = settings.access_token_expire_minutes * 60
+        await token_blacklist.blacklist_token(token, ttl_seconds)
+
     log_auth_event(
         event_type="logout",
         user_id=current_user.user_id,
@@ -128,7 +146,7 @@ async def logout(current_user: CurrentUser) -> dict:
 
     return {
         "message": "Successfully logged out",
-        "detail": "Please discard your access and refresh tokens"
+        "detail": "Your session has been invalidated. Please login again to continue."
     }
 
 
@@ -281,7 +299,9 @@ async def resend_verification(
     summary="Request password reset",
     description="Request a password reset email with reset token"
 )
+@auth_rate_limit
 async def forgot_password(
+    request: Request,
     reset_request: PasswordReset,
     db_session: DatabaseSession
 ) -> dict:
@@ -312,7 +332,9 @@ async def forgot_password(
     summary="Reset password with token",
     description="Reset user password using reset token from email"
 )
+@auth_rate_limit
 async def reset_password_endpoint(
+    request: Request,
     reset_confirm: PasswordResetConfirm,
     db_session: DatabaseSession
 ) -> dict:

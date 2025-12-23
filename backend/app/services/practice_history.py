@@ -4,7 +4,7 @@ Practice History Service for YogaFlow application.
 Provides functions for querying and analyzing practice session history.
 Implements history queries for statistics and analytics.
 """
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, List, Dict, Any
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func, and_, or_, desc
@@ -223,7 +223,7 @@ class PracticeHistoryService:
             return 0
 
         # Check if user practiced today or yesterday
-        today = datetime.utcnow().date()
+        today = datetime.now(timezone.utc).date()
         yesterday = today - timedelta(days=1)
 
         most_recent = practice_dates[0]
@@ -299,7 +299,7 @@ class PracticeHistoryService:
         Returns:
             List of dictionaries with date and session count
         """
-        start_date = datetime.utcnow() - timedelta(days=days)
+        start_date = datetime.now(timezone.utc) - timedelta(days=days)
 
         result = await db_session.execute(
             select(
@@ -439,7 +439,7 @@ class PracticeHistoryService:
         )
 
         # Last 30 days stats
-        thirty_days_ago = datetime.utcnow() - timedelta(days=30)
+        thirty_days_ago = datetime.now(timezone.utc) - timedelta(days=30)
         recent_sessions = await PracticeHistoryService.get_total_sessions(
             db_session,
             user_id,

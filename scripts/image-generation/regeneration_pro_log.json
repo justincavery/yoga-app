@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-12-16T13:28:34.667038",
+  "model": "gemini-3-pro-image-preview",
+  "total": 6,
+  "successful": 6,
+  "failed": 0,
+  "results": [
+    {
+      "pose_name": "Chaturanga",
+      "filename": "chaturanga.jpg",
+      "timestamp": "2025-12-16T13:15:36.655621",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in Chaturanga Dandasana four-limbed staff pose, body lowered parallel to floor, shoulders shifted forward in front of wrists, elbows bent at 90 degrees pointing straight back along ribcage, arms hugging sides of body, body forming straight plank from head to heels hovering just above mat, core engaged, side view, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Bridge Pose",
+      "filename": "bridge-pose.jpg",
+      "timestamp": "2025-12-16T13:17:51.718963",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in Setu Bandha Sarvangasana bridge pose, lying on back on mat with shoulders and head on floor, feet hip-width apart parallel and flat on mat, knees bent directly over ankles, hips lifted high creating smooth diagonal line from shoulders through hips to knees, inner thighs rolling inward, chest lifting toward chin, shoulders rolled under, arms pressing into mat parallel alongside body, side view showing bridge arch clearly, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Wheel Pose",
+      "filename": "wheel-pose.jpg",
+      "timestamp": "2025-12-16T13:20:10.100422",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in Urdhva Dhanurasana full wheel pose, hands and feet planted firmly on mat, body arched in deep backbend forming upward bow shape, elbows over wrists, feet parallel with knees over ankles, hips and chest lifted high creating smooth spinal curve, head hanging naturally between arms, shoulder blades drawn onto back, side view, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Boat Pose",
+      "filename": "boat-pose.jpg",
+      "timestamp": "2025-12-16T13:22:29.317200",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in Navasana full boat pose, sitting on yoga mat balanced on tripod of sitting bones and tailbone, torso lifted with flat back at 45 degrees, legs lifted and extended creating V-shape with torso, arms reaching forward parallel to floor alongside legs, chest lifted with shoulders back, spine straight not rounded, clearly grounded on mat, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Crow Pose",
+      "filename": "crow-pose.jpg",
+      "timestamp": "2025-12-16T13:25:07.303106",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in Bakasana crow pose arm balance, hands planted shoulder-width apart on mat, elbows bent with upper arms creating shelf, shins or knees pressing firmly into backs of upper arms, body weight shifted forward over hands, hips lifted high, feet lifted completely off ground, core engaged, balanced on hands, front three-quarter view, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    },
+    {
+      "pose_name": "Bound Angle Pose",
+      "filename": "bound-angle-pose.jpg",
+      "timestamp": "2025-12-16T13:27:16.456306",
+      "prompt": "blonde yoga instructor, 25-30 years old, wearing grey yoga leggings, in Baddha Konasana bound angle pose, sitting upright on mat, soles of both feet pressed together in front of pelvis, knees dropped out to sides resting naturally, hands gently holding feet, spine lifted and straight, pelvis neutral, sitting evenly on sit bones, shoulders relaxed, one person with only two feet visible, full body visible, yoga studio, natural lighting, professional photo",
+      "status": "success"
+    }
+  ]
+}

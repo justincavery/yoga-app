@@ -7,9 +7,9 @@ Provides endpoints for managing practice sessions:
 - Pausing sessions
 - Getting current active session
 """
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func, desc
 from pydantic import BaseModel, Field
@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field
 from app.api.dependencies import DatabaseSession, CurrentUser
 from app.models.practice_session import PracticeSession, CompletionStatus
 from app.models.sequence import Sequence
+from app.core.rate_limit import authenticated_rate_limit
 
 router = APIRouter()
 
@@ -56,8 +57,10 @@ class SessionResponse(BaseModel):
 
 
 @router.post("/start", response_model=SessionResponse, status_code=status.HTTP_201_CREATED)
+@authenticated_rate_limit
 async def start_session(
-    request: StartSessionRequest,
+    request: Request,
+    session_request: StartSessionRequest,
     current_user: CurrentUser,
     db_session: DatabaseSession
 ):
@@ -69,29 +72,29 @@ async def start_session(
     Returns the newly created session with status "abandoned" (will be updated when completed).
     """
     # Validate sequence exists if provided
-    if request.sequence_id is not None:
-        result = await db.execute(
-            select(Sequence).where(Sequence.sequence_id == request.sequence_id)
+    if session_request.sequence_id is not None:
+        result = await db_session.execute(
+            select(Sequence).where(Sequence.sequence_id == session_request.sequence_id)
         )
         sequence = result.scalar_one_or_none()
         if not sequence:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
-                detail=f"Sequence with ID {request.sequence_id} not found"
+                detail=f"Sequence with ID {session_request.sequence_id} not found"
             )
 
     # Create new session
     new_session = PracticeSession(
         user_id=current_user.user_id,
-        sequence_id=request.sequence_id,
-        started_at=datetime.utcnow(),
+        sequence_id=session_request.sequence_id,
+        started_at=datetime.now(timezone.utc),
         completion_status=CompletionStatus.ABANDONED,
         duration_seconds=0
     )
 
-    db.add(new_session)
-    await db.commit()
-    await db.refresh(new_session)
+    db_session.add(new_session)
+    await db_session.commit()
+    await db_session.refresh(new_session)
 
     return SessionResponse(
         session_id=new_session.session_id,
@@ -105,8 +108,10 @@ async def start_session(
 
 
 @router.post("/complete", response_model=SessionResponse)
+@authenticated_rate_limit
 async def complete_session(
-    request: CompleteSessionRequest,
+    request: Request,
+    complete_request: CompleteSessionRequest,
     db_session: DatabaseSession,
     current_user: CurrentUser
 ):
@@ -121,15 +126,15 @@ async def complete_session(
     Updates the session with completion data and calculates statistics.
     """
     # Get the session
-    result = await db.execute(
-        select(PracticeSession).where(PracticeSession.session_id == request.session_id)
+    result = await db_session.execute(
+        select(PracticeSession).where(PracticeSession.session_id == complete_request.session_id)
     )
     session = result.scalar_one_or_none()
 
     if not session:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Session with ID {request.session_id} not found"
+            detail=f"Session with ID {complete_request.session_id} not found"
         )
 
     # Verify ownership
@@ -140,22 +145,22 @@ async def complete_session(
         )
 
     # Update session
-    session.completed_at = datetime.utcnow()
-    session.duration_seconds = request.duration_seconds
+    session.completed_at = datetime.now(timezone.utc)
+    session.duration_seconds = complete_request.duration_seconds
 
     # Set completion status
-    if request.completion_status == "completed":
+    if complete_request.completion_status == "completed":
         session.completion_status = CompletionStatus.COMPLETED
-    elif request.completion_status == "partial":
+    elif complete_request.completion_status == "partial":
         session.completion_status = CompletionStatus.PARTIAL
-    elif request.completion_status == "abandoned":
+    elif complete_request.completion_status == "abandoned":
         session.completion_status = CompletionStatus.ABANDONED
     else:
         # Default to completed
         session.completion_status = CompletionStatus.COMPLETED
 
-    await db.commit()
-    await db.refresh(session)
+    await db_session.commit()
+    await db_session.refresh(session)
 
     # Calculate user statistics
     stats = await calculate_user_statistics(current_user.user_id, db_session)
@@ -173,9 +178,11 @@ async def complete_session(
 
 
 @router.put("/{session_id}/pause", response_model=SessionResponse)
+@authenticated_rate_limit
 async def pause_session(
+    request: Request,
     session_id: int,
-    request: PauseSessionRequest,
+    pause_request: PauseSessionRequest,
     db_session: DatabaseSession,
     current_user: CurrentUser
 ):
@@ -188,7 +195,7 @@ async def pause_session(
     Updates the session's duration but keeps it active (can be resumed).
     """
     # Get the session
-    result = await db.execute(
+    result = await db_session.execute(
         select(PracticeSession).where(PracticeSession.session_id == session_id)
     )
     session = result.scalar_one_or_none()
@@ -207,10 +214,10 @@ async def pause_session(
         )
 
     # Update duration but don't mark as completed
-    session.duration_seconds = request.duration_so_far
+    session.duration_seconds = pause_request.duration_so_far
 
-    await db.commit()
-    await db.refresh(session)
+    await db_session.commit()
+    await db_session.refresh(session)
 
     return SessionResponse(
         session_id=session.session_id,
@@ -224,7 +231,9 @@ async def pause_session(
 
 
 @router.get("/current", response_model=SessionResponse)
+@authenticated_rate_limit
 async def get_current_session(
+    request: Request,
     db_session: DatabaseSession,
     current_user: CurrentUser
 ):
@@ -235,7 +244,7 @@ async def get_current_session(
     This represents a session that was started but not yet finished.
     """
     # Get most recent active session (not completed)
-    result = await db.execute(
+    result = await db_session.execute(
         select(PracticeSession)
         .where(PracticeSession.user_id == current_user.user_id)
         .where(PracticeSession.completed_at.is_(None))
@@ -269,7 +278,7 @@ async def calculate_user_statistics(user_id: int, db_session: AsyncSession) -> d
         dict: Statistics including total sessions, total time, average duration, completion rate
     """
     # Total completed sessions
-    result = await db.execute(
+    result = await db_session.execute(
         select(func.count(PracticeSession.session_id))
         .where(PracticeSession.user_id == user_id)
         .where(PracticeSession.completion_status == CompletionStatus.COMPLETED)
@@ -277,7 +286,7 @@ async def calculate_user_statistics(user_id: int, db_session: AsyncSession) -> d
     total_completed = result.scalar() or 0
 
     # Total practice time
-    result = await db.execute(
+    result = await db_session.execute(
         select(func.sum(PracticeSession.duration_seconds))
         .where(PracticeSession.user_id == user_id)
         .where(PracticeSession.completion_status == CompletionStatus.COMPLETED)
@@ -285,7 +294,7 @@ async def calculate_user_statistics(user_id: int, db_session: AsyncSession) -> d
     total_seconds = result.scalar() or 0
 
     # Average duration
-    result = await db.execute(
+    result = await db_session.execute(
         select(func.avg(PracticeSession.duration_seconds))
         .where(PracticeSession.user_id == user_id)
         .where(PracticeSession.completion_status == CompletionStatus.COMPLETED)
@@ -293,7 +302,7 @@ async def calculate_user_statistics(user_id: int, db_session: AsyncSession) -> d
     avg_duration = result.scalar() or 0
 
     # All sessions (for completion rate)
-    result = await db.execute(
+    result = await db_session.execute(
         select(func.count(PracticeSession.session_id))
         .where(PracticeSession.user_id == user_id)
     )

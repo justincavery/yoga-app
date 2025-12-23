@@ -1,0 +1,1004 @@
+{
+  "start_time": "2025-12-15T23:47:37.555352",
+  "end_time": "2025-12-16T02:05:55.263068",
+  "configuration": {
+    "model_flash": "gemini-2.5-flash-image",
+    "model_pro": "gemini-3-pro-image-preview",
+    "pro_model_count": 10,
+    "rate_limit_seconds": 60,
+    "max_retries": 10
+  },
+  "summary": {
+    "total": 50,
+    "successful": 50,
+    "failed": 0
+  },
+  "generations": [
+    {
+      "pose_number": 1,
+      "pose_name": "Mountain Pose",
+      "filename": "mountain-pose.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-15T23:47:37.557208",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, standing in mountain pose with feet together, arms at sides, perfect upright posture, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-15T23:47:37.557214",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 2,
+      "pose_name": "Downward Facing Dog",
+      "filename": "downward-facing-dog.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-15T23:48:50.491881",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in downward facing dog pose, side view, hands and feet on mat, hips lifted high forming inverted V-shape, head between arms, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-15T23:48:50.491946",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 3,
+      "pose_name": "Warrior I",
+      "filename": "warrior-i.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-15T23:50:02.518261",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in warrior 1 pose, front knee bent 90 degrees, back foot turned out, arms raised straight overhead, chest open, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-15T23:50:02.518923",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 4,
+      "pose_name": "Warrior II",
+      "filename": "warrior-ii.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-15T23:51:15.712100",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in warrior 2 pose, side view, legs wide apart, front knee bent 90 degrees, arms extended horizontally in opposite directions, gazing forward, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-15T23:51:15.712182",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 5,
+      "pose_name": "Warrior III",
+      "filename": "warrior-iii.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-15T23:52:29.669464",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in warrior 3 pose, balancing on one leg, other leg extended back parallel to floor, arms forward, body in straight horizontal line, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-15T23:52:29.669478",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in warrior 3 pose, balancing on one leg, other leg extended back parallel to floor, arms forward, body in straight horizontal line, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:08:10.637401",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 6,
+      "pose_name": "Tree Pose",
+      "filename": "tree-pose.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-16T00:09:25.322552",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in tree pose, standing on right leg, left foot pressed to inner right thigh, hands in prayer position at chest, balanced, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:09:25.322631",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 7,
+      "pose_name": "Triangle Pose",
+      "filename": "triangle-pose.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-16T00:10:38.144564",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in triangle pose, legs wide apart, reaching down to front shin with one hand, other arm extended straight up, forming triangle, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:10:38.144676",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 8,
+      "pose_name": "Extended Side Angle",
+      "filename": "extended-side-angle.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-16T00:11:53.411989",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in extended side angle pose, front knee bent, front hand reaching to floor inside front foot, back arm extended overhead, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:11:53.412403",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 9,
+      "pose_name": "Half Moon",
+      "filename": "half-moon.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-16T00:13:06.018338",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in half moon pose, balancing on one leg and one hand on floor, other leg extended back parallel to floor, top arm reaching up, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:13:06.021268",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 10,
+      "pose_name": "Chair Pose",
+      "filename": "chair-pose.png",
+      "model": "gemini-3-pro-image-preview",
+      "timestamp": "2025-12-16T00:14:18.805203",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in chair pose, knees bent as if sitting in chair, arms raised overhead, weight in heels, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:14:18.806301",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 11,
+      "pose_name": "Standing Forward Fold",
+      "filename": "standing-forward-fold.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:15:32.996023",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in standing forward fold, legs straight, folding forward from hips, hands reaching toward floor, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:15:32.996087",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in standing forward fold, legs straight, folding forward from hips, hands reaching toward floor, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:15:42.939650",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 12,
+      "pose_name": "Plank Pose",
+      "filename": "plank-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:16:50.345152",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in plank pose, hands under shoulders, body in straight line from head to heels, core engaged, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:16:50.345222",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in plank pose, hands under shoulders, body in straight line from head to heels, core engaged, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:17:01.007379",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 13,
+      "pose_name": "Chaturanga",
+      "filename": "chaturanga.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:18:06.641901",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in chaturanga, body lowered parallel to floor, elbows bent 90 degrees close to ribs, straight line head to heels, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:18:06.641949",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in chaturanga, body lowered parallel to floor, elbows bent 90 degrees close to ribs, straight line head to heels, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:18:16.687166",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 14,
+      "pose_name": "Upward Facing Dog",
+      "filename": "upward-facing-dog.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:19:22.557248",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in upward facing dog, chest lifted, arms straight, looking up, thighs off mat, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:19:22.557319",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 15,
+      "pose_name": "Cobra Pose",
+      "filename": "cobra-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:20:28.421649",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in cobra pose, lying on belly, chest lifted, gentle backbend, hips on mat, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:20:28.421683",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 16,
+      "pose_name": "Child's Pose",
+      "filename": "childs-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:21:33.642611",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in child's pose, kneeling, sitting back on heels, arms extended forward on mat, forehead resting down, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:21:33.642690",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 17,
+      "pose_name": "Cat Pose",
+      "filename": "cat-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:22:39.212667",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in cat pose, on hands and knees, spine rounded upward, head tucked down, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:22:39.212712",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in cat pose, on hands and knees, spine rounded upward, head tucked down, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:22:51.445576",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in cat pose, on hands and knees, spine rounded upward, head tucked down, side view, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T00:23:01.678958",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 18,
+      "pose_name": "Cow Pose",
+      "filename": "cow-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:24:06.900213",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in cow pose, on hands and knees, spine arched downward, head lifted, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:24:06.900286",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 19,
+      "pose_name": "Bridge Pose",
+      "filename": "bridge-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:25:12.069640",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bridge pose, lying on back, knees bent, hips lifted high, feet flat on mat, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:25:12.069712",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bridge pose, lying on back, knees bent, hips lifted high, feet flat on mat, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:40:52.335762",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bridge pose, lying on back, knees bent, hips lifted high, feet flat on mat, side view, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T00:41:06.327904",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 4,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bridge pose, lying on back, knees bent, hips lifted high, feet flat on mat, side view, full body visible, yoga studio, natural lighting, professional photo, wearing full athletic workout attire, professional fitness photo",
+          "timestamp": "2025-12-16T00:41:16.824281",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 20,
+      "pose_name": "Wheel Pose",
+      "filename": "wheel-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:42:21.964589",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in wheel pose, full backbend with hands and feet on mat, body arched high, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:42:21.965239",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in wheel pose, full backbend with hands and feet on mat, body arched high, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:42:31.930523",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in wheel pose, full backbend with hands and feet on mat, body arched high, side view, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T00:42:41.842500",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 21,
+      "pose_name": "Seated Forward Bend",
+      "filename": "seated-forward-bend.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:43:46.758410",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in seated forward bend, sitting with legs extended, folding forward over legs, reaching for feet, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:43:46.758450",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in seated forward bend, sitting with legs extended, folding forward over legs, reaching for feet, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:43:56.903943",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 22,
+      "pose_name": "Seated Spinal Twist",
+      "filename": "seated-spinal-twist.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:45:02.348018",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in seated spinal twist, sitting with one leg bent, twisting torso, one hand behind, other on knee, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:45:02.348158",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 23,
+      "pose_name": "Boat Pose",
+      "filename": "boat-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:46:07.338227",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in boat pose, sitting balanced on sit bones, legs lifted and extended, arms reaching forward parallel to legs, V-shape, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:46:07.338272",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 24,
+      "pose_name": "Pigeon Pose",
+      "filename": "pigeon-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:47:12.283758",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in pigeon pose, front leg bent under body, back leg extended straight behind, chest upright, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:47:12.283829",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 25,
+      "pose_name": "Low Lunge",
+      "filename": "low-lunge.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:48:17.391623",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in low lunge, front knee bent 90 degrees, back knee on mat, arms raised overhead, chest open, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:48:17.391666",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 26,
+      "pose_name": "High Lunge",
+      "filename": "high-lunge.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:49:22.110285",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in high lunge, front knee bent, back leg straight and lifted off mat, arms raised overhead, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:49:22.110385",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in high lunge, front knee bent, back leg straight and lifted off mat, arms raised overhead, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:49:32.264815",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in high lunge, front knee bent, back leg straight and lifted off mat, arms raised overhead, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T00:49:42.306973",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 27,
+      "pose_name": "Lizard Pose",
+      "filename": "lizard-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:50:47.148661",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in lizard pose, deep lunge with both hands inside front foot on mat, back knee lifted, hip opening, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:50:47.148747",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 28,
+      "pose_name": "Crow Pose",
+      "filename": "crow-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:51:56.141539",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in crow pose, balancing on hands, knees resting on upper arms, feet lifted off ground, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:51:56.141883",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 29,
+      "pose_name": "Side Plank",
+      "filename": "side-plank.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:53:01.250463",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in side plank, balancing on one hand and side of foot, body in straight diagonal line, top arm extended up, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:53:01.250493",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in side plank, balancing on one hand and side of foot, body in straight diagonal line, top arm extended up, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:53:12.252079",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 30,
+      "pose_name": "Camel Pose",
+      "filename": "camel-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:54:17.027506",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in camel pose, kneeling upright, leaning back, hands reaching to heels, chest open, deep backbend, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:54:17.027710",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in camel pose, kneeling upright, leaning back, hands reaching to heels, chest open, deep backbend, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:54:27.051790",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in camel pose, kneeling upright, leaning back, hands reaching to heels, chest open, deep backbend, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T00:54:36.637704",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 31,
+      "pose_name": "Fish Pose",
+      "filename": "fish-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:55:44.725447",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in fish pose, lying on back, chest lifted high, head tilted back, legs extended, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:55:44.725529",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in fish pose, lying on back, chest lifted high, head tilted back, legs extended, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:55:55.214084",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 32,
+      "pose_name": "Bow Pose",
+      "filename": "bow-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:57:02.129081",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bow pose, lying on belly, holding both ankles, chest and thighs lifted creating bow shape, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:57:02.129162",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bow pose, lying on belly, holding both ankles, chest and thighs lifted creating bow shape, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:57:13.169176",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bow pose, lying on belly, holding both ankles, chest and thighs lifted creating bow shape, side view, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T00:57:23.545420",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 33,
+      "pose_name": "Locust Pose",
+      "filename": "locust-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:58:31.471278",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in locust pose, lying on belly, chest and legs lifted off mat, arms extended back along body, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:58:31.471318",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 34,
+      "pose_name": "Shoulder Stand",
+      "filename": "shoulder-stand.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T00:59:38.354655",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in shoulder stand, lying on shoulders, legs extended straight up vertically, hands supporting lower back, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T00:59:38.354734",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in shoulder stand, lying on shoulders, legs extended straight up vertically, hands supporting lower back, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T00:59:48.293177",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 35,
+      "pose_name": "Plow Pose",
+      "filename": "plow-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:00:55.189914",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in plow pose, lying on shoulders, legs extended over head with toes touching floor behind head, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:00:55.189989",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 36,
+      "pose_name": "Headstand",
+      "filename": "headstand.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:02:02.291429",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in headstand, balanced on forearms and head, legs extended straight up, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:02:02.291502",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 37,
+      "pose_name": "Handstand",
+      "filename": "handstand.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:03:07.189361",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in handstand, balanced on hands, body straight vertical, legs extended up, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:03:07.189383",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 38,
+      "pose_name": "Forearm Plank",
+      "filename": "forearm-plank.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:04:13.405584",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in forearm plank, forearms on mat, body in straight line from head to heels, core engaged, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:04:13.405647",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in forearm plank, forearms on mat, body in straight line from head to heels, core engaged, side view, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T01:04:23.135422",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in forearm plank, forearms on mat, body in straight line from head to heels, core engaged, side view, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T01:04:33.083398",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 39,
+      "pose_name": "Dolphin Pose",
+      "filename": "dolphin-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:05:38.261753",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in dolphin pose, forearms on mat, hips lifted high forming inverted V, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:05:38.261786",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 40,
+      "pose_name": "Garland Pose",
+      "filename": "garland-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:06:43.487465",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in garland pose, deep squat with feet flat on floor, hands in prayer position at chest, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:06:43.487526",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 41,
+      "pose_name": "Wide-Legged Forward Fold",
+      "filename": "wide-legged-forward-fold.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:07:48.556974",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in wide-legged forward fold, legs wide apart, folding forward from hips, hands on floor between feet, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:07:48.557018",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in wide-legged forward fold, legs wide apart, folding forward from hips, hands on floor between feet, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T01:07:59.664162",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 42,
+      "pose_name": "Reverse Warrior",
+      "filename": "reverse-warrior.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:09:06.291278",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in reverse warrior, front knee bent, leaning back with back hand sliding down back leg, front arm extended overhead, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:09:06.291367",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 43,
+      "pose_name": "Standing Split",
+      "filename": "standing-split.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:10:11.345812",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in standing split, standing on one leg, other leg extended high behind, hands on floor for balance, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:10:11.345910",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 44,
+      "pose_name": "Revolved Triangle",
+      "filename": "revolved-triangle.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:11:16.544252",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in revolved triangle, legs wide, twisting torso, opposite hand reaching to front foot, other arm extended up, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:11:16.545175",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 45,
+      "pose_name": "Bound Angle Pose",
+      "filename": "bound-angle-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:12:21.349980",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bound angle pose, sitting with soles of feet together, knees out to sides, hands holding feet, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:12:21.350522",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bound angle pose, sitting with soles of feet together, knees out to sides, hands holding feet, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T01:12:32.288304",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bound angle pose, sitting with soles of feet together, knees out to sides, hands holding feet, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T01:27:38.291171",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 4,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in bound angle pose, sitting with soles of feet together, knees out to sides, hands holding feet, full body visible, yoga studio, natural lighting, professional photo, wearing full athletic workout attire, professional fitness photo",
+          "timestamp": "2025-12-16T01:27:51.672083",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 46,
+      "pose_name": "Happy Baby",
+      "filename": "happy-baby.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:28:56.623945",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in happy baby pose, lying on back, knees bent toward chest, hands holding feet, side view, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:28:56.623975",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 47,
+      "pose_name": "Legs Up the Wall",
+      "filename": "legs-up-the-wall.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:30:03.277370",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in legs up the wall, lying on back with legs extended up against wall, arms relaxed at sides, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:30:03.277401",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in legs up the wall, lying on back with legs extended up against wall, arms relaxed at sides, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T01:30:17.848720",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 48,
+      "pose_name": "Reclining Hand-to-Big-Toe",
+      "filename": "reclining-hand-to-big-toe.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T01:47:15.189177",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in reclining hand-to-big-toe, lying on back, one leg extended up holding foot, other leg on floor, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T01:47:15.189281",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 2,
+          "prompt": "fitness instructor demonstrating yoga exercise, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in reclining hand-to-big-toe, lying on back, one leg extended up holding foot, other leg on floor, full body visible, yoga studio, natural lighting, professional photo, athletic training photo",
+          "timestamp": "2025-12-16T02:03:12.473678",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 3,
+          "prompt": "professional yoga instruction, blonde yoga instructor, 25-30 years old, wearing yoga leggings, in reclining hand-to-big-toe, lying on back, one leg extended up holding foot, other leg on floor, full body visible, yoga studio, natural lighting, professional photo, educational fitness photography",
+          "timestamp": "2025-12-16T02:03:25.627066",
+          "status": "failed"
+        },
+        {
+          "attempt_number": 4,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in reclining hand-to-big-toe, lying on back, one leg extended up holding foot, other leg on floor, full body visible, yoga studio, natural lighting, professional photo, wearing full athletic workout attire, professional fitness photo",
+          "timestamp": "2025-12-16T02:03:35.832024",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 49,
+      "pose_name": "Corpse Pose",
+      "filename": "corpse-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T02:04:41.947324",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in corpse pose, lying flat on back, arms at sides palms up, legs slightly apart, completely relaxed, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T02:04:41.947354",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    },
+    {
+      "pose_number": 50,
+      "pose_name": "Easy Pose",
+      "filename": "easy-pose.png",
+      "model": "gemini-2.5-flash-image",
+      "timestamp": "2025-12-16T02:05:50.604093",
+      "attempts": [
+        {
+          "attempt_number": 1,
+          "prompt": "blonde yoga instructor, 25-30 years old, wearing yoga leggings, in easy pose, sitting cross-legged, hands resting on knees, spine straight, peaceful, full body visible, yoga studio, natural lighting, professional photo",
+          "timestamp": "2025-12-16T02:05:50.604142",
+          "status": "success"
+        }
+      ],
+      "final_status": "success"
+    }
+  ]
+}
