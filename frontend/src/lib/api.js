@@ -2,12 +2,21 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
 
 // Flag to toggle between mock and real API
+// NOTE: VITE_USE_MOCK_API must be explicitly set to 'false' (string) to use real API
 const USE_MOCK_API = import.meta.env.VITE_USE_MOCK_API !== 'false';
 
 class ApiClient {
   constructor() {
     this.baseUrl = API_BASE_URL;
     this.useMock = USE_MOCK_API;
+
+    // Log configuration for debugging
+    console.log('[ApiClient] Configuration:', {
+      baseUrl: this.baseUrl,
+      useMock: this.useMock,
+      env_VITE_API_URL: import.meta.env.VITE_API_URL,
+      env_VITE_USE_MOCK_API: import.meta.env.VITE_USE_MOCK_API,
+    });
   }
 
   // Helper method to make requests
