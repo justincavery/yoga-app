@@ -254,11 +254,16 @@ jobs:
             # Run database migrations with Alembic
             echo "Running database migrations..."
 
+            # Check if pose instruction columns exist (means migration already applied via raw SQL)
+            if docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "\d poses" 2>/dev/null | grep -q "entry_instructions"; then
+              echo "Pose instruction columns exist - stamping add_pose_instructions migration..."
+              docker exec -w /app yogaflow-backend alembic -c alembic.ini stamp add_pose_instructions
+              echo "✓ Stamped to add_pose_instructions"
             # Check if this is first-time setup (no alembic_version table)
-            if ! docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "\d alembic_version" > /dev/null 2>&1; then
+            elif ! docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "\d alembic_version" > /dev/null 2>&1; then
               echo "First-time Alembic setup - stamping database with base migration..."
-              # Database was created with raw SQL - stamp it with the base migration
               docker exec -w /app yogaflow-backend alembic -c alembic.ini stamp ac494d920e90
+              echo "✓ Stamped to ac494d920e90"
             fi
 
             docker exec -w /app yogaflow-backend alembic -c alembic.ini upgrade head
