@@ -254,13 +254,12 @@ jobs:
             # Run database migrations with Alembic
             echo "Running database migrations..."
 
-            # Debug: Check what's in /app
-            echo "Checking /app directory contents..."
-            docker exec yogaflow-backend ls -la /app/
-            echo "Checking if alembic.ini exists..."
-            docker exec yogaflow-backend test -f /app/alembic.ini && echo "alembic.ini found" || echo "alembic.ini NOT found"
-            echo "Checking alembic directory..."
-            docker exec yogaflow-backend ls -la /app/alembic/ || echo "alembic directory not found"
+            # Check if this is first-time setup (no alembic_version table)
+            if ! docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "\d alembic_version" > /dev/null 2>&1; then
+              echo "First-time Alembic setup - stamping database with base migration..."
+              # Database was created with raw SQL - stamp it with the base migration
+              docker exec -w /app yogaflow-backend alembic -c alembic.ini stamp ac494d920e90
+            fi
 
             docker exec -w /app yogaflow-backend alembic -c alembic.ini upgrade head
 
