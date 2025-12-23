@@ -52,6 +52,11 @@ export default function Login() {
     try {
       const response = await apiClient.login(formData);
       setAuth(response.user, response.tokens);
+
+      // Small delay to ensure localStorage is updated before navigation
+      // This prevents race condition where Dashboard loads before token is persisted
+      await new Promise(resolve => setTimeout(resolve, 100));
+
       navigate('/dashboard');
     } catch (err) {
       setError(err.message || 'Login failed. Please check your credentials.');
