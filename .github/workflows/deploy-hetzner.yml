@@ -255,10 +255,8 @@ jobs:
             echo "Ensuring database schema is correct..."
 
             # Add account lockout columns if they don't exist (migration b5f321cd1234)
-            docker exec yogaflow-postgres psql -U yogaflow -d yogaflow << 'EOSQL'
-ALTER TABLE users ADD COLUMN IF NOT EXISTS failed_login_attempts INTEGER NOT NULL DEFAULT 0;
-ALTER TABLE users ADD COLUMN IF NOT EXISTS account_locked_until TIMESTAMP;
-EOSQL
+            docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "ALTER TABLE users ADD COLUMN IF NOT EXISTS failed_login_attempts INTEGER NOT NULL DEFAULT 0;"
+            docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "ALTER TABLE users ADD COLUMN IF NOT EXISTS account_locked_until TIMESTAMP;"
             echo "✓ Account lockout columns ensured"
 
             # Run database migrations with Alembic
