@@ -254,13 +254,18 @@ jobs:
             # Run database migrations with Alembic
             echo "Running database migrations..."
 
+            # Check current migration status
+            CURRENT_VERSION=$(docker exec -w /app yogaflow-backend alembic -c alembic.ini current 2>/dev/null | grep -oP '(?<=^)[a-z0-9_]+' | head -1 || echo "none")
+            echo "Current Alembic version: $CURRENT_VERSION"
+
             # Check if pose instruction columns exist (means migration already applied via raw SQL)
-            if docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "\d poses" 2>/dev/null | grep -q "entry_instructions"; then
-              echo "Pose instruction columns exist - stamping add_pose_instructions migration..."
+            COLUMN_EXISTS=$(docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -t -c "SELECT COUNT(*) FROM information_schema.columns WHERE table_name='poses' AND column_name='entry_instructions';" | xargs)
+
+            if [[ "$COLUMN_EXISTS" -gt 0 ]] && [[ "$CURRENT_VERSION" != "add_pose_instructions" ]]; then
+              echo "Pose instruction columns exist but not in Alembic - stamping add_pose_instructions..."
               docker exec -w /app yogaflow-backend alembic -c alembic.ini stamp add_pose_instructions
               echo "✓ Stamped to add_pose_instructions"
-            # Check if this is first-time setup (no alembic_version table)
-            elif ! docker exec yogaflow-postgres psql -U yogaflow -d yogaflow -c "\d alembic_version" > /dev/null 2>&1; then
+            elif [[ "$CURRENT_VERSION" == "none" ]]; then
               echo "First-time Alembic setup - stamping database with base migration..."
               docker exec -w /app yogaflow-backend alembic -c alembic.ini stamp ac494d920e90
               echo "✓ Stamped to ac494d920e90"
