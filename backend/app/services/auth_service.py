@@ -150,9 +150,11 @@ async def authenticate_user(
                 detail=f"Account is locked due to too many failed login attempts. Try again in {int(lockout_remaining)} minutes."
             )
         else:
-            # Lockout period expired - reset
-            user.account_locked_until = None
-            user.failed_login_attempts = 0
+            # Lockout period expired - reset (with backward compatibility)
+            if hasattr(user, 'account_locked_until'):
+                user.account_locked_until = None
+            if hasattr(user, 'failed_login_attempts'):
+                user.failed_login_attempts = 0
             await db_session.flush()
 
     if not user or not verify_password(login_data.password, user.password_hash):
