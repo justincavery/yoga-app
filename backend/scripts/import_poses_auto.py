@@ -42,7 +42,7 @@ async def import_poses(force_reimport=False):
     await init_database()
 
     # Load YAML file
-    yaml_path = Path(__file__).parent.parent.parent / "content" / "poses.yaml"
+    yaml_path = Path(__file__).parent.parent / "content" / "poses.yaml"
     print(f"Loading poses from: {yaml_path}")
 
     if not yaml_path.exists():

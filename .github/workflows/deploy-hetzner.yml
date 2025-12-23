@@ -251,11 +251,11 @@ jobs:
 
             # Run database migrations with Alembic
             echo "Running database migrations..."
-            docker exec yogaflow-backend alembic upgrade head
+            docker exec -w /app yogaflow-backend alembic upgrade head
 
             # Verify migration status
             echo "Current migration version:"
-            docker exec yogaflow-backend alembic current
+            docker exec -w /app yogaflow-backend alembic current
             echo "✅ Migrations complete"
 
             # Populate pose instructions and sequences if not already done
