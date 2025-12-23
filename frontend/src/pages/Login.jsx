@@ -53,9 +53,23 @@ export default function Login() {
       const response = await apiClient.login(formData);
       setAuth(response.user, response.tokens);
 
-      // Small delay to ensure localStorage is updated before navigation
+      // Wait for Zustand persist middleware to write token to localStorage
       // This prevents race condition where Dashboard loads before token is persisted
-      await new Promise(resolve => setTimeout(resolve, 100));
+      const maxWaitTime = 2000; // 2 seconds max
+      const startTime = Date.now();
+
+      while (Date.now() - startTime < maxWaitTime) {
+        const storage = localStorage.getItem('auth-storage');
+        if (storage) {
+          const parsed = JSON.parse(storage);
+          if (parsed?.state?.token) {
+            // Token is persisted, safe to navigate
+            break;
+          }
+        }
+        // Wait 50ms before checking again
+        await new Promise(resolve => setTimeout(resolve, 50));
+      }
 
       navigate('/dashboard');
     } catch (err) {
