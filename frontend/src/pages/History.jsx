@@ -97,7 +97,7 @@ function History() {
         page_size: 50,
       };
 
-      const data = await apiClient.getHistory(params);
+      const data = await apiClient.getHistory(token, params);
       setSessions(data.sessions);
     } catch (error) {
       console.error('Failed to load sessions:', error);

@@ -363,13 +363,16 @@ class ApiClient {
     });
   }
 
-  async getHistory(params = {}) {
+  async getHistory(token, params = {}) {
     if (this.useMock) {
       return this.mockGetHistory(params);
     }
     const queryParams = new URLSearchParams(params);
     return this.request(`/history?${queryParams}`, {
       method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
   }
 
