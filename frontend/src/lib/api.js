@@ -24,6 +24,20 @@ class ApiClient {
     try {
       const response = await fetch(url, config);
 
+      // Handle 401 Unauthorized - auto logout and redirect to login
+      if (response.status === 401) {
+        // Only auto-logout if not on login/register pages
+        if (typeof window !== 'undefined' &&
+            !window.location.pathname.match(/^\/(login|register|forgot-password|reset-password)/)) {
+          // Import authStore dynamically to avoid circular dependencies
+          const { default: useAuthStore } = await import('../store/authStore');
+          useAuthStore.getState().logout();
+
+          // Redirect to login, preserving the attempted URL
+          window.location.href = `/login?redirect=${encodeURIComponent(window.location.pathname)}`;
+        }
+      }
+
       // Handle non-OK responses
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
@@ -302,16 +316,22 @@ class ApiClient {
     });
   }
 
-  async startSession(sequenceId) {
+  async startSession(sequenceId, token) {
     return this.request('/sessions/start', {
       method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify({ sequence_id: sequenceId }),
     });
   }
 
-  async completeSession(sessionId, durationSeconds, posesCompleted, completionStatus = 'completed') {
+  async completeSession(sessionId, durationSeconds, posesCompleted, completionStatus = 'completed', token) {
     return this.request('/sessions/complete', {
       method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify({
         session_id: sessionId,
         duration_seconds: durationSeconds,

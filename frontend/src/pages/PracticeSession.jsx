@@ -13,10 +13,12 @@ import {
 } from 'lucide-react';
 import { Button, Spinner } from '../components/ui';
 import apiClient from '../lib/api';
+import useAuthStore from '../store/authStore';
 
 export default function PracticeSession() {
   const { sequenceId } = useParams();
   const navigate = useNavigate();
+  const { accessToken } = useAuthStore();
 
   // State
   const [sequence, setSequence] = useState(null);
@@ -201,7 +203,7 @@ export default function PracticeSession() {
 
       // Start a practice session
       try {
-        const sessionResponse = await apiClient.startSession(sequenceId);
+        const sessionResponse = await apiClient.startSession(sequenceId, accessToken);
         setSessionId(sessionResponse.session_id);
         setSessionStartTime(Date.now());
       } catch (sessionErr) {
@@ -229,7 +231,8 @@ export default function PracticeSession() {
         sessionId,
         durationSeconds,
         posesCompleted,
-        'completed'
+        'completed',
+        accessToken
       );
     } catch (err) {
       console.error('Failed to save session:', err);
