@@ -61,7 +61,7 @@ class UserAchievement(Base):
     user_achievement_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey("users.user_id", ondelete="CASCADE"), nullable=False, index=True)
     achievement_id = Column(Integer, ForeignKey("achievements.achievement_id", ondelete="CASCADE"), nullable=False, index=True)
-    earned_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    earned_at = Column(DateTime, default=lambda: datetime.utcnow(), nullable=False)
 
     # Relationships
     user = relationship("User", back_populates="achievements")

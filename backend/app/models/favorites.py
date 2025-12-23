@@ -24,7 +24,7 @@ class UserFavorite(Base):
     favorite_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey("users.user_id", ondelete="CASCADE"), nullable=False, index=True)
     sequence_id = Column(Integer, ForeignKey("sequences.sequence_id", ondelete="CASCADE"), nullable=False, index=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.utcnow(), nullable=False)
 
     # Relationships
     user = relationship("User", back_populates="favorites")

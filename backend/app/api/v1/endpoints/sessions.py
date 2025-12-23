@@ -87,7 +87,7 @@ async def start_session(
     new_session = PracticeSession(
         user_id=current_user.user_id,
         sequence_id=session_request.sequence_id,
-        started_at=datetime.now(timezone.utc),
+        started_at=datetime.utcnow(),
         completion_status=CompletionStatus.ABANDONED,
         duration_seconds=0
     )
@@ -145,7 +145,7 @@ async def complete_session(
         )
 
     # Update session
-    session.completed_at = datetime.now(timezone.utc)
+    session.completed_at = datetime.utcnow()
     session.duration_seconds = complete_request.duration_seconds
 
     # Set completion status

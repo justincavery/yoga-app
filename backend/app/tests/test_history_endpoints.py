@@ -48,7 +48,7 @@ class TestHistoryEndpoint:
     ):
         """Test getting basic practice history."""
         # Create test sessions
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
         for i in range(3):
             session = PracticeSession(
                 user_id=test_user.user_id,
@@ -84,7 +84,7 @@ class TestHistoryEndpoint:
     ):
         """Test history pagination."""
         # Create 25 sessions
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
         for i in range(25):
             session = PracticeSession(
                 user_id=test_user.user_id,
@@ -129,7 +129,7 @@ class TestHistoryEndpoint:
         user_token_headers: dict
     ):
         """Test filtering history by date range."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create sessions at different times
         old_session = PracticeSession(
@@ -175,14 +175,14 @@ class TestHistoryEndpoint:
         completed = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
         partial = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=450,
             completion_status=CompletionStatus.PARTIAL
         )
@@ -213,7 +213,7 @@ class TestHistoryEndpoint:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
@@ -258,7 +258,7 @@ class TestHistoryEndpoint:
         session1 = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
@@ -266,7 +266,7 @@ class TestHistoryEndpoint:
         session2 = PracticeSession(
             user_id=intermediate_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=1200,
             completion_status=CompletionStatus.COMPLETED
         )
@@ -322,7 +322,7 @@ class TestStatsEndpoint:
         user_token_headers: dict
     ):
         """Test comprehensive statistics calculation."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create varied sessions
         sessions_data = [
@@ -376,7 +376,7 @@ class TestStatsEndpoint:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc),
+                started_at=datetime.utcnow(),
                 duration_seconds=900,
                 completion_status=CompletionStatus.COMPLETED
             )
@@ -386,7 +386,7 @@ class TestStatsEndpoint:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=custom_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
@@ -451,7 +451,7 @@ class TestCalendarEndpoint:
         user_token_headers: dict
     ):
         """Test basic calendar data."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create sessions on different days
         for days_ago in [0, 0, 1, 2]:  # 2 on today, 1 on yesterday, 1 two days ago
@@ -492,7 +492,7 @@ class TestCalendarEndpoint:
         user_token_headers: dict
     ):
         """Test calendar with date range filtering."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create sessions over a 3-month period
         for days_ago in [0, 35, 70]:
@@ -531,7 +531,7 @@ class TestCalendarEndpoint:
         user_token_headers: dict
     ):
         """Test that calendar correctly handles multiple sessions per day."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create 3 sessions on the same day with different durations
         for hour in [8, 12, 18]:

@@ -70,7 +70,7 @@ async def register_user(
 
     # Generate email verification token
     verification_token = generate_verification_token()
-    verification_expires = datetime.now(timezone.utc) + timedelta(hours=24)
+    verification_expires = datetime.utcnow() + timedelta(hours=24)
 
     # Create new user
     new_user = User(
@@ -135,9 +135,9 @@ async def authenticate_user(
 
     # Check if account is locked (with backward compatibility)
     if user and hasattr(user, 'account_locked_until') and user.account_locked_until:
-        if datetime.now(timezone.utc) < user.account_locked_until:
+        if datetime.utcnow() < user.account_locked_until:
             # Account is still locked
-            lockout_remaining = (user.account_locked_until - datetime.now(timezone.utc)).total_seconds() / 60
+            lockout_remaining = (user.account_locked_until - datetime.utcnow()).total_seconds() / 60
             log_auth_event(
                 event_type="login",
                 user_id=user.user_id,
@@ -166,7 +166,7 @@ async def authenticate_user(
             if user.failed_login_attempts >= settings.max_login_attempts:
                 lockout_duration = timedelta(minutes=settings.account_lockout_minutes)
                 if hasattr(user, 'account_locked_until'):
-                    user.account_locked_until = datetime.now(timezone.utc) + lockout_duration
+                    user.account_locked_until = datetime.utcnow() + lockout_duration
                 await db_session.flush()
 
                 log_auth_event(
@@ -213,7 +213,7 @@ async def authenticate_user(
         user.failed_login_attempts = 0
     if hasattr(user, 'account_locked_until'):
         user.account_locked_until = None
-    user.last_login = datetime.now(timezone.utc)
+    user.last_login = datetime.utcnow()
     await db_session.flush()
 
     # Generate tokens
@@ -319,7 +319,7 @@ async def verify_email_token(
         )
 
     # Check if token is expired
-    if user.email_verification_expires and user.email_verification_expires < datetime.now(timezone.utc):
+    if user.email_verification_expires and user.email_verification_expires < datetime.utcnow():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Verification token has expired"
@@ -371,7 +371,7 @@ async def resend_verification_email(
 
     # Generate new verification token
     verification_token = generate_verification_token()
-    verification_expires = datetime.now(timezone.utc) + timedelta(hours=24)
+    verification_expires = datetime.utcnow() + timedelta(hours=24)
 
     user.email_verification_token = verification_token
     user.email_verification_expires = verification_expires
@@ -422,7 +422,7 @@ async def request_password_reset(
 
     # Generate password reset token
     reset_token = generate_verification_token()
-    reset_expires = datetime.now(timezone.utc) + timedelta(hours=1)  # 1 hour expiry
+    reset_expires = datetime.utcnow() + timedelta(hours=1)  # 1 hour expiry
 
     user.password_reset_token = reset_token
     user.password_reset_expires = reset_expires
@@ -496,7 +496,7 @@ async def reset_password(
         )
 
     # Check if token is expired
-    if user.password_reset_expires and user.password_reset_expires < datetime.now(timezone.utc):
+    if user.password_reset_expires and user.password_reset_expires < datetime.utcnow():
         log_auth_event(
             event_type="password_reset",
             user_id=user.user_id,

@@ -105,7 +105,7 @@ class AgentCoordinator:
             "agent_type": self.agent_type,
             "task_description": task_description,
             "status": TaskStatus.IN_PROGRESS,
-            "timestamp": datetime.now(timezone.utc).isoformat()
+            "timestamp": datetime.utcnow().isoformat()
         }
 
         try:
@@ -129,7 +129,7 @@ class AgentCoordinator:
             "agent_id": self.agent_id,
             "agent_type": self.agent_type,
             "progress": progress,
-            "timestamp": datetime.now(timezone.utc).isoformat()
+            "timestamp": datetime.utcnow().isoformat()
         }
 
         try:
@@ -152,7 +152,7 @@ class AgentCoordinator:
             "agent_type": self.agent_type,
             "status": TaskStatus.COMPLETED,
             "result": result,
-            "timestamp": datetime.now(timezone.utc).isoformat()
+            "timestamp": datetime.utcnow().isoformat()
         }
 
         try:
@@ -176,7 +176,7 @@ class AgentCoordinator:
             "status": TaskStatus.BLOCKED,
             "reason": reason,
             "needs_clarification": needs_clarification,
-            "timestamp": datetime.now(timezone.utc).isoformat()
+            "timestamp": datetime.utcnow().isoformat()
         }
 
         try:
@@ -198,7 +198,7 @@ class AgentCoordinator:
             "agent_type": self.agent_type,
             "status": status,
             "details": details or {},
-            "timestamp": datetime.now(timezone.utc).isoformat()
+            "timestamp": datetime.utcnow().isoformat()
         }
 
         try:

@@ -65,7 +65,7 @@ async def test_forgot_password_success(test_user, db_session: AsyncSession, over
     await db_session.refresh(test_user)
     assert test_user.password_reset_token is not None
     assert test_user.password_reset_expires is not None
-    assert test_user.password_reset_expires > datetime.now(timezone.utc)
+    assert test_user.password_reset_expires > datetime.utcnow()
 
 
 @pytest.mark.asyncio
@@ -117,7 +117,7 @@ async def test_reset_password_success(test_user, db_session: AsyncSession, overr
     # Set up reset token
     reset_token = generate_verification_token()
     test_user.password_reset_token = reset_token
-    test_user.password_reset_expires = datetime.now(timezone.utc) + timedelta(hours=1)
+    test_user.password_reset_expires = datetime.utcnow() + timedelta(hours=1)
     await db_session.commit()
 
     new_password = "NewSecurePassword123"
@@ -168,7 +168,7 @@ async def test_reset_password_expired_token(test_user, db_session: AsyncSession,
     # Set up expired reset token
     reset_token = generate_verification_token()
     test_user.password_reset_token = reset_token
-    test_user.password_reset_expires = datetime.now(timezone.utc) - timedelta(hours=1)  # Expired
+    test_user.password_reset_expires = datetime.utcnow() - timedelta(hours=1)  # Expired
     await db_session.commit()
 
     async with AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
@@ -190,7 +190,7 @@ async def test_reset_password_weak_password(test_user, db_session: AsyncSession,
     """Test password reset with weak password."""
     reset_token = generate_verification_token()
     test_user.password_reset_token = reset_token
-    test_user.password_reset_expires = datetime.now(timezone.utc) + timedelta(hours=1)
+    test_user.password_reset_expires = datetime.utcnow() + timedelta(hours=1)
     await db_session.commit()
 
     async with AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
@@ -210,7 +210,7 @@ async def test_reset_password_used_token(test_user, db_session: AsyncSession, ov
     """Test that reset token can only be used once."""
     reset_token = generate_verification_token()
     test_user.password_reset_token = reset_token
-    test_user.password_reset_expires = datetime.now(timezone.utc) + timedelta(hours=1)
+    test_user.password_reset_expires = datetime.utcnow() + timedelta(hours=1)
     await db_session.commit()
 
     async with AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
@@ -241,7 +241,7 @@ async def test_reset_password_login_after_reset(test_user, db_session: AsyncSess
     # Set up reset token
     reset_token = generate_verification_token()
     test_user.password_reset_token = reset_token
-    test_user.password_reset_expires = datetime.now(timezone.utc) + timedelta(hours=1)
+    test_user.password_reset_expires = datetime.utcnow() + timedelta(hours=1)
     await db_session.commit()
 
     new_password = "NewSecurePassword789"

@@ -59,8 +59,8 @@ class Sequence(Base):
     style = Column(Enum(YogaStyle), nullable=False, index=True)
     is_preset = Column(Boolean, default=False, nullable=False, index=True)
     created_by = Column(Integer, ForeignKey("users.user_id", ondelete="CASCADE"), nullable=True, index=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
-    updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc), nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.utcnow(), nullable=False)
+    updated_at = Column(DateTime, default=lambda: datetime.utcnow(), onupdate=lambda: datetime.utcnow(), nullable=False)
 
     # Relationships
     creator = relationship("User", back_populates="custom_sequences")

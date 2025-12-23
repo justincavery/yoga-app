@@ -33,7 +33,7 @@ class PoseRelationship(Base):
     pose_id = Column(Integer, ForeignKey("poses.pose_id", ondelete="CASCADE"), nullable=False, index=True)
     related_pose_id = Column(Integer, ForeignKey("poses.pose_id", ondelete="CASCADE"), nullable=False, index=True)
     relationship_type = Column(Enum(RelationshipType), nullable=False, index=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.utcnow(), nullable=False)
 
     # Relationships
     pose = relationship("Pose", foreign_keys=[pose_id])

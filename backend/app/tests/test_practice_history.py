@@ -29,7 +29,7 @@ class TestPracticeHistoryQueries:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc) - timedelta(days=i),
+                started_at=datetime.utcnow() - timedelta(days=i),
                 duration_seconds=900,
                 completion_status=CompletionStatus.COMPLETED
             )
@@ -56,14 +56,14 @@ class TestPracticeHistoryQueries:
         completed = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
         partial = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=450,
             completion_status=CompletionStatus.PARTIAL
         )
@@ -85,7 +85,7 @@ class TestPracticeHistoryQueries:
         test_sequence: Sequence
     ):
         """Test filtering sessions by date range."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create sessions at different times
         old_session = PracticeSession(
@@ -128,7 +128,7 @@ class TestPracticeHistoryQueries:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc) - timedelta(hours=i),
+                started_at=datetime.utcnow() - timedelta(hours=i),
                 duration_seconds=900,
                 completion_status=CompletionStatus.COMPLETED
             )
@@ -166,7 +166,7 @@ class TestPracticeStatistics:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc),
+                started_at=datetime.utcnow(),
                 duration_seconds=900,
                 completion_status=CompletionStatus.COMPLETED
             )
@@ -192,7 +192,7 @@ class TestPracticeStatistics:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc),
+                started_at=datetime.utcnow(),
                 duration_seconds=duration,
                 completion_status=CompletionStatus.COMPLETED
             )
@@ -219,7 +219,7 @@ class TestPracticeStatistics:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc),
+                started_at=datetime.utcnow(),
                 duration_seconds=duration,
                 completion_status=CompletionStatus.COMPLETED
             )
@@ -240,7 +240,7 @@ class TestPracticeStatistics:
         test_sequence: Sequence
     ):
         """Test calculating current practice streak."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create sessions for last 3 consecutive days
         for days_ago in [0, 1, 2]:
@@ -268,7 +268,7 @@ class TestPracticeStatistics:
         test_sequence: Sequence
     ):
         """Test streak calculation when streak is broken."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Last practice was 3 days ago (streak broken)
         session = PracticeSession(
@@ -320,7 +320,7 @@ class TestPracticeStatistics:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc),
+                started_at=datetime.utcnow(),
                 duration_seconds=900 if status == CompletionStatus.COMPLETED else 450,
                 completion_status=status
             )
@@ -341,7 +341,7 @@ class TestPracticeStatistics:
         test_sequence: Sequence
     ):
         """Test grouping sessions by date."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
         start_date = now - timedelta(days=7)
 
         # Create sessions on different days
@@ -374,7 +374,7 @@ class TestPracticeStatistics:
         test_sequence: Sequence
     ):
         """Test getting practice frequency over time."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create sessions
         for days_ago in [0, 0, 1, 5]:
@@ -415,7 +415,7 @@ class TestPracticeStatistics:
             session = PracticeSession(
                 user_id=test_user.user_id,
                 sequence_id=test_sequence.sequence_id,
-                started_at=datetime.now(timezone.utc),
+                started_at=datetime.utcnow(),
                 duration_seconds=900,
                 completion_status=CompletionStatus.COMPLETED
             )
@@ -425,7 +425,7 @@ class TestPracticeStatistics:
         session = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=custom_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
@@ -456,7 +456,7 @@ class TestComprehensiveStatistics:
         test_sequence: Sequence
     ):
         """Test getting comprehensive user statistics."""
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
 
         # Create varied sessions
         sessions_data = [
@@ -507,14 +507,14 @@ class TestMultiUserIsolation:
         session1 = PracticeSession(
             user_id=test_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=900,
             completion_status=CompletionStatus.COMPLETED
         )
         session2 = PracticeSession(
             user_id=intermediate_user.user_id,
             sequence_id=test_sequence.sequence_id,
-            started_at=datetime.now(timezone.utc),
+            started_at=datetime.utcnow(),
             duration_seconds=1200,
             completion_status=CompletionStatus.COMPLETED
         )

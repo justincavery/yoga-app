@@ -200,7 +200,7 @@ async def get_calendar(
 
     # Default date range: last 90 days
     if end_date is None:
-        end_date = datetime.now(timezone.utc)
+        end_date = datetime.utcnow()
     if start_date is None:
         start_date = end_date - timedelta(days=90)
 
